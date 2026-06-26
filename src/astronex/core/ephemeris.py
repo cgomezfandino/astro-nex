@@ -19,6 +19,7 @@ def delta(jd):
 
 
 def julday(y, m, d, h):
+    # 15821015 = Gregorian calendar adopted 1582-10-15; earlier dates use Julian.
     gregflag = swe.JUL_CAL if (y * 10000 + m * 100 + d) < 15821015 else swe.GREG_CAL
     return swe.julday(y, m, d, h, gregflag)
 
@@ -41,13 +42,23 @@ def _calc(jd, pl, epheflag):
 
 
 def calc(jd, pl, epheflag=MOSEPH):
-    """Compute planet position in ET (adds delta-T to UT jd)."""
+    """Compute planet position, adding delta-T so the jd is treated as ET.
+
+    The +delta(jd) shift is required for golden parity: the original engine
+    fed (UT jd + delta-T) into the ET calc routine. It is deliberate, not an
+    oversight -- do NOT remove it or switch to swe.calc_ut.
+    """
     status, xx, err = _calc(jd + delta(jd), pl, epheflag)
     return status, xx[0], err
 
 
 def calc_ut(jd, pl, epheflag=MOSEPH):
-    """Compute planet position treating jd as UT directly (legacy quirk)."""
+    """Compute planet position treating jd as UT directly (no delta-T shift).
+
+    This is the counterpart to calc(): same routine, but WITHOUT the delta-T
+    addition. The legacy engine called the ET routine on a raw UT jd here -- a
+    deliberate quirk preserved for golden parity, not a bug to "fix".
+    """
     status, xx, err = _calc(jd, pl, epheflag)
     return status, xx[0], err
 
@@ -66,6 +77,8 @@ def houses(jd, glt, glg):
 
 def local_houses(jd, glg, glt, epheflag):
     """Compute local houses via ARMC (as the legacy engine did)."""
+    # swe.houses_armc expects a positive ARMC angle; normalize west (negative)
+    # longitudes by adding 360. Removing this breaks western-longitude charts.
     armc = glg + 360 if glg < 0 else glg
     status, eps, err = calc(jd, -1, epheflag)
     cusps, ascmc = swe.houses_armc(armc, glt, eps, KOCH)
@@ -81,6 +94,8 @@ def planets(jd, epheflag, p=12):
     out = []
     for i in range(p):
         if i == 10:
+            # The legacy engine emitted 11 bodies, omitting body 10; keeping
+            # this skip preserves index alignment with the golden output.
             continue
         status, lon, err = calc(jd, i, epheflag)
         if status < 0:

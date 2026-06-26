@@ -19,5 +19,6 @@ def test_planets_match_golden(c):
 @pytest.mark.parametrize("c", GOLDEN, ids=lambda c: c["name"])
 def test_houses_match_golden(c):
     got = list(e.houses(c["jd"], c["lat"], c["lon"]))
+    assert len(got) == len(c["houses"])
     for g, ref in zip(got, c["houses"]):
         assert abs(g - ref) < 1e-4
