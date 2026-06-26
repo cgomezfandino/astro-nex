@@ -44,3 +44,15 @@ plan_class = [[0, 4, 9], [3, 6, 7], [1, 2, 5, 8]]
 
 planclass = [0, 0, 1, 1, 2, 1, 2, 3, 3, 3, 4]  # related to
 aspclass = [4, 0, 1, 2, 3, 1, 4, 1, 3, 2, 1, 0]  # orbs table
+
+# Default orb table indexed orbs[planclass][aspclass]. In the legacy app this
+# table was populated at runtime by config; this provides a standalone default
+# so Chart.aspects() works without the config layer. Rows are planet classes
+# (lum, normal, short, far, useless); columns are aspect orb classes.
+DEFAULT_ORBS = [
+    [3.0, 5.0, 6.0, 8.0, 9.0],   # lum
+    [2.0, 4.0, 5.0, 6.0, 7.0],   # normal
+    [1.5, 3.0, 4.0, 5.0, 6.0],   # short
+    [1.0, 2.0, 3.0, 4.0, 5.0],   # far
+    [1.0, 2.0, 2.0, 3.0, 4.0],   # useless
+]
