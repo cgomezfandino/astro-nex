@@ -109,8 +109,7 @@ def strdate_to_date(strdate):
     try:
         y, mo, d = [int(x) for x in date.split('-')]
     except ValueError:
-        print(date)
-        raise
+        raise ValueError("Invalid date in strdate: %r" % date) from None
     zone, time = time[8:], time[:5]
     try:
         zone.index(':')
