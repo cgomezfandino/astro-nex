@@ -9,7 +9,9 @@ def test_degtodec_inverse():
     assert abs(degtodec("103000") - 10.5) < 1e-9
 
 def test_format_longitud_west():
-    assert format_longitud(-3.7038).endswith("W")
+    # legacy display form: degrees, hemisphere letter, minutes
+    assert format_longitud(-3.7038) == "3W42"
 
 def test_format_latitud_north():
-    assert format_latitud(40.4168).endswith("N")
+    # legacy display form: degrees, hemisphere letter, minutes
+    assert format_latitud(40.4168) == "40N25"

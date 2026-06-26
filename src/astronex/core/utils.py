@@ -62,10 +62,10 @@ def parsestrtime(strdate):
 
 
 def format_longitud(long):
-    """Format a decimal longitude as a string ending in 'E' or 'W'.
+    """Format a decimal longitude in the legacy display form: deg<hemi>min.
 
-    Returns deg + min + direction, e.g. "342W" for -3.7038 (3 deg 42 min West).
-    The direction letter is appended at the end so the string ends with 'E'/'W'.
+    The hemisphere letter ('E'/'W') is placed between degrees and minutes,
+    e.g. format_longitud(-3.7038) == "3W42" (3 deg, West, 42 min).
     """
     longitud = dectodeg(long)[:-2]
     if longitud[0] == '-':
@@ -73,14 +73,14 @@ def format_longitud(long):
         longitud = longitud[1:]
     else:
         let = 'E'
-    return longitud + let
+    return longitud[0:-2] + let + longitud[-2:]
 
 
 def format_latitud(lat):
-    """Format a decimal latitude as a string ending in 'N' or 'S'.
+    """Format a decimal latitude in the legacy display form: deg<hemi>min.
 
-    Returns deg + min + direction, e.g. "4025N" for 40.4168 (40 deg 25 min North).
-    The direction letter is appended at the end so the string ends with 'N'/'S'.
+    The hemisphere letter ('N'/'S') is placed between degrees and minutes,
+    e.g. format_latitud(40.4168) == "40N25" (40 deg, North, 25 min).
     """
     latitud = dectodeg(lat)[:-2]
     if latitud[0] == '-':
@@ -88,7 +88,7 @@ def format_latitud(lat):
         latitud = latitud[1:]
     else:
         let = 'N'
-    return latitud + let
+    return latitud[0:-2] + let + latitud[-2:]
 
 
 def points_from_angle(angles):
