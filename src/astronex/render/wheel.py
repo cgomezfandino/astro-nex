@@ -88,6 +88,7 @@ def draw_radix(cr, chart, size=600, cfg=None):
     house_label_ring = radius * 0.74   # house number labels just inside
     planet_ring = radius * 0.55        # planets on a mid ring
     aspect_ring = radius * 0.50        # aspect lines drawn from here inward
+    cusp_inner = radius * 0.30         # inner extent of the house cusp lines
 
     use_font = glyphs.set_symbol_font(cr)
 
@@ -127,10 +128,9 @@ def draw_radix(cr, chart, size=600, cfg=None):
     for i in range(12):
         cusp = houses[i]
         x0, y0 = _pos(cusp, inner_circle, asc, cx, cy)
-        x1, y1 = _pos(cusp, 0.0, asc, cx, cy)  # toward centre
         cr.set_source_rgb(0.4, 0.4, 0.4)
         # draw cusp line only across the house ring (inner_circle -> a bit in)
-        xin, yin = _pos(cusp, radius * 0.30, asc, cx, cy)
+        xin, yin = _pos(cusp, cusp_inner, asc, cx, cy)
         cr.move_to(x0, y0)
         cr.line_to(xin, yin)
         cr.stroke()
@@ -176,11 +176,10 @@ def draw_radix(cr, chart, size=600, cfg=None):
         cr.move_to(tx0, ty0)
         cr.line_to(tx1, ty1)
         cr.stroke()
-        # the glyph
+        # the glyph (symbol font already set once before the loop)
         px, py = _pos(lon, planet_ring, asc, cx, cy)
         cr.set_source_rgb(0.6, 0.0, 0.0)
         if use_font:
-            glyphs.set_symbol_font(cr)
             _glyph(cr, glyphs.PLANET_GLYPHS[i], px, py, pl_size, True)
         else:
             _glyph(cr, str(i), px, py, pl_size, False)
