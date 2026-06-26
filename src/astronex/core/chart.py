@@ -31,6 +31,10 @@ from . import ephemeris
 from .constants import planclass, aspclass, PHI, RAD, DEFAULT_ORBS
 
 # Legacy config filled ``orbs`` at runtime; bind the standalone default here.
+# Intentionally a mutable module global, NOT an immutable constant: future
+# config wiring (and tests) override the active orb table by rebinding this
+# name. Do not "clean this up" into a frozen constant -- that would break the
+# override path the legacy app relies on.
 orbs = DEFAULT_ORBS
 
 
@@ -87,6 +91,8 @@ class Chart(object):
         n = nod % 30.0
         uplan = []
         for p in iter(plans):
+            # nodal house index: count houses from the node, inverted (house 0
+            # = node's sign), carry the remainder distance
             h = 11 - int(((p - nod) / 30.0) % 12)
             dist = (n - p % 30.0) % 30.0
             uplan.append((self.houses[h] + dist * sizes[h] / 30.0) % 360)
@@ -112,6 +118,8 @@ class Chart(object):
                 dis = abs(pl[i] - pl[j])
                 nsig = int(dis / 30)
                 orb = dis - nsig * 30
+                # fold: an orb > 20 deg belongs to the next sign/aspect; measure
+                # it from that boundary
                 if orb > 20.0:
                     nsig += 1
                     orb = 30.0 - orb
