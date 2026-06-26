@@ -1,7 +1,9 @@
 # Roadmap
 
-Astro-Nex is a modernization of José Antonio Rodríguez's GPLv3 Astro-Nex 1.2.3, a chart
-program for the Bruno & Louise Huber (API — *Astrologisch-Psychologisches Institut*) method.
+Astro-Nex is a modernization of the GPLv3 Astro-Nex 1.2.3 created by **José Antonio
+Rodríguez (1960–2022)** ([astro-nex.net](https://astro-nex.net/)) — a chart program for the
+Bruno & Louise Huber (API — *Astrologisch-Psychologisches Institut*) method. This work and
+its future improvements are maintained in his honor and memory.
 
 ## Phase 1 — Python 3 + GTK 3 vertical slice ✅ DONE (v0.1.0)
 

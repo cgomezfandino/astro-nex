@@ -7,6 +7,10 @@ progression and house emphasis in chart interpretation. This project is a modern
 the original Astro-Nex 1.2.3 (Python 2 / GTK 2), targeting Python 3.12+ and GTK 3 on macOS
 Apple Silicon and Linux.
 
+> **In memory of José Antonio Rodríguez (1960–2022)**, creator of Astro-Nex
+> ([astro-nex.net](https://astro-nex.net/)). This software is his work and his legacy;
+> it is maintained and improved in his honor. See [IN-MEMORIAM.md](IN-MEMORIAM.md).
+
 ## Project status
 
 **Phase 1 — Python 3 + GTK 3 vertical slice: complete (v0.1.0).**
@@ -46,9 +50,14 @@ Clean layering so the calculation core has no GUI dependency and is reusable for
 - [Implementation plan](docs/plans/2026-06-26-astro-nex-py3-gtk3-vertical-slice.md)
 - [Roadmap](docs/ROADMAP.md) · [Changelog](CHANGELOG.md)
 
-## License & credits
+## Credits & dedication
+
+Astro-Nex was created by **José Antonio Rodríguez (1960–2022)** — original project at
+[astro-nex.net](https://astro-nex.net/). All recognition for this software belongs to him.
+This Python 3 / GTK 3 modernization preserves his original calculation behavior and is
+maintained in his honor and memory. See [IN-MEMORIAM.md](IN-MEMORIAM.md) and [NOTICE](NOTICE).
+
+## License
 
 GPLv3 (required: this work uses the [Swiss Ephemeris](https://www.astro.com/swisseph/) via
-`pyswisseph` under its GPL option). Original Astro-Nex by **José Antonio Rodríguez**
-(`jar@eideia.net`); see [NOTICE](NOTICE). This is a Python 3 / GTK 3 modernization that
-preserves the original calculation behavior.
+`pyswisseph` under its GPL option). See [LICENSE](LICENSE).

@@ -1,6 +1,15 @@
-Astro-Nex — astrological charts in the API/Huber method.
-Original work Copyright (C) Jose Antonio Rodriguez <jar@eideia.net>.
-Python 3 / GTK 3 modernization Copyright (C) 2026 contributors.
+Astro-Nex — astrological charts in the API / Huber method.
 
-This program is free software under the GNU General Public License v3 or later.
-It uses the Swiss Ephemeris (Astrodienst AG) via pyswisseph under the GPL option.
+Copyright (C) José Antonio Rodríguez (1960–2022).
+Original project: https://astro-nex.net/
+
+Astro-Nex was created by José Antonio Rodríguez. This software is his work and his
+legacy. The Python 3 / GTK 3 modernization is maintained by the community in his
+honor and memory — to keep Astro-Nex alive, free, and freely available, as he
+intended. All credit for its design, its calculations, and its vision belongs to him.
+
+A su honor.
+
+Astro-Nex is free software under the GNU General Public License version 3 or later
+(see LICENSE). It uses the Swiss Ephemeris (Astrodienst AG) via pyswisseph under the
+GPL option.

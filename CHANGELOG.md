@@ -1,5 +1,7 @@
 # Changelog
 
+_In memory of José Antonio Rodríguez (1960–2022), creator of Astro-Nex — maintained in his honor._
+
 All notable changes to this project are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/).
 
