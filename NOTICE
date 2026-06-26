@@ -1,0 +1,6 @@
+Astro-Nex — astrological charts in the API/Huber method.
+Original work Copyright (C) Jose Antonio Rodriguez <jar@eideia.net>.
+Python 3 / GTK 3 modernization Copyright (C) 2026 contributors.
+
+This program is free software under the GNU General Public License v3 or later.
+It uses the Swiss Ephemeris (Astrodienst AG) via pyswisseph under the GPL option.

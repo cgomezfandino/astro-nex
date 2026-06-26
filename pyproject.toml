@@ -1,0 +1,27 @@
+[project]
+name = "astronex"
+version = "2.0.0.dev0"
+description = "Astrological charts in the API/Huber method — modernized (Python 3 + GTK 3)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "Jose Antonio Rodriguez" }]
+dependencies = [
+    "pyswisseph>=2.10",
+    "pycairo>=1.26",
+    "PyGObject>=3.48",
+    "tzdata>=2024.1",
+]
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+[project.scripts]
+astronex = "astronex.__main__:main"
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-data]
+astronex = ["data/*"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
