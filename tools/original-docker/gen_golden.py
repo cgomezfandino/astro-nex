@@ -169,6 +169,62 @@ def dump_chart_types(ds):
     return out
 
 
+def dump_age_point(ds):
+    """Run the ORIGINAL legacy Age Point pointer methods via a stub; capture.
+
+    The pointer (Lebensuhr) advances ~1 house per 6 years of life, sweeping the
+    wheel in 72 years. It is PURE arithmetic on house longitudes + age, so the
+    golden verifies EXACT parity when the same houses are fed in.
+
+    Golden fields per dataset:
+      birth_date_iso : the chart date string the legacy methods parse
+      node_lon       : planets[10] (mean node), for the nodal variant
+      now_year       : the projection target year (fixed for determinism)
+      cycles         : get_cycles(now_dt) result
+      pe_radix       : which_degree_today(now, cycles, 'radix')
+      pe_nodal       : which_degree_today(now, cycles, 'nodal')
+    """
+    import chart as legacy_chart
+
+    class _StubChart(legacy_chart.Chart):
+        def __init__(self, date_iso, planets, houses):
+            self.date = date_iso
+            self.planets = list(planets)
+            self.houses = list(houses)
+
+    from datetime import datetime
+
+    out = []
+    NOW_YEAR = 2025
+    now_dt = datetime(NOW_YEAR, 7, 1, 12, 0, 0)
+    for c in ds:
+        jd = pysw.julday(c["y"], c["m"], c["d"], c["h"])
+        planets = pysw.planets(jd, EPHEFLAG)
+        houses = list(pysw.houses(jd, c["lat"], c["lon"]))
+        # legacy date string format: YYYY-MM-DDTHH:MM:SS+0000UTC
+        ho = int(c["h"])
+        mi = int(round((c["h"] - ho) * 60))
+        date_iso = "%04d-%02d-%02dT%02d:%02d:00+0000UTC" % (
+            c["y"], c["m"], c["d"], ho, mi)
+        ch = _StubChart(date_iso, planets, houses)
+
+        cycles = ch.get_cycles(now_dt)
+        pe_radix = ch.which_degree_today(now_dt, cycles, kind="radix")
+        pe_nodal = ch.which_degree_today(now_dt, cycles, kind="nodal")
+
+        out.append({
+            "name": c["name"],
+            "birth_date_iso": date_iso,
+            "houses": houses,
+            "node_lon": planets[10],
+            "now_year": NOW_YEAR,
+            "cycles": cycles,
+            "pe_radix": pe_radix,
+            "pe_nodal": pe_nodal,
+        })
+    return out
+
+
 if __name__ == "__main__":
     ds = json.load(open(sys.argv[1]))
     mode = sys.argv[3] if len(sys.argv) > 3 else "ephemeris"
@@ -176,6 +232,8 @@ if __name__ == "__main__":
         result = dump_directions(ds)
     elif mode == "chart_types":
         result = dump_chart_types(ds)
+    elif mode == "age_point":
+        result = dump_age_point(ds)
     else:
         result = dump(ds)
     json.dump(result, open(sys.argv[2], "w"), indent=2)

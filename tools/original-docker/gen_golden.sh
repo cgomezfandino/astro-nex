@@ -10,6 +10,7 @@
 #   ./gen_golden.sh ephemeris      # only tests/golden/ephemeris.json
 #   ./gen_golden.sh directions     # only tests/golden/directions.json
 #   ./gen_golden.sh chart_types    # only tests/golden/chart_types.json
+#   ./gen_golden.sh age_point      # only tests/golden/age_point.json
 set -euo pipefail
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -46,9 +47,11 @@ run() {  # run <mode> <out-subpath>
 case "$MODE" in
   all)        run ephemeris   ephemeris.json
               run directions  directions.json
-              run chart_types chart_types.json ;;
+              run chart_types chart_types.json
+              run age_point   age_point.json ;;
   ephemeris)  run ephemeris   ephemeris.json ;;
   directions) run directions  directions.json ;;
   chart_types) run chart_types chart_types.json ;;
-  *) echo "unknown mode: $MODE (use all|ephemeris|directions|chart_types)"; exit 1 ;;
+  age_point)  run age_point   age_point.json ;;
+  *) echo "unknown mode: $MODE (use all|ephemeris|directions|chart_types|age_point)"; exit 1 ;;
 esac
