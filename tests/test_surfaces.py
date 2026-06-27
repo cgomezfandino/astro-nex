@@ -19,3 +19,22 @@ def test_export_pdf(tmp_path):
     out = tmp_path / "c.pdf"
     export_pdf(_chart(), str(out), size=800)
     assert out.exists() and out.read_bytes().startswith(b"%PDF")
+
+
+def test_export_png_view_modes(tmp_path):
+    for mode in ("wheel", "datasheet", "diagram"):
+        out = tmp_path / ("c_%s.png" % mode)
+        export_png(_chart(), str(out), kind="radix", view_mode=mode, size=600)
+        assert out.exists() and out.stat().st_size > 1000, mode
+
+
+def test_export_pdf_datasheet(tmp_path):
+    out = tmp_path / "c_sheet.pdf"
+    export_pdf(_chart(), str(out), kind="radix", view_mode="datasheet", size=600)
+    assert out.exists() and out.read_bytes().startswith(b"%PDF")
+
+
+def test_export_wheel_kind_soul(tmp_path):
+    out = tmp_path / "c_soul.png"
+    export_png(_chart(), str(out), kind="soul", view_mode="wheel", size=600)
+    assert out.exists() and out.stat().st_size > 1000

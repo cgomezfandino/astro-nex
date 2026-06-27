@@ -5,7 +5,29 @@ _In memory of José Antonio Rodríguez (1960–2022), creator of Astro-Nex — m
 All notable changes to this project are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] — Phase 2C-core: Rendering core
+## [Unreleased] — Phase 2D-mvp: Usable GUI
+
+Amplía el slice de GUI de Phase 1 hasta una **app genuinamente usable**,
+construyendo SOBRE el core/render ya portados (no portando el legacy GTK2).
+Flujo principal end-to-end: datos de nacimiento → tipo de carta → vista
+(rueda/hoja/diagrama) → export PNG/PDF. **350 tests passing.**
+
+### Added
+- **`gui/chart_view.py`**: `ChartView` con `view_mode` (wheel/datasheet/diagram)
+  + `kind` (7 tipos); `_on_draw` dispatcha a `render/`.
+- **`gui/chart_entry.py`**: validación de input (try/except + `MessageDialog`
+  con mensajes legibles en español), campos first/last name.
+- **`gui/app.py`**: `MainWindow` con selectores view-mode + chart-type (combos);
+  "Local" recomputa houses; wiring a `Current` singleton (replica en
+  `state.master`); export PNG/PDF con kind/view_mode.
+- **`surfaces/png.py` + `pdf.py`**: `export_png/export_pdf` threadean
+  `kind`/`view_mode` (archivo = pantalla); defaults retrocompatibles.
+
+### Deferred
+- Diálogos avanzados (browser DB, config, calendar popup, place search,
+  couples/cycles = paarwabe/biograph); boss.Manager; slot swap; accelerators.
+
+## [Superseded] — Phase 2C-core: Rendering core
 
 Ports the chart-drawing layer to Python 3 / pycairo using the project's
 function-pure renderer pattern (not the legacy mixin/chartob hierarchy). The
