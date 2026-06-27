@@ -5,7 +5,29 @@ _In memory of José Antonio Rodríguez (1960–2022), creator of Astro-Nex — m
 All notable changes to this project are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] — Phase 2D-mvp: Usable GUI
+## [Unreleased] — Phase 2E: macOS `.app` packaging
+
+Genera `Astro-Nex.app`, una app de **doble clic** instalable y relocatable.
+Build aditivo (vive en `tools/`, no toca `src/`). **Approach híbrido**: el
+`.app` embebe astronex + launcher + icono + Info.plist y referencia el Python +
+GTK de Homebrew en runtime. Verificado: app arranca, relocatable, 350 tests.
+
+### Added
+- **`tools/build_macos_app.py`**: script idempotente (preflight → skeleton →
+  copia astronex → icono .icns → Info.plist → launcher → codesign →
+  auto-verificación de arranque). `python3 tools/build_macos_app.py`.
+- **`tools/macos/Info.plist.tmpl`** + **`launcher.sh.tmpl`** + **`iconex-48.png`**:
+  plantillas y fuente del icono (del legacy).
+- Launcher: PYTHONPATH al paquete embebido, GI/GDK/XDG a Homebrew, lockfile
+  instancia única, auto-diagnóstico en fallo (log + diálogo osascript).
+
+### Notes
+- Bundle híbrido (11MB): requiere Homebrew + GTK en la Mac destino. El bundle
+  **embebido completo** (sin Homebrew) queda como seguimiento (codesign +
+  framework-Python lo bloquearon; necesita Python standalone + dylib rewrite).
+- `.dmg` instalable y firma Developer ID/notarización: issues de seguimiento.
+
+## [Superseded] — Phase 2D-mvp: Usable GUI
 
 Amplía el slice de GUI de Phase 1 hasta una **app genuinamente usable**,
 construyendo SOBRE el core/render ya portados (no portando el legacy GTK2).
