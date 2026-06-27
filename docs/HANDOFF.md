@@ -3,20 +3,20 @@
 > **Lee esto al iniciar cada sesión.** Captura el estado y el siguiente paso.
 > Metodología detallada en `docs/WORKING-STYLE.md`.
 >
-> Última actualización: 2026-06-27 (tras cerrar Phase 2A, QA verde).
+> Última actualización: 2026-06-27 (tras cerrar Phase 2B completa, 252 tests).
 
 ## Estado actual (verificado con evidencia)
 
 | Hito | Estado | Ref |
 |---|---|---|
 | Phase 1 (slice Py3/GTK3) | ✅ DONE | v0.1.0 |
-| **Phase 2A — Cimientos de datos** | ✅ **DONE, mergeado, QA verde, milestone cerrado** | commit `9b72fee`, milestone #4 closed |
-| Phase 2B — Motor de cálculo | ⏳ **SIGUIENTE** | milestone #5 (abierto) |
-| Phase 2C–2E | ⏳ Pendientes | milestones #6, #7, #2 |
+| Phase 2A — Cimientos de datos | ✅ DONE, mergeado | milestone #4 closed |
+| **Phase 2B — Motor de cálculo** | ✅ **DONE, mergeado, QA verde, 252 tests** | milestone #5 (cerrar) |
+| Phase 2C–2E | ⏳ **SIGUIENTE** | milestones #6, #7, #2 |
 
 - **`main`**: sincronizada con `origin/main`, working tree limpio, sin ramas colgadas.
-- **Tests**: 125 pasando (venv limpio). Baseline sólida.
-- **Issues**: 2A (#11–#15) cerrados. 20 abiertos repartidos en 2B–2E.
+- **Tests**: **252 pasando** (baseline 2A era 125 → +127 en 2B).
+- **Issues 2B**: #16, #17, #18, #5 trabajados, testeados y listos para cerrar.
 
 ## Qué es el proyecto
 
@@ -26,51 +26,77 @@ con doble clic + soporte multiplataforma (Win/Linux/macOS). Repo del port:
 `/Users/cgomezfandino/repos/astro-nex` · GitHub: `cgomezfandino/astro-nex`.
 
 **Decisión clave**: port completo a Py3/GTK3 primero → empaquetado `.app` al final.
-El slice actual es ~4% del código (1084/28639 LOC); falta portar la funcionalidad
-para igualar el screenshot de referencia.
+El slice actual es ~7% del código; el motor de cálculo está completo, falta
+render (2C) y GUI (2D).
 
-## ━━ SIGUIENTE PASITO: Phase 2B ━━
+## ━━ Phase 2B cerrada — qué se hizo ━━
 
-El siguiente hito es **2B · Motor de cálculo completo** (milestone #5). Sus issues:
+Todos los issues verificados **contra el original corriendo en Docker** (golden),
+con review subagent aprobado por cada uno.
 
-| Issue | Qué | Notas |
+| Issue | Qué | Detalle |
 |---|---|---|
-| #16 | Port `directions.py` | solar_rev, sec_prog. Consolidar con `strdate_to_date` ya portado. |
-| **#17** | **Age Point Huber (Lebensuhr)** | **La pieza distintiva del método API/Huber.** Núcleo. |
-| #18 | Tipos de carta (Nodal, House, Local, Soul, Dharma, Prof, Transits, UR-Nodal) | Extiende `core/chart.py` (solo radix hoy). |
-| #5  | Historical-DST timezones (`tz_sup`) | Nacimientos pre-hora-estándar. |
+| **#16** directions | solar_rev + sec_prog | `core/directions.py`. solar_rev con bisección (~40 evals vs 6 bucles legacy); **bug C1 cazado por review** (wraparound 0/360 en equinoccio) arreglado + bloqueado con golden. +22 tests. |
+| **NeXDate** | setdt/set_now/set_delta/dateforstore/getnewdt | Cierra el ciclo con `Current`. Política `fold=0` (fidelidad a `is_dst=True`). +10 tests. |
+| **#18** chart types | Tier A/B/C/D | 9 transformaciones puras (exact 1e-9), local_houses, pers_force (Huber), contrato Transits. +66 tests. |
+| **#5** tz_sup | **Obsoleto bajo zoneinfo** | Cerrado con tests: zoneinfo maneja LMT nativamente, más preciso que el legacy (15/16 fechas de transición del legacy estaban mal). +6 tests. |
+| **#17** Age Point | puntero + timetable | `core/age_point.py`: puntero Lebensuhr (radix+nodal, exact 1e-9) + timetable calc_agep radix (955 eventos verificados elemento-por-elemento; sort-stability Py2→Py3 resuelto). +33 tests. |
 
-### Cómo empezaremos 2B (plan de arranque)
+### Hallazgos clave de 2B
+- **Paridad verificada** contra el legacy real corriendo en Docker, sin modificar.
+- **Golden harness reproducible** (`tools/original-docker/gen_golden.sh`) — regenera
+  cualquier golden con un comando.
+- **Sort-stability**: el timetable reproduce el orden exacto del legacy Py2 via
+  `cmp_to_key` + append order idéntico.
+- **Mejoras sobre el legacy** (sin romper cálculos): solar_rev converge mejor,
+  tz_sup más preciso, bug del equinoccio arreglado.
 
-1. **`git pull`** → verificar baseline (125 tests pasan).
-2. **Brainstorming** (skill `$brainstorming`) para el primer issue. Orden sugerido:
-   - Empezar por **#16 directions** (más autocontenido, desbloquea otros cálculos).
-   - Luego **completar `NeXDate`** (set_now, dateforstore) — necesario para `Current`
-     y para los tipos de carta. Cae naturalmente en 2B.
-   - Luego **#18 tipos de carta** (radix ya está; añadir el resto).
-   - Por último **#17 Age Point** (lo más distintivo y complejo; mejor con base sólida).
-   - **#5 tz_sup** puede ir en paralelo cuando tengamos fechas históricas que probar.
-3. **Worktree aislado**: `git worktree add .worktrees/2B-calc -b milestone-2B-calc`.
-4. **TDD por cada issue**: test contra golden data del original → portar → QA.
-5. Al cerrar 2B: smoke test integración → cerrar issues → merge → push → cerrar milestone.
+### Variantes diferidas (no bloquean)
+- `calc_nodal_agep`, `calc_house_agep`, `calc_house_nodal_agep` (variantes del
+  timetable; radix es el default de la GUI).
+- `calc_agep(local=True)` (relocated-houses).
+- `calc_plan_with_retrogression`, `chiron_calc`, `vulcan_calc`, dynamics.
 
-### Dependencias a recordar
-- `Current` (state.py) quedó con métodos pendientes de `NeXDate.set_now`/`dateforstore`.
-  Completar `NeXDate` en 2B cierra ese ciclo.
-- Los tipos de carta (#18) alimentan el motor de dibujo (2C) y la GUI (2D).
+## ━━ SIGUIENTE PASO: Phase 2C (render) ━━
+
+El motor de cálculo está completo. La siguiente fase es **2C · Render** (milestone #6):
+portar el núcleo de dibujo para que las cartas y los análisis (biograph, planetogram,
+datasheets) se rendericen. Issues:
+
+| Issue | Qué | LOC |
+|---|---|---|
+| #19 | coredraw.py + aspects.py + dispatcher.py | 804+404+953 |
+| #20 | datasheets.py + diagrams.py + roundedcharts.py | 705+962+771 |
+| #21 | paarwabe.py (sistema de ondas/parejas Huber) | 3.296 (pieza central) |
+| #22 | biograph.py + planetogram.py + profchart.py + progsheet.py | 1.205+1.115+388+213 |
+
+**Cómo empezar 2C**: brainstorming del issue #19 (núcleo de dibujo) — el render ya
+tiene un slice funcionando (`render/wheel.py` + `surfaces/png.py`, validado con PNGs
+en 2B), pero falta el dispatcher/aspects completo y los diagramas.
+
+## Dependencias a recordar
+- `core/` está **completo y testeado** (config, state, chart, directions, age_point,
+  nexdate, ephemeris, utils, timezones, constants). Puro, sin GUI.
+- 2C consume `core/` directamente (chart planets/houses, age_point timetable,
+  directions solar_rev/sec_prog).
+- `Current` (state.py) sigue con métodos pendientes que mutan estado (setchart,
+  setprogchart, setloc) — esos son de la capa GUI (2D), no del cálculo.
 
 ## Documentación importante
 
 - `docs/WORKING-STYLE.md` — **cómo trabajamos** (brainstorm→TDD→QA→ciclar). Leer.
 - `docs/ROADMAP.md` — fases y sub-milestones.
-- `CHANGELOG.md` — historial de cambios.
+- `CHANGELOG.md` — historial de cambios (entrada Phase 2B añadida).
+- `docs/superpowers/specs/2026-06-27-directions-port-design.md` — spec de directions (#16).
+- `docs/superpowers/plans/2026-06-27-directions-port.md` — plan de directions.
 - `docs/superpowers/specs/2026-06-27-macos-app-bundling-design.md` — spec del `.app`.
-- `tools/original-docker/` — harness para comparar contra el original (referencia).
+- `tools/original-docker/` — harness para comparar contra el original (golden).
 
-## Snapshot técnico de 2A (para contexto)
+## Snapshot técnico de 2B (para contexto)
 
-Portados con TDD: `config.py` (#13), `state.py` (#12), `zodiac.py` (#14),
-`countries.py` (#15), `database.py` (#11). Bug real cazado: `store_chart` (named
-vs positional placeholders). `local.db` (279 tablas SQLite) empaquetada en
-`src/astronex/data/`. Smoke test integración OK (lookup Girona, Zodiac 12 glifos,
-chart store round-trip).
+Golden files (reproducibles via `gen_golden.sh`): `ephemeris.json`, `directions.json`,
+`chart_types.json`, `age_point.json`, `age_timetable.json` — 5 datasets cada uno
+(incl. caso equinoccio que bloquea el bug C1).
+
+Sanity verificados: PNGs renderizados correctamente (natal, solar return), paridad
+numérica port-vs-legacy a 1e-6°, smoke test e2e (calc→chart→png).
