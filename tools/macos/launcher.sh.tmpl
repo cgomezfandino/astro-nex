@@ -1,37 +1,41 @@
 #!/bin/bash
-# Astro-Nex launcher — fixes the GTK/Python environment to bundle-relative
-# paths, then runs the embedded interpreter. Self-diagnoses on failure.
+# Astro-Nex launcher (hybrid bundle).
 #
-# Generated from launcher.sh.tmpl by tools/build_macos_app.py.
-# Variables substituted at build time: {{PY_BIN}} {{PY_HOME}} {{LIB_DIR}}
-# {{GI_TYPELIB_DIR}} {{GDK_PIXBUF_MODFILE}} {{GTK_SCHEMAS_DIR}}
+# The .app embeds the astronex package + this launcher + the icon + Info.plist.
+# Python and the GTK/cairo dylibs are resolved from the system/Homebrew at
+# runtime via DYLD/GI env. This makes the .app small and robust (no fragile
+# dylib-path rewriting or framework-Python bundling) at the cost of requiring
+# Homebrew + the GTK stack installed on the target Mac.
+#
+# For a fully self-contained bundle (no Homebrew dependency), see the spec's
+# "embedded" approach — deferred pending a standalone-Python resolution.
+#
+# Variables substituted at build time: {{PY_BIN}} {{ASTRONEX_DIR}} {{VERSION}}
 
 set -e
 
-# --- resolve bundle paths (relocatable: works from /Applications or anywhere) ---
+# --- resolve bundle paths (relocatable) ---
 HERE="$(cd "$(dirname "$0")" && pwd)"            # .../Contents/MacOS
 CONTENTS="$(dirname "$HERE")"
 RESOURCES="$CONTENTS/Resources"
-BIN_DIR="{{BIN_DIR}}"                              # .../Contents/MacOS/Astro-Nex.bin
-PY_BIN="$BIN_DIR/{{PY_BIN}}"
-PY_HOME="$BIN_DIR/{{PY_HOME}}"
-LIB_DIR="$BIN_DIR/lib"
+ASTRONEX_DIR="{{ASTRONEX_DIR}}"                  # .../Contents/Resources/astronex
 
-# --- isolate the runtime environment to the bundle (no /opt/homebrew leaks) ---
-export DYLD_LIBRARY_PATH="$LIB_DIR"
-export DYLD_FALLBACK_LIBRARY_PATH="$LIB_DIR"
-export GI_TYPELIB_PATH="$LIB_DIR/girepository-1.0"
-export GDK_PIXBUF_MODULE_FILE="$LIB_DIR/gdk-pixbuf-2.0/loaders.cache"
-export GTK_PATH=""
-export GTK_IM_MODULE_FILE=""
-export XDG_DATA_DIRS="$LIB_DIR/share"
-export GDK_PIXBUF_PIXDATA="$LIB_DIR/gdk-pixbuf-2.0"
-export FONTCONFIG_PATH="$LIB_DIR/etc/fonts"
+# --- locate Homebrew prefix (arm64 or intel) ---
+if [ -x /opt/homebrew/bin/python3 ]; then
+    BREW=/opt/homebrew
+else
+    BREW=/usr/local
+fi
+PY_BIN="{{PY_BIN}}"                              # /opt/homebrew/bin/python3.14
+
+# --- point Python at the embedded astronex package ---
+export PYTHONPATH="$ASTRONEX_DIR"
+
+# --- isolate GTK/GI env to Homebrew (so the app finds typelibs/loaders) ---
+export GI_TYPELIB_PATH="$BREW/lib/girepository-1.0"
+export GDK_PIXBUF_MODULE_FILE="$BREW/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+export XDG_DATA_DIRS="$BREW/share"
 export LANG="${LANG:-en_US.UTF-8}"
-
-# Python: point the embedded interpreter at its bundle-relative stdlib.
-export PYTHONHOME="$PY_HOME"
-export PYTHONPATH="$PY_HOME/lib/python{{PY_VER}}/site-packages"
 
 # --- single instance (avoid duplicate windows on rapid double-click) ---
 LOCK="/tmp/astro-nex.lock"
@@ -50,7 +54,7 @@ if "$PY_BIN" -m astronex >"$LOG" 2>&1; then
     exit 0
 fi
 
-# --- failure path: show a native dialog with the error tail, never crash silent ---
+# --- failure path: native dialog with the error tail, never crash silent ---
 RC=$?
 ERR="$(tail -n 20 "$LOG" 2>/dev/null)"
 osascript -e "display dialog \"Astro-Nex failed to start (exit $RC). See the log at:\\n$LOG\\n\\n$ERR\" with title \"Astro-Nex\" buttons {\"OK\"} default button 1 with icon stop" >/dev/null 2>&1 || true
