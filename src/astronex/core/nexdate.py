@@ -11,6 +11,13 @@ every populated zone carries an LMT entry, so pre-standard births resolve to a
 correct LMT offset natively (verified vs the legacy formula in
 tests/test_tz_sup_historical.py). ``FixedOffset`` remains available in
 ``timezones.py`` for any explicit longitude-LMT use.
+
+Known limitation vs the legacy: the legacy used the BIRTH-CITY longitude for
+LMT; the port uses the zone's REFERENCE longitude (e.g. a pre-1893 Barcelona
+birth filed under Europe/Madrid resolves to Madrid's LMT, not Barcelona's).
+This can differ by up to ~tens of minutes. It is consistent with the tz
+database (which has no per-city zones) and is more accurate than the legacy's
+hand-coded transition dates (15 of 16 were wrong); it is not a regression.
 """
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo

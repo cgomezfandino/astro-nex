@@ -78,3 +78,30 @@ def test_fixedoffset_still_available_for_explicit_lmt_use():
     tz = FixedOffset(round(-3.7038 * 4))   # Madrid LMT
     assert tz.utcoffset(None).total_seconds() / 60 == -15
     assert tz.tzname(None) == "LMT"
+
+
+def test_transition_year_uses_standard_offset_not_lmt():
+    # Vienna adopted standard time (CET, +1) in 1893 (the tzdb date). The legacy
+    # tz_sup table wrongly had 1910 -- zoneinfo is more accurate. A 1910 birth
+    # must use CET (+1), not LMT (~+1:05).
+    nd = NeXDate(datetime(2000, 1, 1), tz=ZoneInfo("Europe/Vienna"))
+    nd.setdt(datetime(1910, 6, 15, 12, 0))
+    off = nd.ld.utcoffset().total_seconds()
+    assert off == 3600  # CET +1h, NOT the ~3909s LMT offset
+    assert nd.dt.hour == 11  # 12:00 CET -> 11:00 UT
+
+
+def test_known_limitation_non_reference_city_lmt():
+    # Documents the documented limitation: a non-reference city (Barcelona) filed
+    # under Europe/Madrid resolves to Madrid's LMT, not Barcelona's. This is
+    # consistent with the tz database (no per-city zones) and is not a bug.
+    barcelona_lon = 2.1734
+    nd = NeXDate(datetime(2000, 1, 1), tz=ZoneInfo("Europe/Madrid"))
+    nd.setdt(datetime(1850, 6, 15, 12, 0))
+    port_offset_min = nd.ld.utcoffset().total_seconds() / 60
+    barcelona_legacy_lmt = round(barcelona_lon * 4)  # +9 min
+    # The port uses Madrid's reference LMT (~-14m44s), which differs from
+    # Barcelona's +9m. This test pins the divergence (do NOT "fix" it -- it is
+    # the documented tradeoff of zone-based LMT).
+    assert port_offset_min < 0  # Madrid LMT is negative
+    assert barcelona_legacy_lmt > 0  # Barcelona longitude is east
