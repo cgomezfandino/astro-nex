@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""Timezone helpers for the chart core.
+
+Provides :class:`FixedOffset`, a constant UTC offset used for births before
+standard time existed (local mean time derived from longitude). Standard
+named zones are handled with the stdlib :mod:`zoneinfo` in ``nexdate``.
+"""
 from datetime import tzinfo, timedelta
 
 

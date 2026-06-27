@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""GTK 3 application shell: a window pairing the entry form with the chart view,
+plus PNG/PDF export. This layer only orchestrates; all calculation and drawing
+live in ``core``/``render``/``surfaces``.
+"""
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -8,6 +12,7 @@ from ..surfaces.png import export_png
 from ..surfaces.pdf import export_pdf
 
 class MainWindow(Gtk.ApplicationWindow):
+    """Main window: entry form + export buttons on the left, chart view on the right."""
     def __init__(self, app):
         super().__init__(application=app, title="Astro-Nex")
         self.set_default_size(1000, 640)
@@ -45,6 +50,7 @@ class MainWindow(Gtk.ApplicationWindow):
             export_pdf(self.current, p)
 
 class AstroNexApp(Gtk.Application):
+    """The Astro-Nex GTK application; shows the main window on activation."""
     def __init__(self):
         super().__init__(application_id="net.astronex.App")
 

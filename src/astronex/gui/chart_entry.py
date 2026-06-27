@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""GTK 3 birth-data entry form that builds a computed Chart and hands it to a callback."""
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk

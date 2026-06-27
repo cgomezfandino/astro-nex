@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+"""GTK 3 drawing-area widget that paints a chart's radix wheel via the renderer."""
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from ..render.wheel import draw_radix
 
 class ChartView(Gtk.DrawingArea):
+    """A ``Gtk.DrawingArea`` that renders the current chart, redrawing on resize."""
     def __init__(self):
         super().__init__()
         self.chart = None
