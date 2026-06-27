@@ -9,6 +9,7 @@ from gi.repository import Gtk
 
 from .chart_entry import ChartEntry
 from .chart_view import ChartView, VIEW_MODES, CHART_KINDS
+from ..core.state import Current
 from ..core.ephemeris import julday, local_houses
 from ..surfaces.png import export_png
 from ..surfaces.pdf import export_pdf
@@ -28,6 +29,10 @@ class MainWindow(Gtk.ApplicationWindow):
         self.set_default_size(1000, 640)
         self.current = None
         self._natal_jd = None  # for local-house recompute
+        # Hold the application-wide state singleton (unlocks save/pool/fav
+        # later). Constructed lazily with a per-user homedir; the DB/pickle
+        # files are created on demand and tolerate a fresh home.
+        self.state = Current()
 
         paned = Gtk.Paned()
         self.view = ChartView()
@@ -86,6 +91,13 @@ class MainWindow(Gtk.ApplicationWindow):
     # --- chart arrival from entry ---
     def _on_chart(self, chart):
         self.current = chart
+        # Mirror into the state singleton's master chart so future save/pool
+        # logic (Phase 2D-advanced) has the live data. Replicate person/geo.
+        try:
+            self.state.replicate(chart, self.state.master)
+            self.state.curr_chart = self.state.master
+        except Exception:
+            pass  # state wiring is best-effort; rendering must not depend on it
         # stash natal jd + loc for local-house recompute
         self._natal_jd = julday(*chart._natal_dateforcalc) if hasattr(chart, "_natal_dateforcalc") else None
         self.view.set_chart(chart)
