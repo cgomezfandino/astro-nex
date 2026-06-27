@@ -3,15 +3,19 @@
 > **Lee esto al iniciar cada sesión.** Captura el estado y el siguiente paso.
 > Metodología detallada en `docs/WORKING-STYLE.md`.
 >
-> Última actualización: 2026-06-27 (Phase 2C-core render completa, 333 tests).
+> Última actualización: 2026-06-27 (Phase 2D-mvp GUI usable completa, 350 tests).
 
 ## Estado actual (verificado con evidencia)
 
 | Hito | Estado | Ref |
 |---|---|---|
-| Phase 1 (slice Py3/GTK3) | ✅ DONE | v0.1.0 |
+| Phase 1 (slice PyPy/GTK3) | ✅ DONE | v0.1.0 |
 | Phase 2A — Cimientos de datos | ✅ DONE, mergeado | milestone #4 closed |
 | Phase 2B — Motor de cálculo | ✅ DONE, mergeado, 252 tests | milestone #5 closed |
+| Phase 2C-core — Render core | ✅ DONE, mergeado, 333 tests | milestone #6 (parcial) |
+| **Phase 2D-mvp — GUI usable** | ✅ **DONE, mergeado, QA verde, 350 tests** | milestone #7 (mvp) |
+| Phase 2D-advanced (diálogos) | ⏳ Pendiente | #23-#31 |
+| Phase 2E — Empaquetado .app | ⏳ Pendiente | milestone #2 |
 | **Phase 2C-core — Render core** | ✅ **DONE, mergeado, QA verde, 333 tests** | milestone #6 (2C-core parcial) |
 | Phase 2C-advanced (biograph/planetogram) | ⏳ Pendiente | #22 |
 | Phase 2C-synastry (paarwabe) | ⏳ Pendiente | #21 |
@@ -82,11 +86,35 @@ comparación visual humana (no golden — es trabajo visual).
 | #21 | paarwabe (3.296 LOC) | Sinastria/parejas — subsistema distinto; depende de jerarquía chartob dual. |
 | parcial | dyn_cuad/dyn_cuad2 (quadrant interactivo), datasheets house/nodal variants | Click-chart / variants menores. |
 
-## ━━ SIGUIENTE PASO: Phase 2D (GUI) ━━
+## ━━ Phase 2D-mvp cerrada — qué se hizo ━━
 
-El cálculo Y el render core están completos. La siguiente fase es **2D · GUI**
-(milestone #7): portar la ventana GTK3, paneles y diálogos que consumen el
-`core/` + `render/` ya portados. Issues #23-#31.
+La **GUI usable** está completa, construida SOBRE el core/render ya portados
+(no portando el legacy GTK2). El flujo principal funciona end-to-end:
+
+> entrar datos de nacimiento → seleccionar tipo de carta (7 kinds) → ver
+> (rueda/hoja de datos/diagrama) → exportar PNG/PDF que coincide con la pantalla
+
+| Tarea | Qué |
+|---|---|
+| ChartView multi-modo | view_mode (wheel/datasheet/diagram) + kind (7 tipos), dispatch a render/ |
+| ChartEntry validación | try/except + MessageDialog; campos first/last name; text fields |
+| MainWindow selectores | combos view-mode + chart-type; "Local" recomputa houses |
+| Exporters kind/view_mode | export_png/pdf threadean los params (archivo = pantalla) |
+| Wiring Current | MainWindow replica el chart en state.master (desbloquea save/pool futuro) |
+
+### Lo que queda de 2D (no bloquea)
+- Diálogos avanzados: browser de DB, config, calendar popup, place search,
+  couples/cycles (paarwabe/biograph). Son features; el mvp da la app usable.
+- boss.Manager god-object, slot/master-click swap, ~40 keyboard accelerators.
+
+## ━━ SIGUIENTE PASO: Phase 2D-advanced o 2E (.app) ━━
+
+Dos caminos:
+- **2D-advanced**: diálogos del legacy (browser DB, config, place search) — más
+  features pero no cambian el flujo principal.
+- **2E empaquetado**: `Astro-Nex.app` autocontenido (spec ya existe) — convierte
+  lo hecho en una app instalable de doble clic. Recomendado: tras 2D-mvp, el
+  empaquetado da el producto entregable.
 
 ## Dependencias a recordar
 - `core/` está **completo y testeado** (config, state, chart, directions, age_point,
