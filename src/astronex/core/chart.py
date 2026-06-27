@@ -7,7 +7,9 @@ the GTK ``boss``/config layer, on ``self.date``/``pytz`` machinery, or on the
 age-point milestone is intentionally NOT ported.
 
 DEFERRED (out of scope for this slice; see legacy chart.py):
-- calc_localhouses          (uses boss.get_state())  -- Tier B (issue #18)
+- calc_localhouses (the legacy boss-coupled Chart method). The decoupled
+  contract -- local_houses(jd, lon, lat, epheflag) -- IS implemented in
+  ephemeris.py and tested (Tier B).
 - calc_plan_with_retrogression (uses self.date/self.zone/pytz)
 - calc_aspects              (bi-wheel/click variant)
 - chiron_calc, vulcan_calc
@@ -18,12 +20,19 @@ DEFERRED (out of scope for this slice; see legacy chart.py):
   get_cycles, evcmp.  (issue #17)
 - All "dynamics" methods: signdyn, housedyn, resolve_dyn, dyncalc_*,
   dynstar_*, dyn_span_diff.
-- Force/ray/data-sheet methods (rays_calc, *_force, plagram_*).
+- rays_calc, plagram_*, house_force_all, sign_force_all (display-only force
+  variants). The Huber professional factors (pers_force family) ARE ported.
 
-Ported Tier-A pure transforms (nod_plan_long, nod_sign_long, nodal_cusp_degrees,
-house_sign_long, sign_sizes, sign_in_house, invert_house_plan,
-invert_house_sign, which_house_nodal) -- verified exact (1e-9) vs the legacy
-golden (tests/golden/chart_types.json).
+Ported chart-type transforms (issue #18), verified vs the legacy golden
+(tests/golden/chart_types.json):
+  * Tier A (exact 1e-9, pure arithmetic): nod_plan_long, nod_sign_long,
+    nodal_cusp_degrees, house_sign_long, sign_sizes, sign_in_house,
+    invert_house_plan, invert_house_sign, which_house_nodal.
+  * Tier B (1e-6, fresh ephemeris): local_houses contract (ephemeris.py).
+  * Tier D (exact 1e-6, pure arithmetic): pers_house_force, pers_sign_force,
+    pers_aspects_force, pers_zone_force, pers_force.
+  * Tier C (contract): Transits = a second radix Chart.calc(transit_jd) +
+    cross-chart aspects (no chart-type-specific transform).
 The age point is a later milestone and is deliberately left for then.
 """
 

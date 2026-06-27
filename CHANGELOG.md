@@ -5,7 +5,35 @@ _In memory of José Antonio Rodríguez (1960–2022), creator of Astro-Nex — m
 All notable changes to this project are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] — Phase 2A: Data foundations
+## [Unreleased] — Phase 2B: Calculation engine
+
+Ports the directional techniques, the chart-type transforms, and the NeXDate
+surface needed to close the cycle with `Current`. All verified test-first
+against golden data generated from the **original** Python 2 engine running
+unmodified in Docker. **213 tests passing.**
+
+### Added
+- **`core/directions.py`** (#16): solar revolution (`solar_rev`) and secondary
+  progression (`sec_prog`) as pure functions (no `boss`/GUI/`Current` mutation).
+  `solar_rev` uses a clean ~40-eval bisection (replacing the legacy's 6 nested
+  loops) and converges closer to the true root than the legacy Moshier engine;
+  verified both by golden proximity (3e-4 day, the engine gap) and by the
+  physical property `sun(jd) ≈ natal`. Includes a wraparound fix at the
+  0/360 equinox boundary.
+- **`core/nexdate.py`**: completed `NeXDate` with `setdt`, `set_now`,
+  `set_delta`, `dateforstore` (and `getnewdt` from #16). DST-fold policy is
+  `fold=0` (zoneinfo), which matches the legacy `pytz localize(is_dst=True)`.
+- **`core/chart.py`** (#18): chart-type transforms verified exact (1e-9 / 1e-6)
+  vs the legacy golden — Tier A (Nodal, House/Dharma sign-side, inverts,
+  which_house_nodal), Tier B (`local_houses` contract), Tier D (Huber
+  professional factors `pers_force` family), and the Tier C Transits contract.
+- **Golden harness** (`tools/original-docker/`): `boss_stub.py` runs the legacy
+  `solar_rev`/`sec_prog` headless; `dump_chart_types` exercises the Tier A/D
+  transforms via a minimal Chart stub; `gen_golden.sh` regenerates all goldens
+  reproducibly. Datasets extended with zone/target_year/now_dt (incl. an
+  equinox case that locks the solar_rev wraparound fix).
+
+## [Superseded] — Phase 2A: Data foundations
 
 Ports the dependency/data layer of the original Astro-Nex to Python 3, unblocking
 the full feature port (2B–2D). Developed test-first (TDD) against the bundled

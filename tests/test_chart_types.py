@@ -96,7 +96,9 @@ def test_calc_localhouses(c):
     jd = julday(c["jd_y"], c["jd_m"], c["jd_d"], c["jd_h"])
     got = list(local_houses(jd, c["lon"], c["lat"], 4))
     for g, ref in zip(got, c["local_houses"]):
-        assert abs(g - ref) < 1e-4   # fresh ephemeris call -> engine tolerance
+        # Fresh ephemeris call, but same Moshier engine as the golden capture,
+        # so actual parity is ~5e-10. 1e-6 catches regressions with margin.
+        assert abs(g - ref) < 1e-6
 
 
 # --- Tier D: profession force (output is a 3-tuple, not longitudes) ---
