@@ -34,6 +34,7 @@ def test_pl_midpoints(c):
         assert g["sign"] == ref["sign"]
         assert g["house"] == ref["house"]
         assert g["name"] == ref["name"]
+        assert g["pair"] == ref["pair"]  # kept for structure parity w/ legacy
 
 
 @pytest.mark.parametrize("c", GOLDEN, ids=lambda c: c["name"])

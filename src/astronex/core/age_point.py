@@ -16,14 +16,16 @@ pointer is pure arithmetic on house longitudes + age, so it verifies EXACTLY
 against the legacy golden (tests/golden/age_point.json).
 
 Pure functions: explicit inputs -> data outputs. No boss, no GUI, no Chart.
+
+Scope note: this module ports the radix variants only. The nodal variants
+(which_degree_today nodal is here; calc_nodal_agep is NOT) and the legacy
+``local=True`` relocated-houses branch of calc_agep (recalculates houses for a
+relocated time/place) are deferred. The radix calc_agep is the GUI default.
 """
 from datetime import datetime, timedelta
 from functools import cmp_to_key
 
-from .constants import zodnames, aspnames, planames
-
-# Golden ratio (Huber low-points Pr/Pi). Ported from legacy chart.py:11.
-PHI = 1 / ((1 + 5 ** 0.5) / 2)
+from .constants import zodnames, aspnames, planames, PHI
 
 
 def _evcmp(a, b):
