@@ -225,6 +225,60 @@ def dump_age_point(ds):
     return out
 
 
+def dump_age_timetable(ds):
+    """Run the ORIGINAL legacy calc_agep (radix full 72-year timetable) + its
+    helpers via a stub; capture the exact ordered event list.
+
+    calc_agep produces a biograph: for each of 12 houses (6 years each) an
+    ordered list of {day, mon, year, lab, cl} events (house entry, sign cusps,
+    planet aspects, midpoints, Huber Pr/Pi low-points). The ORDER matters for
+    the GUI, so we capture the exact list (including tie-break from Py2 sort
+    stability on equal scusp).
+
+    Golden fields per dataset:
+      birth_date_iso, houses, plan[{degree,ix}] (sorted planets input),
+      house_degree[12], pl_midpoints[{degree,sign,house,name}],
+      age_prog[...]  -- the full calc_agep output (ordered events)
+    """
+    import chart as legacy_chart
+
+    class _StubChart(legacy_chart.Chart):
+        def __init__(self, date_iso, planets, houses):
+            self.date = date_iso
+            self.planets = list(planets)
+            self.houses = list(houses)
+
+    out = []
+    for c in ds:
+        jd = pysw.julday(c["y"], c["m"], c["d"], c["h"])
+        planets = pysw.planets(jd, EPHEFLAG)
+        houses = list(pysw.houses(jd, c["lat"], c["lon"]))
+        ho = int(c["h"])
+        mi = int(round((c["h"] - ho) * 60))
+        date_iso = "%04d-%02d-%02dT%02d:%02d:00+0000UTC" % (
+            c["y"], c["m"], c["d"], ho, mi)
+        ch = _StubChart(date_iso, planets, houses)
+
+        # plan input: sorted [{degree, ix}], exactly as roundedcharts.sortplan
+        plan = [{"degree": planets[i], "ix": i} for i in range(11)]
+        plan = sorted(plan)
+
+        house_degree = ch.house_degree()
+        mids = ch.pl_midpoints(plan)
+        age_prog = ch.calc_agep(plan)
+
+        out.append({
+            "name": c["name"],
+            "birth_date_iso": date_iso,
+            "houses": houses,
+            "plan": plan,
+            "house_degree": house_degree,
+            "pl_midpoints": mids,
+            "age_prog": age_prog,
+        })
+    return out
+
+
 if __name__ == "__main__":
     ds = json.load(open(sys.argv[1]))
     mode = sys.argv[3] if len(sys.argv) > 3 else "ephemeris"
@@ -234,6 +288,8 @@ if __name__ == "__main__":
         result = dump_chart_types(ds)
     elif mode == "age_point":
         result = dump_age_point(ds)
+    elif mode == "age_timetable":
+        result = dump_age_timetable(ds)
     else:
         result = dump(ds)
     json.dump(result, open(sys.argv[2], "w"), indent=2)

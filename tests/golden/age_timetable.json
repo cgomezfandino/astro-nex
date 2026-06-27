@@ -1,0 +1,7647 @@
+[
+  {
+    "name": "ref1", 
+    "birth_date_iso": "1970-01-01T12:00:00+0000UTC", 
+    "houses": [
+      12.065725172833643, 
+      47.45211434930378, 
+      74.71625478775026, 
+      96.4453611497645, 
+      121.1676425382089, 
+      153.38925945749588, 
+      192.06572517283365, 
+      227.45211434930377, 
+      254.71625478775024, 
+      276.4453611497645, 
+      301.1676425382089, 
+      333.3892594574959
+    ], 
+    "house_degree": [
+      12.065725172833643, 
+      17.452114349303777, 
+      14.716254787750259, 
+      6.445361149764494, 
+      1.167642538208895, 
+      3.389259457495882, 
+      12.065725172833652, 
+      17.45211434930377, 
+      14.716254787750245, 
+      6.445361149764494, 
+      1.167642538208895, 
+      3.389259457495882
+    ], 
+    "plan": [
+      {
+        "ix": 6, 
+        "degree": 32.059826764136496
+      }, 
+      {
+        "ix": 9, 
+        "degree": 177.3917276617087
+      }, 
+      {
+        "ix": 7, 
+        "degree": 188.72628257678224
+      }, 
+      {
+        "ix": 1, 
+        "degree": 197.01955322241218
+      }, 
+      {
+        "ix": 5, 
+        "degree": 212.39312081483416
+      }, 
+      {
+        "ix": 8, 
+        "degree": 239.9010456522714
+      }, 
+      {
+        "ix": 3, 
+        "degree": 275.0824307535437
+      }, 
+      {
+        "ix": 0, 
+        "degree": 280.66592292827056
+      }, 
+      {
+        "ix": 2, 
+        "degree": 299.28418186707296
+      }, 
+      {
+        "ix": 4, 
+        "degree": 342.6091198809289
+      }, 
+      {
+        "ix": 10, 
+        "degree": 344.0554019183375
+      }
+    ], 
+    "age_prog": [
+      {
+        "cl": "txt_cp", 
+        "year": 1970, 
+        "day": "01", 
+        "lab": "Cc 1", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1970, 
+        "day": "04", 
+        "lab": "semi/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1970, 
+        "day": "04", 
+        "lab": "semi/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1970, 
+        "day": "04", 
+        "lab": "opos/moon", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1972, 
+        "day": "17", 
+        "lab": "Pi 1", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1972, 
+        "day": "07", 
+        "lab": "quinc/pluto", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1972, 
+        "day": "02", 
+        "lab": "cuad/mercury", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1973, 
+        "day": "09", 
+        "lab": "quinc/neptune", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1973, 
+        "day": "15", 
+        "lab": "tauro", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1973, 
+        "day": "23", 
+        "lab": "conj/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1973, 
+        "day": "13", 
+        "lab": "opos/jupiter", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1973, 
+        "day": "16", 
+        "lab": "Pr 1", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1973, 
+        "day": "26", 
+        "lab": "trig/venus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1974, 
+        "day": "10", 
+        "lab": "quinc/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1974, 
+        "day": "07", 
+        "lab": "trig/sun", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1975, 
+        "day": "07", 
+        "lab": "sext/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1975, 
+        "day": "05", 
+        "lab": "sext/node", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1975, 
+        "day": "05", 
+        "lab": "quinc/moon", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1976, 
+        "day": "01", 
+        "lab": "Cc 2", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1978, 
+        "day": "10", 
+        "lab": "trig/pluto", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1978, 
+        "day": "17", 
+        "lab": "Pi 2", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1978, 
+        "day": "09", 
+        "lab": "trig/mercury", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1978, 
+        "day": "28", 
+        "lab": "opos/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1978, 
+        "day": "06", 
+        "lab": "geminis", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1979, 
+        "day": "20", 
+        "lab": "semi/saturn", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1979, 
+        "day": "16", 
+        "lab": "quinc/jupiter", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1979, 
+        "day": "17", 
+        "lab": "Pr 2", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1979, 
+        "day": "18", 
+        "lab": "quinc/venus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1980, 
+        "day": "06", 
+        "lab": "trig/uranus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1981, 
+        "day": "09", 
+        "lab": "quinc/sun", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1981, 
+        "day": "16", 
+        "lab": "cuad/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1981, 
+        "day": "09", 
+        "lab": "cuad/node", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1982, 
+        "day": "01", 
+        "lab": "Cc 3", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1982, 
+        "day": "21", 
+        "lab": "trig/moon", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1984, 
+        "day": "17", 
+        "lab": "Pi 3", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1985, 
+        "day": "02", 
+        "lab": "cuad/pluto", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1985, 
+        "day": "16", 
+        "lab": "Pr 3", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "09", 
+        "lab": "quinc/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "12", 
+        "lab": "quinc/neptune", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1986, 
+        "day": "22", 
+        "lab": "cancer", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "16", 
+        "lab": "sext/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "18", 
+        "lab": "trig/jupiter", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1987, 
+        "day": "17", 
+        "lab": "opos/venus", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1988, 
+        "day": "01", 
+        "lab": "Cc 4", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1988, 
+        "day": "21", 
+        "lab": "cuad/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1989, 
+        "day": "09", 
+        "lab": "opos/sun", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1989, 
+        "day": "01", 
+        "lab": "trig/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1989, 
+        "day": "06", 
+        "lab": "trig/node", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 1990, 
+        "day": "04", 
+        "lab": "saturn/pluto", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1990, 
+        "day": "17", 
+        "lab": "Pi 4", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1990, 
+        "day": "27", 
+        "lab": "cuad/moon", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1991, 
+        "day": "17", 
+        "lab": "Pr 4", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "31", 
+        "lab": "sext/pluto", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "18", 
+        "lab": "opos/mercury", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "11", 
+        "lab": "trig/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1993, 
+        "day": "19", 
+        "lab": "leo", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1994, 
+        "day": "01", 
+        "lab": "Cc 5", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1994, 
+        "day": "03", 
+        "lab": "cuad/saturn", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1994, 
+        "day": "25", 
+        "lab": "cuad/jupiter", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1994, 
+        "day": "24", 
+        "lab": "quinc/venus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1995, 
+        "day": "30", 
+        "lab": "sext/uranus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1995, 
+        "day": "09", 
+        "lab": "quinc/sun", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1996, 
+        "day": "18", 
+        "lab": "quinc/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1996, 
+        "day": "17", 
+        "lab": "Pi 5", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1996, 
+        "day": "26", 
+        "lab": "quinc/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1996, 
+        "day": "14", 
+        "lab": "sext/moon", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1997, 
+        "day": "16", 
+        "lab": "Pr 5", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1998, 
+        "day": "19", 
+        "lab": "semi/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "28", 
+        "lab": "quinc/mercury", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "09", 
+        "lab": "cuad/neptune", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1999, 
+        "day": "16", 
+        "lab": "virgo", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "03", 
+        "lab": "trig/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "25", 
+        "lab": "sext/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2000, 
+        "day": "01", 
+        "lab": "Cc 6", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2000, 
+        "day": "06", 
+        "lab": "trig/venus", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2000, 
+        "day": "29", 
+        "lab": "semi/uranus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "16", 
+        "lab": "trig/sun", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "07", 
+        "lab": "opos/mars", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "28", 
+        "lab": "opos/node", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2002, 
+        "day": "12", 
+        "lab": "semi/moon", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2002, 
+        "day": "17", 
+        "lab": "Pi 6", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2003, 
+        "day": "17", 
+        "lab": "Pr 6", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "22", 
+        "lab": "conj/pluto", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "08", 
+        "lab": "trig/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "12", 
+        "lab": "sext/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2004, 
+        "day": "17", 
+        "lab": "libra", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "13", 
+        "lab": "quinc/saturn", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "02", 
+        "lab": "semi/jupiter", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2004, 
+        "day": "09", 
+        "lab": "pluto/uranus", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "01", 
+        "lab": "cuad/venus", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "26", 
+        "lab": "conj/uranus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "14", 
+        "lab": "cuad/sun", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2006, 
+        "day": "01", 
+        "lab": "Cc 7", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "04", 
+        "lab": "quinc/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2006, 
+        "day": "20", 
+        "lab": "uranus/moon", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "04", 
+        "lab": "quinc/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "04", 
+        "lab": "conj/moon", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2008, 
+        "day": "23", 
+        "lab": "moon/jupiter", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2008, 
+        "day": "17", 
+        "lab": "Pi 7", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "07", 
+        "lab": "semi/pluto", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "02", 
+        "lab": "cuad/mercury", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "09", 
+        "lab": "semi/neptune", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2009, 
+        "day": "15", 
+        "lab": "scorpio", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "23", 
+        "lab": "opos/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "13", 
+        "lab": "conj/jupiter", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2009, 
+        "day": "16", 
+        "lab": "Pr 7", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "26", 
+        "lab": "sext/venus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "10", 
+        "lab": "semi/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "07", 
+        "lab": "sext/sun", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "07", 
+        "lab": "trig/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "05", 
+        "lab": "trig/node", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2011, 
+        "day": "12", 
+        "lab": "jupiter/neptune", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "05", 
+        "lab": "semi/moon", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2012, 
+        "day": "01", 
+        "lab": "Cc 8", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "10", 
+        "lab": "sext/pluto", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2014, 
+        "day": "17", 
+        "lab": "Pi 8", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "09", 
+        "lab": "sext/mercury", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "28", 
+        "lab": "conj/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2014, 
+        "day": "06", 
+        "lab": "sagitario", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "20", 
+        "lab": "quinc/saturn", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "16", 
+        "lab": "semi/jupiter", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2015, 
+        "day": "17", 
+        "lab": "Pr 8", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "18", 
+        "lab": "semi/venus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "06", 
+        "lab": "sext/uranus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "09", 
+        "lab": "semi/sun", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "16", 
+        "lab": "cuad/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "09", 
+        "lab": "cuad/node", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2018, 
+        "day": "01", 
+        "lab": "Cc 9", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "21", 
+        "lab": "sext/moon", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2018, 
+        "day": "08", 
+        "lab": "neptune/venus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2020, 
+        "day": "17", 
+        "lab": "Pi 9", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "02", 
+        "lab": "cuad/pluto", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2021, 
+        "day": "16", 
+        "lab": "Pr 9", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "09", 
+        "lab": "semi/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "12", 
+        "lab": "semi/neptune", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2022, 
+        "day": "22", 
+        "lab": "capricornio", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "16", 
+        "lab": "trig/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "18", 
+        "lab": "sext/jupiter", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2023, 
+        "day": "17", 
+        "lab": "conj/venus", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2024, 
+        "day": "01", 
+        "lab": "Cc 10", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2024, 
+        "day": "07", 
+        "lab": "venus/sun", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2024, 
+        "day": "21", 
+        "lab": "cuad/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "09", 
+        "lab": "conj/sun", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "01", 
+        "lab": "sext/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "06", 
+        "lab": "sext/node", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2026, 
+        "day": "17", 
+        "lab": "Pi 10", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2026, 
+        "day": "27", 
+        "lab": "cuad/moon", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2027, 
+        "day": "15", 
+        "lab": "sun/mercury", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2027, 
+        "day": "17", 
+        "lab": "Pr 10", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "31", 
+        "lab": "trig/pluto", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "18", 
+        "lab": "conj/mercury", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "11", 
+        "lab": "sext/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2029, 
+        "day": "19", 
+        "lab": "acuario", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2030, 
+        "day": "01", 
+        "lab": "Cc 11", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "03", 
+        "lab": "cuad/saturn", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "25", 
+        "lab": "cuad/jupiter", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "24", 
+        "lab": "semi/venus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2031, 
+        "day": "30", 
+        "lab": "trig/uranus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2031, 
+        "day": "09", 
+        "lab": "semi/sun", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "18", 
+        "lab": "semi/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2032, 
+        "day": "17", 
+        "lab": "Pi 11", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "26", 
+        "lab": "semi/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "14", 
+        "lab": "trig/moon", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2033, 
+        "day": "07", 
+        "lab": "mercury/mars", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2033, 
+        "day": "16", 
+        "lab": "Pr 11", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2034, 
+        "day": "19", 
+        "lab": "quinc/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "28", 
+        "lab": "semi/mercury", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "09", 
+        "lab": "cuad/neptune", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2035, 
+        "day": "16", 
+        "lab": "piscis", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "03", 
+        "lab": "sext/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "25", 
+        "lab": "trig/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2036, 
+        "day": "01", 
+        "lab": "Cc 12", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2036, 
+        "day": "06", 
+        "lab": "sext/venus", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2036, 
+        "day": "29", 
+        "lab": "quinc/uranus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "16", 
+        "lab": "sext/sun", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "07", 
+        "lab": "conj/mars", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2037, 
+        "day": "18", 
+        "lab": "mars/node", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "28", 
+        "lab": "conj/node", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2038, 
+        "day": "12", 
+        "lab": "quinc/moon", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2038, 
+        "day": "17", 
+        "lab": "Pi 12", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2039, 
+        "day": "17", 
+        "lab": "Pr 12", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "22", 
+        "lab": "opos/pluto", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "08", 
+        "lab": "sext/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "12", 
+        "lab": "trig/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2040, 
+        "day": "17", 
+        "lab": "aries", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "13", 
+        "lab": "semi/saturn", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "02", 
+        "lab": "quinc/jupiter", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "01", 
+        "lab": "cuad/venus", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2041, 
+        "day": "19", 
+        "lab": "node/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "26", 
+        "lab": "opos/uranus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "14", 
+        "lab": "cuad/sun", 
+        "mon": "10"
+      }
+    ], 
+    "pl_midpoints": [
+      {
+        "pair": [
+          6, 
+          9
+        ], 
+        "house": 3, 
+        "name": "saturn/pluto", 
+        "degree": 14.725777212922594, 
+        "sign": 3
+      }, 
+      {
+        "pair": [
+          9, 
+          7
+        ], 
+        "house": 5, 
+        "name": "pluto/uranus", 
+        "degree": 3.0590051192454553, 
+        "sign": 6
+      }, 
+      {
+        "pair": [
+          7, 
+          1
+        ], 
+        "house": 6, 
+        "name": "uranus/moon", 
+        "degree": 12.872917899597212, 
+        "sign": 6
+      }, 
+      {
+        "pair": [
+          1, 
+          5
+        ], 
+        "house": 6, 
+        "name": "moon/jupiter", 
+        "degree": 24.706337018623174, 
+        "sign": 6
+      }, 
+      {
+        "pair": [
+          5, 
+          8
+        ], 
+        "house": 6, 
+        "name": "jupiter/neptune", 
+        "degree": 16.14708323355279, 
+        "sign": 7
+      }, 
+      {
+        "pair": [
+          8, 
+          3
+        ], 
+        "house": 8, 
+        "name": "neptune/venus", 
+        "degree": 17.491738202907527, 
+        "sign": 8
+      }, 
+      {
+        "pair": [
+          3, 
+          0
+        ], 
+        "house": 9, 
+        "name": "venus/sun", 
+        "degree": 7.8741768409071256, 
+        "sign": 9
+      }, 
+      {
+        "pair": [
+          0, 
+          2
+        ], 
+        "house": 9, 
+        "name": "sun/mercury", 
+        "degree": 19.97505239767179, 
+        "sign": 9
+      }, 
+      {
+        "pair": [
+          2, 
+          4
+        ], 
+        "house": 10, 
+        "name": "mercury/mars", 
+        "degree": 20.946650874000966, 
+        "sign": 10
+      }, 
+      {
+        "pair": [
+          4, 
+          10
+        ], 
+        "house": 11, 
+        "name": "mars/node", 
+        "degree": 13.332260899633184, 
+        "sign": 11
+      }, 
+      {
+        "pair": [
+          10, 
+          6
+        ], 
+        "house": 11, 
+        "name": "node/saturn", 
+        "degree": 8.057614341237013, 
+        "sign": 12
+      }
+    ]
+  }, 
+  {
+    "name": "ref2", 
+    "birth_date_iso": "1985-06-15T08:30:00+0000UTC", 
+    "houses": [
+      138.57475182795554, 
+      163.35531868949306, 
+      188.31726505890182, 
+      213.16071894087852, 
+      263.4264152002375, 
+      293.2597669137224, 
+      318.57475182795554, 
+      343.35531868949306, 
+      8.317265058901853, 
+      33.16071894087853, 
+      83.4264152002375, 
+      113.25976691372242
+    ], 
+    "house_degree": [
+      18.574751827955538, 
+      13.35531868949306, 
+      8.317265058901825, 
+      3.1607189408785246, 
+      23.4264152002375, 
+      23.259766913722387, 
+      18.574751827955538, 
+      13.35531868949306, 
+      8.317265058901853, 
+      3.1607189408785317, 
+      23.4264152002375, 
+      23.259766913722416
+    ], 
+    "plan": [
+      {
+        "ix": 3, 
+        "degree": 38.45868172229127
+      }, 
+      {
+        "ix": 10, 
+        "degree": 47.86952801151578
+      }, 
+      {
+        "ix": 1, 
+        "degree": 48.896144483996245
+      }, 
+      {
+        "ix": 0, 
+        "degree": 84.1813922937568
+      }, 
+      {
+        "ix": 2, 
+        "degree": 93.533424977102
+      }, 
+      {
+        "ix": 4, 
+        "degree": 93.9335188232644
+      }, 
+      {
+        "ix": 9, 
+        "degree": 212.12331171011036
+      }, 
+      {
+        "ix": 6, 
+        "degree": 232.7162766001685
+      }, 
+      {
+        "ix": 7, 
+        "degree": 255.63903039482008
+      }, 
+      {
+        "ix": 8, 
+        "degree": 272.4670476306665
+      }, 
+      {
+        "ix": 5, 
+        "degree": 316.79064011690826
+      }
+    ], 
+    "age_prog": [
+      {
+        "cl": "txt_cp", 
+        "year": 1985, 
+        "day": "15", 
+        "lab": "Cc 1", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1985, 
+        "day": "13", 
+        "lab": "cuad/moon", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "16", 
+        "lab": "cuad/saturn", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "24", 
+        "lab": "sext/sun", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1987, 
+        "day": "30", 
+        "lab": "Pi 1", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1988, 
+        "day": "21", 
+        "lab": "virgo", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1988, 
+        "day": "25", 
+        "lab": "sext/pluto", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1988, 
+        "day": "25", 
+        "lab": "trig/neptune", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 1988, 
+        "day": "14", 
+        "lab": "mars/pluto", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1989, 
+        "day": "27", 
+        "lab": "sext/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1989, 
+        "day": "28", 
+        "lab": "Pr 1", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1989, 
+        "day": "04", 
+        "lab": "sext/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1990, 
+        "day": "08", 
+        "lab": "trig/venus", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1991, 
+        "day": "15", 
+        "lab": "Cc 2", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1992, 
+        "day": "01", 
+        "lab": "cuad/uranus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1992, 
+        "day": "12", 
+        "lab": "quinc/jupiter", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1992, 
+        "day": "15", 
+        "lab": "trig/node", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1992, 
+        "day": "13", 
+        "lab": "trig/moon", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "14", 
+        "lab": "sext/saturn", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1993, 
+        "day": "29", 
+        "lab": "Pi 2", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1994, 
+        "day": "21", 
+        "lab": "cuad/sun", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1995, 
+        "day": "01", 
+        "lab": "Pr 2", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1995, 
+        "day": "15", 
+        "lab": "libra", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1995, 
+        "day": "19", 
+        "lab": "semi/pluto", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1996, 
+        "day": "18", 
+        "lab": "cuad/neptune", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1996, 
+        "day": "21", 
+        "lab": "cuad/mercury", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1996, 
+        "day": "26", 
+        "lab": "cuad/mars", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1997, 
+        "day": "15", 
+        "lab": "Cc 3", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1997, 
+        "day": "27", 
+        "lab": "quinc/venus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "23", 
+        "lab": "sext/uranus", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "02", 
+        "lab": "trig/jupiter", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1999, 
+        "day": "30", 
+        "lab": "Pi 3", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "05", 
+        "lab": "quinc/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2000, 
+        "day": "04", 
+        "lab": "quinc/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2000, 
+        "day": "06", 
+        "lab": "semi/saturn", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2001, 
+        "day": "28", 
+        "lab": "Pr 3", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "14", 
+        "lab": "trig/sun", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2002, 
+        "day": "09", 
+        "lab": "scorpio", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "15", 
+        "lab": "conj/pluto", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "15", 
+        "lab": "sext/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2003, 
+        "day": "15", 
+        "lab": "Cc 4", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "01", 
+        "lab": "trig/mercury", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "19", 
+        "lab": "trig/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "01", 
+        "lab": "opos/venus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2004, 
+        "day": "23", 
+        "lab": "pluto/saturn", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "10", 
+        "lab": "semi/uranus", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "29", 
+        "lab": "cuad/jupiter", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "17", 
+        "lab": "opos/node", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "01", 
+        "lab": "opos/moon", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2005, 
+        "day": "29", 
+        "lab": "Pi 4", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "15", 
+        "lab": "conj/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "18", 
+        "lab": "quinc/sun", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2006, 
+        "day": "28", 
+        "lab": "sagitario", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "29", 
+        "lab": "semi/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "14", 
+        "lab": "semi/neptune", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "29", 
+        "lab": "quinc/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "16", 
+        "lab": "quinc/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2007, 
+        "day": "26", 
+        "lab": "saturn/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2007, 
+        "day": "01", 
+        "lab": "Pr 4", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "01", 
+        "lab": "quinc/venus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "10", 
+        "lab": "conj/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "29", 
+        "lab": "sext/jupiter", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "16", 
+        "lab": "quinc/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "29", 
+        "lab": "quinc/moon", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "15", 
+        "lab": "semi/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2009, 
+        "day": "15", 
+        "lab": "Cc 5", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2009, 
+        "day": "31", 
+        "lab": "uranus/neptune", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "09", 
+        "lab": "opos/sun", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2010, 
+        "day": "11", 
+        "lab": "capricornio", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "16", 
+        "lab": "sext/pluto", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "10", 
+        "lab": "conj/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "27", 
+        "lab": "opos/mercury", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "27", 
+        "lab": "opos/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2011, 
+        "day": "30", 
+        "lab": "Pi 5", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "23", 
+        "lab": "trig/venus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2013, 
+        "day": "28", 
+        "lab": "Pr 5", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2013, 
+        "day": "02", 
+        "lab": "semi/uranus", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "25", 
+        "lab": "semi/jupiter", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "15", 
+        "lab": "trig/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "29", 
+        "lab": "trig/moon", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "06", 
+        "lab": "sext/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2015, 
+        "day": "15", 
+        "lab": "Cc 6", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "03", 
+        "lab": "quinc/sun", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2015, 
+        "day": "11", 
+        "lab": "neptune/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2017, 
+        "day": "18", 
+        "lab": "acuario", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "21", 
+        "lab": "cuad/pluto", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "20", 
+        "lab": "semi/neptune", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2017, 
+        "day": "29", 
+        "lab": "Pi 6", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "20", 
+        "lab": "quinc/mercury", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "25", 
+        "lab": "quinc/mars", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2019, 
+        "day": "21", 
+        "lab": "cuad/venus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2019, 
+        "day": "01", 
+        "lab": "Pr 6", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2020, 
+        "day": "04", 
+        "lab": "sext/uranus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "11", 
+        "lab": "conj/jupiter", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "15", 
+        "lab": "cuad/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2021, 
+        "day": "15", 
+        "lab": "Cc 7", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "13", 
+        "lab": "cuad/moon", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "16", 
+        "lab": "cuad/saturn", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "24", 
+        "lab": "trig/sun", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2023, 
+        "day": "30", 
+        "lab": "Pi 7", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2024, 
+        "day": "21", 
+        "lab": "piscis", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2024, 
+        "day": "25", 
+        "lab": "trig/pluto", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2024, 
+        "day": "25", 
+        "lab": "sext/neptune", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "27", 
+        "lab": "trig/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2025, 
+        "day": "28", 
+        "lab": "Pr 7", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "04", 
+        "lab": "trig/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2026, 
+        "day": "08", 
+        "lab": "sext/venus", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2027, 
+        "day": "15", 
+        "lab": "Cc 8", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2028, 
+        "day": "01", 
+        "lab": "cuad/uranus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2028, 
+        "day": "12", 
+        "lab": "semi/jupiter", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2028, 
+        "day": "15", 
+        "lab": "sext/node", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2028, 
+        "day": "13", 
+        "lab": "sext/moon", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "14", 
+        "lab": "trig/saturn", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2029, 
+        "day": "29", 
+        "lab": "Pi 8", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "21", 
+        "lab": "cuad/sun", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2030, 
+        "day": "19", 
+        "lab": "jupiter/venus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2031, 
+        "day": "01", 
+        "lab": "Pr 8", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2031, 
+        "day": "15", 
+        "lab": "aries", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2031, 
+        "day": "19", 
+        "lab": "quinc/pluto", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "18", 
+        "lab": "cuad/neptune", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "21", 
+        "lab": "cuad/mercury", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "26", 
+        "lab": "cuad/mars", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2033, 
+        "day": "15", 
+        "lab": "Cc 9", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "27", 
+        "lab": "semi/venus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "23", 
+        "lab": "trig/uranus", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "02", 
+        "lab": "sext/jupiter", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2035, 
+        "day": "30", 
+        "lab": "Pi 9", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "05", 
+        "lab": "semi/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2036, 
+        "day": "04", 
+        "lab": "semi/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2036, 
+        "day": "06", 
+        "lab": "quinc/saturn", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2037, 
+        "day": "28", 
+        "lab": "Pr 9", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "14", 
+        "lab": "sext/sun", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2038, 
+        "day": "09", 
+        "lab": "tauro", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "15", 
+        "lab": "opos/pluto", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "15", 
+        "lab": "trig/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2039, 
+        "day": "15", 
+        "lab": "Cc 10", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "01", 
+        "lab": "sext/mercury", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "19", 
+        "lab": "sext/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "01", 
+        "lab": "conj/venus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2040, 
+        "day": "24", 
+        "lab": "venus/node", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "10", 
+        "lab": "quinc/uranus", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "29", 
+        "lab": "cuad/jupiter", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "17", 
+        "lab": "conj/node", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2041, 
+        "day": "09", 
+        "lab": "node/moon", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "01", 
+        "lab": "conj/moon", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2041, 
+        "day": "29", 
+        "lab": "Pi 10", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "15", 
+        "lab": "opos/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "18", 
+        "lab": "semi/sun", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2042, 
+        "day": "28", 
+        "lab": "geminis", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2042, 
+        "day": "29", 
+        "lab": "quinc/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2042, 
+        "day": "14", 
+        "lab": "quinc/neptune", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "29", 
+        "lab": "semi/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "16", 
+        "lab": "semi/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2043, 
+        "day": "01", 
+        "lab": "Pr 10", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2043, 
+        "day": "09", 
+        "lab": "moon/sun", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "01", 
+        "lab": "semi/venus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "10", 
+        "lab": "opos/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "29", 
+        "lab": "trig/jupiter", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "16", 
+        "lab": "semi/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "29", 
+        "lab": "semi/moon", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2045, 
+        "day": "15", 
+        "lab": "quinc/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2045, 
+        "day": "15", 
+        "lab": "Cc 11", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2045, 
+        "day": "09", 
+        "lab": "conj/sun", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2046, 
+        "day": "19", 
+        "lab": "sun/mercury", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2046, 
+        "day": "11", 
+        "lab": "cancer", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "16", 
+        "lab": "trig/pluto", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "10", 
+        "lab": "opos/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "27", 
+        "lab": "conj/mercury", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2047, 
+        "day": "12", 
+        "lab": "mercury/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "27", 
+        "lab": "conj/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2047, 
+        "day": "30", 
+        "lab": "Pi 11", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2048, 
+        "day": "23", 
+        "lab": "sext/venus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2049, 
+        "day": "28", 
+        "lab": "Pr 11", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2049, 
+        "day": "02", 
+        "lab": "quinc/uranus", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2050, 
+        "day": "25", 
+        "lab": "quinc/jupiter", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2050, 
+        "day": "15", 
+        "lab": "sext/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2050, 
+        "day": "29", 
+        "lab": "sext/moon", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2051, 
+        "day": "06", 
+        "lab": "trig/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2051, 
+        "day": "15", 
+        "lab": "Cc 12", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2051, 
+        "day": "03", 
+        "lab": "semi/sun", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2053, 
+        "day": "18", 
+        "lab": "leo", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2053, 
+        "day": "21", 
+        "lab": "cuad/pluto", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2053, 
+        "day": "20", 
+        "lab": "quinc/neptune", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2053, 
+        "day": "29", 
+        "lab": "Pi 12", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2053, 
+        "day": "20", 
+        "lab": "semi/mercury", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2053, 
+        "day": "25", 
+        "lab": "semi/mars", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2055, 
+        "day": "21", 
+        "lab": "cuad/venus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2055, 
+        "day": "01", 
+        "lab": "Pr 12", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2056, 
+        "day": "04", 
+        "lab": "trig/uranus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2057, 
+        "day": "11", 
+        "lab": "opos/jupiter", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2057, 
+        "day": "15", 
+        "lab": "cuad/node", 
+        "mon": "04"
+      }
+    ], 
+    "pl_midpoints": [
+      {
+        "pair": [
+          3, 
+          10
+        ], 
+        "house": 9, 
+        "name": "venus/node", 
+        "degree": 13.164104866903529, 
+        "sign": 1
+      }, 
+      {
+        "pair": [
+          10, 
+          1
+        ], 
+        "house": 9, 
+        "name": "node/moon", 
+        "degree": 18.382836247756018, 
+        "sign": 1
+      }, 
+      {
+        "pair": [
+          1, 
+          0
+        ], 
+        "house": 9, 
+        "name": "moon/sun", 
+        "degree": 6.53876838887652, 
+        "sign": 2
+      }, 
+      {
+        "pair": [
+          0, 
+          2
+        ], 
+        "house": 10, 
+        "name": "sun/mercury", 
+        "degree": 28.857408635429408, 
+        "sign": 2
+      }, 
+      {
+        "pair": [
+          2, 
+          4
+        ], 
+        "house": 10, 
+        "name": "mercury/mars", 
+        "degree": 3.73347190018319, 
+        "sign": 3
+      }, 
+      {
+        "pair": [
+          4, 
+          9
+        ], 
+        "house": 0, 
+        "name": "mars/pluto", 
+        "degree": 3.028415266687375, 
+        "sign": 5
+      }, 
+      {
+        "pair": [
+          9, 
+          6
+        ], 
+        "house": 3, 
+        "name": "pluto/saturn", 
+        "degree": 12.419794155139414, 
+        "sign": 7
+      }, 
+      {
+        "pair": [
+          6, 
+          7
+        ], 
+        "house": 3, 
+        "name": "saturn/uranus", 
+        "degree": 4.177653497494305, 
+        "sign": 8
+      }, 
+      {
+        "pair": [
+          7, 
+          8
+        ], 
+        "house": 4, 
+        "name": "uranus/neptune", 
+        "degree": 24.053039012743284, 
+        "sign": 8
+      }, 
+      {
+        "pair": [
+          8, 
+          5
+        ], 
+        "house": 5, 
+        "name": "neptune/jupiter", 
+        "degree": 24.62884387378739, 
+        "sign": 9
+      }, 
+      {
+        "pair": [
+          5, 
+          3
+        ], 
+        "house": 7, 
+        "name": "jupiter/venus", 
+        "degree": 27.624660919599762, 
+        "sign": 11
+      }
+    ]
+  }, 
+  {
+    "name": "ref3", 
+    "birth_date_iso": "2000-12-31T23:15:00+0000UTC", 
+    "houses": [
+      103.06190103784498, 
+      133.6588450992821, 
+      172.44371652298588, 
+      213.2707318709617, 
+      235.4590359413206, 
+      258.09371310198947, 
+      283.06190103784496, 
+      313.6588450992821, 
+      352.4437165229859, 
+      33.27073187096171, 
+      55.45903594132059, 
+      78.09371310198947
+    ], 
+    "house_degree": [
+      13.061901037844976, 
+      13.658845099282104, 
+      22.44371652298588, 
+      3.270731870961697, 
+      25.459035941320593, 
+      18.093713101989465, 
+      13.061901037844962, 
+      13.658845099282075, 
+      22.44371652298588, 
+      3.2707318709617113, 
+      25.459035941320593, 
+      18.093713101989465
+    ], 
+    "plan": [
+      {
+        "ix": 6, 
+        "degree": 54.59239675159587
+      }, 
+      {
+        "ix": 5, 
+        "degree": 62.1925501754141
+      }, 
+      {
+        "ix": 10, 
+        "degree": 105.51664172815785
+      }, 
+      {
+        "ix": 4, 
+        "degree": 214.91952223631426
+      }, 
+      {
+        "ix": 9, 
+        "degree": 253.7669673471151
+      }, 
+      {
+        "ix": 0, 
+        "degree": 280.60153868420247
+      }, 
+      {
+        "ix": 2, 
+        "degree": 284.22080580733984
+      }, 
+      {
+        "ix": 8, 
+        "degree": 305.3260934821087
+      }, 
+      {
+        "ix": 7, 
+        "degree": 318.6485433471813
+      }, 
+      {
+        "ix": 3, 
+        "degree": 326.9322090080164
+      }, 
+      {
+        "ix": 1, 
+        "degree": 348.3281929826242
+      }
+    ], 
+    "age_prog": [
+      {
+        "cl": "txt_cp", 
+        "year": 2000, 
+        "day": "31", 
+        "lab": "Cc 1", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "20", 
+        "lab": "quinc/pluto", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "24", 
+        "lab": "opos/mercury", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "25", 
+        "lab": "conj/node", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2002, 
+        "day": "13", 
+        "lab": "trig/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2002, 
+        "day": "05", 
+        "lab": "quinc/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "06", 
+        "lab": "sext/saturn", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2003, 
+        "day": "17", 
+        "lab": "Pi 1", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "21", 
+        "lab": "quinc/venus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2004, 
+        "day": "27", 
+        "lab": "leo", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2004, 
+        "day": "16", 
+        "lab": "Pr 1", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "01", 
+        "lab": "sext/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "15", 
+        "lab": "cuad/mars", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "14", 
+        "lab": "opos/neptune", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "27", 
+        "lab": "quinc/sun", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2006, 
+        "day": "31", 
+        "lab": "Cc 2", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "07", 
+        "lab": "trig/pluto", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "01", 
+        "lab": "quinc/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "15", 
+        "lab": "semi/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "21", 
+        "lab": "quinc/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "09", 
+        "lab": "opos/uranus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "09", 
+        "lab": "cuad/saturn", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "20", 
+        "lab": "opos/venus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2009, 
+        "day": "17", 
+        "lab": "Pi 2", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2009, 
+        "day": "12", 
+        "lab": "virgo", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "13", 
+        "lab": "cuad/jupiter", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "16", 
+        "lab": "sext/mars", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "09", 
+        "lab": "quinc/neptune", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2010, 
+        "day": "16", 
+        "lab": "Pr 2", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2011, 
+        "day": "10", 
+        "lab": "node/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "03", 
+        "lab": "trig/sun", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "29", 
+        "lab": "cuad/pluto", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "24", 
+        "lab": "trig/mercury", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "06", 
+        "lab": "sext/node", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "13", 
+        "lab": "opos/moon", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "31", 
+        "lab": "quinc/uranus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2012, 
+        "day": "31", 
+        "lab": "Cc 3", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2013, 
+        "day": "26", 
+        "lab": "trig/saturn", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2013, 
+        "day": "29", 
+        "lab": "quinc/venus", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2014, 
+        "day": "10", 
+        "lab": "libra", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "08", 
+        "lab": "trig/jupiter", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "01", 
+        "lab": "semi/mars", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "23", 
+        "lab": "trig/neptune", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2015, 
+        "day": "17", 
+        "lab": "Pi 3", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "02", 
+        "lab": "cuad/sun", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "19", 
+        "lab": "sext/pluto", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "14", 
+        "lab": "cuad/mercury", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "23", 
+        "lab": "cuad/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2016, 
+        "day": "16", 
+        "lab": "Pr 3", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "21", 
+        "lab": "quinc/moon", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "07", 
+        "lab": "trig/uranus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "22", 
+        "lab": "quinc/saturn", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "25", 
+        "lab": "trig/venus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2018, 
+        "day": "09", 
+        "lab": "scorpio", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "04", 
+        "lab": "quinc/jupiter", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2018, 
+        "day": "31", 
+        "lab": "Cc 4", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2019, 
+        "day": "12", 
+        "lab": "conj/mars", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2019, 
+        "day": "23", 
+        "lab": "cuad/neptune", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2020, 
+        "day": "25", 
+        "lab": "sext/sun", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2021, 
+        "day": "17", 
+        "lab": "Pi 4", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "02", 
+        "lab": "semi/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "17", 
+        "lab": "sext/mercury", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "24", 
+        "lab": "trig/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2022, 
+        "day": "16", 
+        "lab": "Pr 4", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2023, 
+        "day": "27", 
+        "lab": "trig/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2023, 
+        "day": "28", 
+        "lab": "cuad/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2024, 
+        "day": "12", 
+        "lab": "mars/pluto", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2024, 
+        "day": "07", 
+        "lab": "opos/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2024, 
+        "day": "31", 
+        "lab": "Cc 5", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "23", 
+        "lab": "cuad/venus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2026, 
+        "day": "16", 
+        "lab": "sagitario", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2026, 
+        "day": "14", 
+        "lab": "opos/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2027, 
+        "day": "17", 
+        "lab": "Pi 5", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2027, 
+        "day": "05", 
+        "lab": "semi/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2027, 
+        "day": "14", 
+        "lab": "sext/neptune", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2028, 
+        "day": "16", 
+        "lab": "Pr 5", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "05", 
+        "lab": "semi/sun", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "08", 
+        "lab": "conj/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "22", 
+        "lab": "semi/mercury", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "26", 
+        "lab": "quinc/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2030, 
+        "day": "31", 
+        "lab": "Cc 6", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2031, 
+        "day": "21", 
+        "lab": "cuad/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2031, 
+        "day": "18", 
+        "lab": "sext/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "24", 
+        "lab": "quinc/saturn", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "14", 
+        "lab": "sext/venus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2033, 
+        "day": "09", 
+        "lab": "pluto/sun", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2033, 
+        "day": "17", 
+        "lab": "Pi 6", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2033, 
+        "day": "11", 
+        "lab": "capricornio", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2034, 
+        "day": "22", 
+        "lab": "quinc/jupiter", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2034, 
+        "day": "16", 
+        "lab": "Pr 6", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "17", 
+        "lab": "sext/mars", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "21", 
+        "lab": "semi/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2036, 
+        "day": "29", 
+        "lab": "conj/sun", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2036, 
+        "day": "04", 
+        "lab": "sun/mercury", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2036, 
+        "day": "31", 
+        "lab": "Cc 7", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "20", 
+        "lab": "semi/pluto", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "24", 
+        "lab": "conj/mercury", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "25", 
+        "lab": "opos/node", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2038, 
+        "day": "13", 
+        "lab": "sext/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2038, 
+        "day": "05", 
+        "lab": "semi/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "06", 
+        "lab": "trig/saturn", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2039, 
+        "day": "17", 
+        "lab": "Pi 7", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2039, 
+        "day": "19", 
+        "lab": "mercury/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "21", 
+        "lab": "semi/venus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2040, 
+        "day": "27", 
+        "lab": "acuario", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2040, 
+        "day": "16", 
+        "lab": "Pr 7", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "01", 
+        "lab": "trig/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "15", 
+        "lab": "cuad/mars", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "14", 
+        "lab": "conj/neptune", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2042, 
+        "day": "27", 
+        "lab": "semi/sun", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2042, 
+        "day": "03", 
+        "lab": "neptune/uranus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2042, 
+        "day": "31", 
+        "lab": "Cc 8", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "07", 
+        "lab": "sext/pluto", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "01", 
+        "lab": "semi/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "15", 
+        "lab": "quinc/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "21", 
+        "lab": "semi/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "09", 
+        "lab": "conj/uranus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2044, 
+        "day": "31", 
+        "lab": "uranus/venus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "09", 
+        "lab": "cuad/saturn", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2045, 
+        "day": "20", 
+        "lab": "conj/venus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2045, 
+        "day": "17", 
+        "lab": "Pi 8", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2045, 
+        "day": "12", 
+        "lab": "piscis", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2045, 
+        "day": "13", 
+        "lab": "cuad/jupiter", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2046, 
+        "day": "16", 
+        "lab": "trig/mars", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2046, 
+        "day": "09", 
+        "lab": "semi/neptune", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2046, 
+        "day": "16", 
+        "lab": "Pr 8", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2046, 
+        "day": "16", 
+        "lab": "venus/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "03", 
+        "lab": "sext/sun", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "29", 
+        "lab": "cuad/pluto", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "24", 
+        "lab": "sext/mercury", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "06", 
+        "lab": "trig/node", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2048, 
+        "day": "13", 
+        "lab": "conj/moon", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2048, 
+        "day": "31", 
+        "lab": "semi/uranus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2048, 
+        "day": "31", 
+        "lab": "Cc 9", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2049, 
+        "day": "26", 
+        "lab": "sext/saturn", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2049, 
+        "day": "29", 
+        "lab": "semi/venus", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2050, 
+        "day": "10", 
+        "lab": "aries", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2050, 
+        "day": "08", 
+        "lab": "sext/jupiter", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2050, 
+        "day": "01", 
+        "lab": "quinc/mars", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2050, 
+        "day": "23", 
+        "lab": "sext/neptune", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2051, 
+        "day": "17", 
+        "lab": "Pi 9", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2051, 
+        "day": "02", 
+        "lab": "cuad/sun", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2052, 
+        "day": "19", 
+        "lab": "trig/pluto", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2052, 
+        "day": "14", 
+        "lab": "cuad/mercury", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2052, 
+        "day": "23", 
+        "lab": "cuad/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2052, 
+        "day": "16", 
+        "lab": "Pr 9", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2052, 
+        "day": "21", 
+        "lab": "semi/moon", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2052, 
+        "day": "07", 
+        "lab": "sext/uranus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2053, 
+        "day": "07", 
+        "lab": "moon/saturn", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2053, 
+        "day": "22", 
+        "lab": "semi/saturn", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2054, 
+        "day": "25", 
+        "lab": "sext/venus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2054, 
+        "day": "09", 
+        "lab": "tauro", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2054, 
+        "day": "04", 
+        "lab": "semi/jupiter", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2054, 
+        "day": "31", 
+        "lab": "Cc 10", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2055, 
+        "day": "12", 
+        "lab": "opos/mars", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2055, 
+        "day": "23", 
+        "lab": "cuad/neptune", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2056, 
+        "day": "25", 
+        "lab": "trig/sun", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2057, 
+        "day": "17", 
+        "lab": "Pi 10", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2057, 
+        "day": "02", 
+        "lab": "quinc/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2057, 
+        "day": "17", 
+        "lab": "trig/mercury", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2058, 
+        "day": "24", 
+        "lab": "sext/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2058, 
+        "day": "16", 
+        "lab": "Pr 10", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2059, 
+        "day": "27", 
+        "lab": "sext/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2059, 
+        "day": "28", 
+        "lab": "cuad/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2060, 
+        "day": "07", 
+        "lab": "conj/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2060, 
+        "day": "31", 
+        "lab": "Cc 11", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2061, 
+        "day": "23", 
+        "lab": "cuad/venus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2061, 
+        "day": "11", 
+        "lab": "saturn/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2062, 
+        "day": "16", 
+        "lab": "geminis", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2062, 
+        "day": "14", 
+        "lab": "conj/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2063, 
+        "day": "17", 
+        "lab": "Pi 11", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2063, 
+        "day": "05", 
+        "lab": "quinc/mars", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2063, 
+        "day": "14", 
+        "lab": "trig/neptune", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2064, 
+        "day": "16", 
+        "lab": "Pr 11", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2065, 
+        "day": "05", 
+        "lab": "quinc/sun", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2065, 
+        "day": "08", 
+        "lab": "opos/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2065, 
+        "day": "22", 
+        "lab": "quinc/mercury", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2066, 
+        "day": "26", 
+        "lab": "semi/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2066, 
+        "day": "31", 
+        "lab": "Cc 12", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2067, 
+        "day": "21", 
+        "lab": "cuad/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2067, 
+        "day": "18", 
+        "lab": "trig/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2068, 
+        "day": "20", 
+        "lab": "jupiter/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2068, 
+        "day": "24", 
+        "lab": "semi/saturn", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2069, 
+        "day": "14", 
+        "lab": "trig/venus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2069, 
+        "day": "17", 
+        "lab": "Pi 12", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2069, 
+        "day": "11", 
+        "lab": "cancer", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2070, 
+        "day": "22", 
+        "lab": "semi/jupiter", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2070, 
+        "day": "16", 
+        "lab": "Pr 12", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2071, 
+        "day": "17", 
+        "lab": "trig/mars", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2071, 
+        "day": "21", 
+        "lab": "quinc/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2072, 
+        "day": "29", 
+        "lab": "opos/sun", 
+        "mon": "05"
+      }
+    ], 
+    "pl_midpoints": [
+      {
+        "pair": [
+          6, 
+          5
+        ], 
+        "house": 10, 
+        "name": "saturn/jupiter", 
+        "degree": 28.392473463504984, 
+        "sign": 1
+      }, 
+      {
+        "pair": [
+          5, 
+          10
+        ], 
+        "house": 11, 
+        "name": "jupiter/node", 
+        "degree": 23.854595951785967, 
+        "sign": 2
+      }, 
+      {
+        "pair": [
+          10, 
+          4
+        ], 
+        "house": 1, 
+        "name": "node/mars", 
+        "degree": 10.218081982236072, 
+        "sign": 5
+      }, 
+      {
+        "pair": [
+          4, 
+          9
+        ], 
+        "house": 3, 
+        "name": "mars/pluto", 
+        "degree": 24.34324479171468, 
+        "sign": 7
+      }, 
+      {
+        "pair": [
+          9, 
+          0
+        ], 
+        "house": 5, 
+        "name": "pluto/sun", 
+        "degree": 27.184253015658783, 
+        "sign": 8
+      }, 
+      {
+        "pair": [
+          0, 
+          2
+        ], 
+        "house": 5, 
+        "name": "sun/mercury", 
+        "degree": 12.411172245771127, 
+        "sign": 9
+      }, 
+      {
+        "pair": [
+          2, 
+          8
+        ], 
+        "house": 6, 
+        "name": "mercury/neptune", 
+        "degree": 24.77344964472428, 
+        "sign": 9
+      }, 
+      {
+        "pair": [
+          8, 
+          7
+        ], 
+        "house": 6, 
+        "name": "neptune/uranus", 
+        "degree": 11.987318414645017, 
+        "sign": 10
+      }, 
+      {
+        "pair": [
+          7, 
+          3
+        ], 
+        "house": 7, 
+        "name": "uranus/venus", 
+        "degree": 22.790376177598887, 
+        "sign": 10
+      }, 
+      {
+        "pair": [
+          3, 
+          1
+        ], 
+        "house": 7, 
+        "name": "venus/moon", 
+        "degree": 7.630200995320308, 
+        "sign": 11
+      }, 
+      {
+        "pair": [
+          1, 
+          6
+        ], 
+        "house": 8, 
+        "name": "moon/saturn", 
+        "degree": 21.460294867110065, 
+        "sign": 12
+      }
+    ]
+  }, 
+  {
+    "name": "ref4", 
+    "birth_date_iso": "1969-07-20T20:17:00+0000UTC", 
+    "houses": [
+      311.7176423724519, 
+      351.62769015792406, 
+      35.091153700249755, 
+      66.86973049737827, 
+      83.87003949370074, 
+      104.1342365925808, 
+      131.7176423724519, 
+      171.627690157924, 
+      215.09115370024975, 
+      246.86973049737827, 
+      263.87003949370074, 
+      284.1342365925808
+    ], 
+    "house_degree": [
+      11.717642372451905, 
+      21.627690157924064, 
+      5.091153700249755, 
+      6.869730497378271, 
+      23.870039493700745, 
+      14.134236592580805, 
+      11.717642372451905, 
+      21.627690157924008, 
+      5.091153700249748, 
+      6.869730497378271, 
+      23.870039493700745, 
+      14.134236592580805
+    ], 
+    "plan": [
+      {
+        "ix": 6, 
+        "degree": 38.09800190534837
+      }, 
+      {
+        "ix": 3, 
+        "degree": 75.03742859866699
+      }, 
+      {
+        "ix": 2, 
+        "degree": 115.84291771640581
+      }, 
+      {
+        "ix": 0, 
+        "degree": 117.9107498615967
+      }, 
+      {
+        "ix": 9, 
+        "degree": 173.00727524907478
+      }, 
+      {
+        "ix": 7, 
+        "degree": 180.68995158391186
+      }, 
+      {
+        "ix": 5, 
+        "degree": 180.74623313860707
+      }, 
+      {
+        "ix": 1, 
+        "degree": 187.8738766784465
+      }, 
+      {
+        "ix": 8, 
+        "degree": 236.02291679328894
+      }, 
+      {
+        "ix": 4, 
+        "degree": 242.77324723157324
+      }, 
+      {
+        "ix": 10, 
+        "degree": 352.47591780940223
+      }
+    ], 
+    "age_prog": [
+      {
+        "cl": "txt_cp", 
+        "year": 1969, 
+        "day": "20", 
+        "lab": "Cc 1", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1970, 
+        "day": "19", 
+        "lab": "trig/venus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1971, 
+        "day": "03", 
+        "lab": "semi/node", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1971, 
+        "day": "01", 
+        "lab": "quinc/pluto", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1971, 
+        "day": "04", 
+        "lab": "quinc/mercury", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1971, 
+        "day": "14", 
+        "lab": "cuad/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1971, 
+        "day": "04", 
+        "lab": "Pi 1", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1971, 
+        "day": "26", 
+        "lab": "quinc/sun", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1972, 
+        "day": "19", 
+        "lab": "piscis", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1972, 
+        "day": "27", 
+        "lab": "quinc/uranus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1972, 
+        "day": "30", 
+        "lab": "quinc/jupiter", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1972, 
+        "day": "18", 
+        "lab": "cuad/mars", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1973, 
+        "day": "04", 
+        "lab": "Pr 1", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1973, 
+        "day": "25", 
+        "lab": "quinc/moon", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1973, 
+        "day": "08", 
+        "lab": "sext/saturn", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1974, 
+        "day": "24", 
+        "lab": "cuad/venus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1975, 
+        "day": "20", 
+        "lab": "Cc 2", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1975, 
+        "day": "01", 
+        "lab": "conj/node", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1975, 
+        "day": "28", 
+        "lab": "opos/pluto", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1976, 
+        "day": "18", 
+        "lab": "trig/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1976, 
+        "day": "27", 
+        "lab": "trig/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1976, 
+        "day": "01", 
+        "lab": "trig/sun", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1976, 
+        "day": "15", 
+        "lab": "aries", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1976, 
+        "day": "19", 
+        "lab": "opos/uranus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1976, 
+        "day": "22", 
+        "lab": "opos/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1977, 
+        "day": "01", 
+        "lab": "trig/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1977, 
+        "day": "17", 
+        "lab": "opos/moon", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1977, 
+        "day": "28", 
+        "lab": "semi/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1977, 
+        "day": "04", 
+        "lab": "Pi 2", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1978, 
+        "day": "13", 
+        "lab": "sext/venus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 1978, 
+        "day": "26", 
+        "lab": "node/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1979, 
+        "day": "05", 
+        "lab": "Pr 2", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1979, 
+        "day": "23", 
+        "lab": "semi/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1979, 
+        "day": "19", 
+        "lab": "quinc/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1980, 
+        "day": "10", 
+        "lab": "cuad/mercury", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1980, 
+        "day": "19", 
+        "lab": "quinc/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1980, 
+        "day": "23", 
+        "lab": "cuad/sun", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1980, 
+        "day": "06", 
+        "lab": "tauro", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1980, 
+        "day": "10", 
+        "lab": "quinc/uranus", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1980, 
+        "day": "13", 
+        "lab": "quinc/jupiter", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1981, 
+        "day": "25", 
+        "lab": "quinc/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1981, 
+        "day": "20", 
+        "lab": "Cc 3", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1982, 
+        "day": "28", 
+        "lab": "quinc/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1982, 
+        "day": "13", 
+        "lab": "conj/saturn", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1983, 
+        "day": "06", 
+        "lab": "semi/venus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1983, 
+        "day": "04", 
+        "lab": "Pi 3", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1984, 
+        "day": "31", 
+        "lab": "sext/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1984, 
+        "day": "07", 
+        "lab": "trig/pluto", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1985, 
+        "day": "04", 
+        "lab": "Pr 3", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1985, 
+        "day": "20", 
+        "lab": "sext/mercury", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1985, 
+        "day": "03", 
+        "lab": "opos/neptune", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 1985, 
+        "day": "09", 
+        "lab": "saturn/venus", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1985, 
+        "day": "10", 
+        "lab": "sext/sun", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1986, 
+        "day": "03", 
+        "lab": "geminis", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "20", 
+        "lab": "trig/uranus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "24", 
+        "lab": "trig/jupiter", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "11", 
+        "lab": "opos/mars", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1987, 
+        "day": "20", 
+        "lab": "Cc 4", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1987, 
+        "day": "27", 
+        "lab": "trig/moon", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1987, 
+        "day": "26", 
+        "lab": "semi/saturn", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1989, 
+        "day": "04", 
+        "lab": "Pi 4", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1990, 
+        "day": "07", 
+        "lab": "conj/venus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1991, 
+        "day": "05", 
+        "lab": "Pr 4", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "22", 
+        "lab": "cuad/node", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "31", 
+        "lab": "cuad/pluto", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1993, 
+        "day": "20", 
+        "lab": "Cc 5", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1994, 
+        "day": "19", 
+        "lab": "semi/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1994, 
+        "day": "10", 
+        "lab": "quinc/neptune", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1994, 
+        "day": "30", 
+        "lab": "semi/sun", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1995, 
+        "day": "14", 
+        "lab": "cancer", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1995, 
+        "day": "28", 
+        "lab": "cuad/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1995, 
+        "day": "03", 
+        "lab": "cuad/jupiter", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1995, 
+        "day": "04", 
+        "lab": "Pi 5", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1996, 
+        "day": "09", 
+        "lab": "quinc/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 1996, 
+        "day": "22", 
+        "lab": "venus/mercury", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1997, 
+        "day": "04", 
+        "lab": "Pr 5", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1997, 
+        "day": "11", 
+        "lab": "cuad/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1997, 
+        "day": "06", 
+        "lab": "sext/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1999, 
+        "day": "20", 
+        "lab": "Cc 6", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "30", 
+        "lab": "semi/venus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "13", 
+        "lab": "trig/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "24", 
+        "lab": "sext/pluto", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2001, 
+        "day": "04", 
+        "lab": "Pi 6", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2002, 
+        "day": "05", 
+        "lab": "conj/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2002, 
+        "day": "19", 
+        "lab": "trig/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2002, 
+        "day": "28", 
+        "lab": "mercury/sun", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2002, 
+        "day": "19", 
+        "lab": "conj/sun", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2003, 
+        "day": "01", 
+        "lab": "leo", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "25", 
+        "lab": "sext/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "01", 
+        "lab": "sext/jupiter", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2003, 
+        "day": "05", 
+        "lab": "Pr 6", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "10", 
+        "lab": "trig/mars", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "18", 
+        "lab": "sext/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "06", 
+        "lab": "cuad/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2005, 
+        "day": "20", 
+        "lab": "Cc 7", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "19", 
+        "lab": "sext/venus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "03", 
+        "lab": "quinc/node", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "01", 
+        "lab": "semi/pluto", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2007, 
+        "day": "14", 
+        "lab": "sun/pluto", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "04", 
+        "lab": "semi/mercury", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "14", 
+        "lab": "cuad/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2007, 
+        "day": "04", 
+        "lab": "Pi 7", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "26", 
+        "lab": "semi/sun", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2008, 
+        "day": "19", 
+        "lab": "virgo", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "27", 
+        "lab": "semi/uranus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "30", 
+        "lab": "semi/jupiter", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "18", 
+        "lab": "cuad/mars", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2009, 
+        "day": "04", 
+        "lab": "Pr 7", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "25", 
+        "lab": "semi/moon", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2009, 
+        "day": "08", 
+        "lab": "trig/saturn", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "24", 
+        "lab": "cuad/venus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2011, 
+        "day": "20", 
+        "lab": "Cc 8", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "01", 
+        "lab": "opos/node", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "28", 
+        "lab": "conj/pluto", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "18", 
+        "lab": "sext/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "27", 
+        "lab": "sext/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2012, 
+        "day": "09", 
+        "lab": "pluto/uranus", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "01", 
+        "lab": "sext/sun", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2012, 
+        "day": "15", 
+        "lab": "libra", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "19", 
+        "lab": "conj/uranus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2012, 
+        "day": "21", 
+        "lab": "uranus/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "22", 
+        "lab": "conj/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2013, 
+        "day": "01", 
+        "lab": "sext/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2013, 
+        "day": "20", 
+        "lab": "jupiter/moon", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2013, 
+        "day": "17", 
+        "lab": "conj/moon", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2013, 
+        "day": "28", 
+        "lab": "quinc/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2013, 
+        "day": "04", 
+        "lab": "Pi 8", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2014, 
+        "day": "13", 
+        "lab": "trig/venus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2015, 
+        "day": "05", 
+        "lab": "Pr 8", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "23", 
+        "lab": "quinc/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "19", 
+        "lab": "semi/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "10", 
+        "lab": "cuad/mercury", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "19", 
+        "lab": "semi/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "23", 
+        "lab": "cuad/sun", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2016, 
+        "day": "06", 
+        "lab": "scorpio", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "10", 
+        "lab": "semi/uranus", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2016, 
+        "day": "13", 
+        "lab": "semi/jupiter", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2017, 
+        "day": "12", 
+        "lab": "moon/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "25", 
+        "lab": "semi/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2017, 
+        "day": "20", 
+        "lab": "Cc 9", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "28", 
+        "lab": "semi/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "13", 
+        "lab": "opos/saturn", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2019, 
+        "day": "06", 
+        "lab": "quinc/venus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2019, 
+        "day": "04", 
+        "lab": "Pi 9", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2020, 
+        "day": "31", 
+        "lab": "trig/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2020, 
+        "day": "07", 
+        "lab": "sext/pluto", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2021, 
+        "day": "04", 
+        "lab": "Pr 9", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "20", 
+        "lab": "trig/mercury", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "03", 
+        "lab": "conj/neptune", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2021, 
+        "day": "10", 
+        "lab": "trig/sun", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2022, 
+        "day": "20", 
+        "lab": "neptune/mars", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2022, 
+        "day": "03", 
+        "lab": "sagitario", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "20", 
+        "lab": "sext/uranus", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "24", 
+        "lab": "sext/jupiter", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "11", 
+        "lab": "conj/mars", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2023, 
+        "day": "20", 
+        "lab": "Cc 10", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2023, 
+        "day": "27", 
+        "lab": "sext/moon", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2023, 
+        "day": "26", 
+        "lab": "quinc/saturn", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2025, 
+        "day": "04", 
+        "lab": "Pi 10", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2026, 
+        "day": "07", 
+        "lab": "opos/venus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2027, 
+        "day": "05", 
+        "lab": "Pr 10", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "22", 
+        "lab": "cuad/node", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "31", 
+        "lab": "cuad/pluto", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2029, 
+        "day": "20", 
+        "lab": "Cc 11", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "19", 
+        "lab": "quinc/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "10", 
+        "lab": "semi/neptune", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "30", 
+        "lab": "quinc/sun", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2031, 
+        "day": "14", 
+        "lab": "capricornio", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2031, 
+        "day": "28", 
+        "lab": "cuad/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2031, 
+        "day": "03", 
+        "lab": "cuad/jupiter", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2031, 
+        "day": "04", 
+        "lab": "Pi 11", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "09", 
+        "lab": "semi/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2033, 
+        "day": "04", 
+        "lab": "Pr 11", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "11", 
+        "lab": "cuad/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "06", 
+        "lab": "trig/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2035, 
+        "day": "20", 
+        "lab": "Cc 12", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "30", 
+        "lab": "quinc/venus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "13", 
+        "lab": "sext/node", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "24", 
+        "lab": "trig/pluto", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2037, 
+        "day": "04", 
+        "lab": "Pi 12", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2038, 
+        "day": "05", 
+        "lab": "opos/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2038, 
+        "day": "19", 
+        "lab": "sext/neptune", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2038, 
+        "day": "26", 
+        "lab": "mars/node", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2038, 
+        "day": "19", 
+        "lab": "opos/sun", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2039, 
+        "day": "01", 
+        "lab": "acuario", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "25", 
+        "lab": "trig/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "01", 
+        "lab": "trig/jupiter", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2039, 
+        "day": "05", 
+        "lab": "Pr 12", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "10", 
+        "lab": "sext/mars", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "18", 
+        "lab": "trig/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "06", 
+        "lab": "cuad/saturn", 
+        "mon": "10"
+      }
+    ], 
+    "pl_midpoints": [
+      {
+        "pair": [
+          6, 
+          3
+        ], 
+        "house": 2, 
+        "name": "saturn/venus", 
+        "degree": 26.56771525200768, 
+        "sign": 1
+      }, 
+      {
+        "pair": [
+          3, 
+          2
+        ], 
+        "house": 4, 
+        "name": "venus/mercury", 
+        "degree": 5.440173157536407, 
+        "sign": 3
+      }, 
+      {
+        "pair": [
+          2, 
+          0
+        ], 
+        "house": 5, 
+        "name": "mercury/sun", 
+        "degree": 26.876833789001253, 
+        "sign": 3
+      }, 
+      {
+        "pair": [
+          0, 
+          9
+        ], 
+        "house": 6, 
+        "name": "sun/pluto", 
+        "degree": 25.459012555335732, 
+        "sign": 4
+      }, 
+      {
+        "pair": [
+          9, 
+          7
+        ], 
+        "house": 7, 
+        "name": "pluto/uranus", 
+        "degree": 26.848613416493322, 
+        "sign": 5
+      }, 
+      {
+        "pair": [
+          7, 
+          5
+        ], 
+        "house": 7, 
+        "name": "uranus/jupiter", 
+        "degree": 0.7180923612594654, 
+        "sign": 6
+      }, 
+      {
+        "pair": [
+          5, 
+          1
+        ], 
+        "house": 7, 
+        "name": "jupiter/moon", 
+        "degree": 4.31005490852678, 
+        "sign": 6
+      }, 
+      {
+        "pair": [
+          1, 
+          8
+        ], 
+        "house": 7, 
+        "name": "moon/neptune", 
+        "degree": 1.9483967358677319, 
+        "sign": 7
+      }, 
+      {
+        "pair": [
+          8, 
+          4
+        ], 
+        "house": 8, 
+        "name": "neptune/mars", 
+        "degree": 29.398082012431075, 
+        "sign": 7
+      }, 
+      {
+        "pair": [
+          4, 
+          10
+        ], 
+        "house": 11, 
+        "name": "mars/node", 
+        "degree": 27.624582520487706, 
+        "sign": 9
+      }, 
+      {
+        "pair": [
+          10, 
+          6
+        ], 
+        "house": 1, 
+        "name": "node/saturn", 
+        "degree": 15.286959857375336, 
+        "sign": 12
+      }
+    ]
+  }, 
+  {
+    "name": "ref5", 
+    "birth_date_iso": "1985-03-21T12:00:00+0000UTC", 
+    "houses": [
+      104.76812770467512, 
+      128.4481016181711, 
+      151.52366550063581, 
+      174.81767963512834, 
+      222.6511591810715, 
+      257.9559536782075, 
+      284.7681277046751, 
+      308.4481016181711, 
+      331.52366550063584, 
+      354.8176796351284, 
+      42.65115918107151, 
+      77.95595367820746
+    ], 
+    "house_degree": [
+      14.768127704675123, 
+      8.448101618171108, 
+      1.5236655006358149, 
+      24.817679635128343, 
+      12.651159181071506, 
+      17.955953678207493, 
+      14.768127704675123, 
+      8.448101618171108, 
+      1.5236655006358433, 
+      24.8176796351284, 
+      12.651159181071513, 
+      17.955953678207464
+    ], 
+    "plan": [
+      {
+        "ix": 0, 
+        "degree": 0.8183385283284064
+      }, 
+      {
+        "ix": 1, 
+        "degree": 0.8281010068044349
+      }, 
+      {
+        "ix": 2, 
+        "degree": 17.94619239759822
+      }, 
+      {
+        "ix": 3, 
+        "degree": 21.067691778359105
+      }, 
+      {
+        "ix": 4, 
+        "degree": 34.5570357451953
+      }, 
+      {
+        "ix": 10, 
+        "degree": 49.11665646817001
+      }, 
+      {
+        "ix": 9, 
+        "degree": 214.227679236479
+      }, 
+      {
+        "ix": 6, 
+        "degree": 237.96224822332502
+      }, 
+      {
+        "ix": 7, 
+        "degree": 257.985154247993
+      }, 
+      {
+        "ix": 8, 
+        "degree": 273.5576215074887
+      }, 
+      {
+        "ix": 5, 
+        "degree": 309.07038706151076
+      }
+    ], 
+    "age_prog": [
+      {
+        "cl": "txt_cp", 
+        "year": 1985, 
+        "day": "21", 
+        "lab": "Cc 1", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "09", 
+        "lab": "cuad/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "13", 
+        "lab": "quinc/uranus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "27", 
+        "lab": "sext/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1986, 
+        "day": "25", 
+        "lab": "cuad/venus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1987, 
+        "day": "06", 
+        "lab": "Pi 1", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1988, 
+        "day": "24", 
+        "lab": "trig/saturn", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1988, 
+        "day": "04", 
+        "lab": "Pr 1", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1989, 
+        "day": "28", 
+        "lab": "leo", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1989, 
+        "day": "14", 
+        "lab": "trig/sun", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1989, 
+        "day": "15", 
+        "lab": "trig/moon", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1989, 
+        "day": "24", 
+        "lab": "quinc/neptune", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1990, 
+        "day": "24", 
+        "lab": "cuad/pluto", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1990, 
+        "day": "26", 
+        "lab": "cuad/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1991, 
+        "day": "21", 
+        "lab": "Cc 2", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1991, 
+        "day": "19", 
+        "lab": "opos/jupiter", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 1992, 
+        "day": "21", 
+        "lab": "node/pluto", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1993, 
+        "day": "05", 
+        "lab": "Pi 2", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "08", 
+        "lab": "trig/mercury", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "12", 
+        "lab": "trig/uranus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1993, 
+        "day": "28", 
+        "lab": "cuad/node", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1994, 
+        "day": "02", 
+        "lab": "trig/venus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 1994, 
+        "day": "05", 
+        "lab": "Pr 2", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1996, 
+        "day": "17", 
+        "lab": "cuad/saturn", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 1996, 
+        "day": "27", 
+        "lab": "virgo", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1997, 
+        "day": "13", 
+        "lab": "quinc/sun", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1997, 
+        "day": "14", 
+        "lab": "quinc/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 1997, 
+        "day": "21", 
+        "lab": "Cc 3", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1997, 
+        "day": "28", 
+        "lab": "trig/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1997, 
+        "day": "30", 
+        "lab": "sext/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1997, 
+        "day": "31", 
+        "lab": "trig/mars", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 1999, 
+        "day": "01", 
+        "lab": "quinc/jupiter", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 1999, 
+        "day": "06", 
+        "lab": "Pi 3", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2000, 
+        "day": "04", 
+        "lab": "Pr 3", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "13", 
+        "lab": "quinc/mercury", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "16", 
+        "lab": "cuad/uranus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2001, 
+        "day": "01", 
+        "lab": "trig/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2002, 
+        "day": "02", 
+        "lab": "quinc/venus", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2003, 
+        "day": "21", 
+        "lab": "Cc 4", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "12", 
+        "lab": "sext/saturn", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2003, 
+        "day": "13", 
+        "lab": "libra", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "21", 
+        "lab": "opos/sun", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2003, 
+        "day": "21", 
+        "lab": "opos/moon", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "25", 
+        "lab": "cuad/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "25", 
+        "lab": "semi/pluto", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2004, 
+        "day": "09", 
+        "lab": "quinc/mars", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2005, 
+        "day": "02", 
+        "lab": "trig/jupiter", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2005, 
+        "day": "05", 
+        "lab": "Pi 4", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "13", 
+        "lab": "opos/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "15", 
+        "lab": "sext/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "08", 
+        "lab": "quinc/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2006, 
+        "day": "06", 
+        "lab": "opos/venus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2006, 
+        "day": "05", 
+        "lab": "Pr 4", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "18", 
+        "lab": "semi/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2007, 
+        "day": "19", 
+        "lab": "scorpio", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "26", 
+        "lab": "quinc/sun", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2007, 
+        "day": "26", 
+        "lab": "quinc/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "29", 
+        "lab": "sext/neptune", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "29", 
+        "lab": "conj/pluto", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "15", 
+        "lab": "opos/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2008, 
+        "day": "08", 
+        "lab": "cuad/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2009, 
+        "day": "21", 
+        "lab": "Cc 5", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2009, 
+        "day": "21", 
+        "lab": "pluto/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "13", 
+        "lab": "quinc/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "15", 
+        "lab": "semi/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "26", 
+        "lab": "opos/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2010, 
+        "day": "25", 
+        "lab": "quinc/venus", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2011, 
+        "day": "06", 
+        "lab": "Pi 5", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2011, 
+        "day": "27", 
+        "lab": "conj/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2012, 
+        "day": "02", 
+        "lab": "sagitario", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "21", 
+        "lab": "trig/sun", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "22", 
+        "lab": "trig/moon", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "08", 
+        "lab": "semi/neptune", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "19", 
+        "lab": "semi/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2012, 
+        "day": "04", 
+        "lab": "Pr 5", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2012, 
+        "day": "09", 
+        "lab": "quinc/mars", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2013, 
+        "day": "10", 
+        "lab": "saturn/uranus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2013, 
+        "day": "16", 
+        "lab": "sext/jupiter", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "20", 
+        "lab": "trig/mercury", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2015, 
+        "day": "21", 
+        "lab": "Cc 6", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "23", 
+        "lab": "conj/uranus", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "24", 
+        "lab": "quinc/node", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2015, 
+        "day": "30", 
+        "lab": "trig/venus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2016, 
+        "day": "19", 
+        "lab": "uranus/neptune", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2017, 
+        "day": "16", 
+        "lab": "semi/saturn", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2017, 
+        "day": "05", 
+        "lab": "Pi 6", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2017, 
+        "day": "30", 
+        "lab": "capricornio", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "05", 
+        "lab": "cuad/sun", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "05", 
+        "lab": "cuad/moon", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "16", 
+        "lab": "conj/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "10", 
+        "lab": "sext/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2018, 
+        "day": "05", 
+        "lab": "Pr 6", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2018, 
+        "day": "07", 
+        "lab": "trig/mars", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2019, 
+        "day": "11", 
+        "lab": "semi/jupiter", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2021, 
+        "day": "21", 
+        "lab": "Cc 7", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "09", 
+        "lab": "cuad/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "13", 
+        "lab": "semi/uranus", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "27", 
+        "lab": "trig/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2022, 
+        "day": "25", 
+        "lab": "cuad/venus", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2022, 
+        "day": "17", 
+        "lab": "neptune/jupiter", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2023, 
+        "day": "06", 
+        "lab": "Pi 7", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2024, 
+        "day": "24", 
+        "lab": "sext/saturn", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2024, 
+        "day": "04", 
+        "lab": "Pr 7", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2025, 
+        "day": "28", 
+        "lab": "acuario", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "14", 
+        "lab": "sext/sun", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "15", 
+        "lab": "sext/moon", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2025, 
+        "day": "24", 
+        "lab": "semi/neptune", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2026, 
+        "day": "24", 
+        "lab": "cuad/pluto", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2026, 
+        "day": "26", 
+        "lab": "cuad/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2027, 
+        "day": "21", 
+        "lab": "Cc 8", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2027, 
+        "day": "19", 
+        "lab": "conj/jupiter", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2029, 
+        "day": "05", 
+        "lab": "Pi 8", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "08", 
+        "lab": "sext/mercury", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "12", 
+        "lab": "sext/uranus", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2029, 
+        "day": "28", 
+        "lab": "cuad/node", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2030, 
+        "day": "02", 
+        "lab": "sext/venus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2030, 
+        "day": "05", 
+        "lab": "Pr 8", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2032, 
+        "day": "17", 
+        "lab": "cuad/saturn", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2032, 
+        "day": "27", 
+        "lab": "piscis", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "13", 
+        "lab": "semi/sun", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "14", 
+        "lab": "semi/moon", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2033, 
+        "day": "21", 
+        "lab": "Cc 9", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "28", 
+        "lab": "sext/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "30", 
+        "lab": "trig/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2033, 
+        "day": "31", 
+        "lab": "sext/mars", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2034, 
+        "day": "06", 
+        "lab": "jupiter/sun", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2035, 
+        "day": "01", 
+        "lab": "semi/jupiter", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2035, 
+        "day": "06", 
+        "lab": "Pi 9", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2036, 
+        "day": "04", 
+        "lab": "Pr 9", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "13", 
+        "lab": "semi/mercury", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "16", 
+        "lab": "cuad/uranus", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2037, 
+        "day": "01", 
+        "lab": "sext/node", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2038, 
+        "day": "02", 
+        "lab": "semi/venus", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2039, 
+        "day": "21", 
+        "lab": "Cc 10", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "12", 
+        "lab": "trig/saturn", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2039, 
+        "day": "13", 
+        "lab": "aries", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "21", 
+        "lab": "conj/sun", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2039, 
+        "day": "21", 
+        "lab": "sun/moon", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2039, 
+        "day": "21", 
+        "lab": "conj/moon", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "25", 
+        "lab": "cuad/neptune", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "25", 
+        "lab": "quinc/pluto", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2040, 
+        "day": "09", 
+        "lab": "semi/mars", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2041, 
+        "day": "02", 
+        "lab": "sext/jupiter", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2041, 
+        "day": "17", 
+        "lab": "moon/mercury", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2041, 
+        "day": "05", 
+        "lab": "Pi 10", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2042, 
+        "day": "13", 
+        "lab": "conj/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2042, 
+        "day": "15", 
+        "lab": "trig/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2042, 
+        "day": "08", 
+        "lab": "semi/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2042, 
+        "day": "25", 
+        "lab": "mercury/venus", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2042, 
+        "day": "06", 
+        "lab": "conj/venus", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2042, 
+        "day": "05", 
+        "lab": "Pr 10", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2043, 
+        "day": "11", 
+        "lab": "venus/mars", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "18", 
+        "lab": "quinc/saturn", 
+        "mon": "05"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2043, 
+        "day": "19", 
+        "lab": "tauro", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "26", 
+        "lab": "semi/sun", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2043, 
+        "day": "26", 
+        "lab": "semi/moon", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "29", 
+        "lab": "trig/neptune", 
+        "mon": "01"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "29", 
+        "lab": "opos/pluto", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "15", 
+        "lab": "conj/mars", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2044, 
+        "day": "08", 
+        "lab": "cuad/jupiter", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "mid", 
+        "year": 2045, 
+        "day": "12", 
+        "lab": "mars/node", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2045, 
+        "day": "21", 
+        "lab": "Cc 11", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2046, 
+        "day": "13", 
+        "lab": "semi/mercury", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2046, 
+        "day": "15", 
+        "lab": "quinc/uranus", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2046, 
+        "day": "26", 
+        "lab": "conj/node", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2046, 
+        "day": "25", 
+        "lab": "semi/venus", 
+        "mon": "08"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2047, 
+        "day": "06", 
+        "lab": "Pi 11", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2047, 
+        "day": "27", 
+        "lab": "opos/saturn", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2048, 
+        "day": "02", 
+        "lab": "geminis", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2048, 
+        "day": "21", 
+        "lab": "sext/sun", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2048, 
+        "day": "22", 
+        "lab": "sext/moon", 
+        "mon": "04"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2048, 
+        "day": "08", 
+        "lab": "quinc/neptune", 
+        "mon": "10"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2048, 
+        "day": "19", 
+        "lab": "quinc/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2048, 
+        "day": "04", 
+        "lab": "Pr 11", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2048, 
+        "day": "09", 
+        "lab": "semi/mars", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2049, 
+        "day": "16", 
+        "lab": "trig/jupiter", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2051, 
+        "day": "20", 
+        "lab": "sext/mercury", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "txt_cp", 
+        "year": 2051, 
+        "day": "21", 
+        "lab": "Cc 12", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2051, 
+        "day": "23", 
+        "lab": "opos/uranus", 
+        "mon": "03"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2051, 
+        "day": "24", 
+        "lab": "semi/node", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2051, 
+        "day": "30", 
+        "lab": "sext/venus", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2053, 
+        "day": "16", 
+        "lab": "quinc/saturn", 
+        "mon": "06"
+      }, 
+      {
+        "cl": "pi", 
+        "year": 2053, 
+        "day": "05", 
+        "lab": "Pi 12", 
+        "mon": "07"
+      }, 
+      {
+        "cl": "sign", 
+        "year": 2053, 
+        "day": "30", 
+        "lab": "cancer", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2054, 
+        "day": "05", 
+        "lab": "cuad/sun", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2054, 
+        "day": "05", 
+        "lab": "cuad/moon", 
+        "mon": "02"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2054, 
+        "day": "16", 
+        "lab": "opos/neptune", 
+        "mon": "09"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2054, 
+        "day": "10", 
+        "lab": "trig/pluto", 
+        "mon": "11"
+      }, 
+      {
+        "cl": "pr", 
+        "year": 2054, 
+        "day": "05", 
+        "lab": "Pr 12", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2054, 
+        "day": "07", 
+        "lab": "sext/mars", 
+        "mon": "12"
+      }, 
+      {
+        "cl": "asp", 
+        "year": 2055, 
+        "day": "11", 
+        "lab": "quinc/jupiter", 
+        "mon": "12"
+      }
+    ], 
+    "pl_midpoints": [
+      {
+        "pair": [
+          0, 
+          1
+        ], 
+        "house": 9, 
+        "name": "sun/moon", 
+        "degree": 0.8232197675663997, 
+        "sign": 12
+      }, 
+      {
+        "pair": [
+          1, 
+          2
+        ], 
+        "house": 9, 
+        "name": "moon/mercury", 
+        "degree": 9.387146702201335, 
+        "sign": 12
+      }, 
+      {
+        "pair": [
+          2, 
+          3
+        ], 
+        "house": 9, 
+        "name": "mercury/venus", 
+        "degree": 19.506942087978643, 
+        "sign": 12
+      }, 
+      {
+        "pair": [
+          3, 
+          4
+        ], 
+        "house": 9, 
+        "name": "venus/mars", 
+        "degree": 27.812363761777192, 
+        "sign": 12
+      }, 
+      {
+        "pair": [
+          4, 
+          10
+        ], 
+        "house": 9, 
+        "name": "mars/node", 
+        "degree": 11.836846106682628, 
+        "sign": 13
+      }, 
+      {
+        "pair": [
+          10, 
+          9
+        ], 
+        "house": 1, 
+        "name": "node/pluto", 
+        "degree": 11.672167852324492, 
+        "sign": 4
+      }, 
+      {
+        "pair": [
+          9, 
+          6
+        ], 
+        "house": 4, 
+        "name": "pluto/saturn", 
+        "degree": 16.09496372990202, 
+        "sign": 7
+      }, 
+      {
+        "pair": [
+          6, 
+          7
+        ], 
+        "house": 4, 
+        "name": "saturn/uranus", 
+        "degree": 7.973701235659007, 
+        "sign": 8
+      }, 
+      {
+        "pair": [
+          7, 
+          8
+        ], 
+        "house": 5, 
+        "name": "uranus/neptune", 
+        "degree": 25.771387877740835, 
+        "sign": 8
+      }, 
+      {
+        "pair": [
+          8, 
+          5
+        ], 
+        "house": 6, 
+        "name": "neptune/jupiter", 
+        "degree": 21.31400428449973, 
+        "sign": 9
+      }, 
+      {
+        "pair": [
+          5, 
+          0
+        ], 
+        "house": 8, 
+        "name": "jupiter/sun", 
+        "degree": 4.944362794919584, 
+        "sign": 11
+      }
+    ]
+  }
+]
