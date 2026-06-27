@@ -279,6 +279,56 @@ def dump_age_timetable(ds):
     return out
 
 
+def dump_dynamics(ds):
+    """Run the ORIGINAL legacy dynamics/cross-points/rays methods via a stub;
+    capture outputs. These feed the datasheets/diagrams renderers.
+
+    Pure numeric/text calculation (no ephemeris call of its own), so the golden
+    verifies EXACT parity. Golden fields per dataset:
+      signdyn, housedyn  : {elem, cross} dicts
+      dyncalc_list       : [srow, hrow, dif] string rows
+      dynstar_signs/houses, dyn_span_diff : 12-lists
+      cuad_plan          : [ind, you, col, ii] lists of {degree,ix,conflict}
+      which_all_houses   : 12-lists of (d,i,l) which_sign dicts
+      which_all_signs    : 11-list of which_sign dicts
+      rays_calc          : 8-list of ints
+      cross_point        : float (calc_cross_points())
+      cross_point_full   : {cp1,cp2,dat1,dat2} (calc_cross_points(cross=True))
+    """
+    import chart as legacy_chart
+
+    class _StubChart(legacy_chart.Chart):
+        def __init__(self, planets, houses):
+            self.date = "2000-01-01T00:00:00+0000UTC"  # for cp_time_lapsus
+            self.planets = list(planets)
+            self.houses = list(houses)
+
+    out = []
+    for c in ds:
+        jd = pysw.julday(c["y"], c["m"], c["d"], c["h"])
+        planets = pysw.planets(jd, EPHEFLAG)
+        houses = list(pysw.houses(jd, c["lat"], c["lon"]))
+        ch = _StubChart(planets, houses)
+
+        out.append({
+            "name": c["name"],
+            "planets": planets, "houses": houses,
+            "signdyn": ch.signdyn(),
+            "housedyn": ch.housedyn(),
+            "dyncalc_list": list(ch.dyncalc_list()),
+            "dynstar_signs": ch.dynstar_signs(),
+            "dynstar_houses": ch.dynstar_houses(),
+            "dyn_span_diff": ch.dyn_span_diff(),
+            "cuad_plan": [[dict(e) for e in group] for group in ch.cuad_plan()],
+            "which_all_houses": ch.which_all_houses(),
+            "which_all_signs": ch.which_all_signs(),
+            "rays_calc": ch.rays_calc(),
+            "cross_point": ch.calc_cross_points(),
+            "cross_point_full": ch.calc_cross_points(cross=True),
+        })
+    return out
+
+
 if __name__ == "__main__":
     ds = json.load(open(sys.argv[1]))
     mode = sys.argv[3] if len(sys.argv) > 3 else "ephemeris"
@@ -290,6 +340,8 @@ if __name__ == "__main__":
         result = dump_age_point(ds)
     elif mode == "age_timetable":
         result = dump_age_timetable(ds)
+    elif mode == "dynamics":
+        result = dump_dynamics(ds)
     else:
         result = dump(ds)
     json.dump(result, open(sys.argv[2], "w"), indent=2)
