@@ -50,11 +50,13 @@ case "$MODE" in
               run directions   directions.json
               run chart_types  chart_types.json
               run age_point    age_point.json
-              run age_timetable age_timetable.json ;;
+              run age_timetable age_timetable.json
+              run dynamics     dynamics.json ;;
   ephemeris)  run ephemeris    ephemeris.json ;;
   directions) run directions   directions.json ;;
   chart_types) run chart_types chart_types.json ;;
   age_point)  run age_point    age_point.json ;;
   age_timetable) run age_timetable age_timetable.json ;;
-  *) echo "unknown mode: $MODE (use all|ephemeris|directions|chart_types|age_point|age_timetable)"; exit 1 ;;
+  dynamics)   run dynamics     dynamics.json ;;
+  *) echo "unknown mode: $MODE (use all|ephemeris|directions|chart_types|age_point|age_timetable|dynamics)"; exit 1 ;;
 esac

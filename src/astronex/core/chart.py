@@ -40,7 +40,9 @@ from . import ephemeris
 # Re-export legacy module-level names so the ported method bodies work
 # unchanged. The legacy aspects() reads module globals ``planclass``,
 # ``aspclass`` and ``orbs``.
-from .constants import planclass, aspclass, PHI, RAD, DEFAULT_ORBS
+from .constants import planclass, aspclass, PHI, RAD, DEFAULT_ORBS, points
+from .utils import parsestrtime
+from datetime import timedelta
 
 # Legacy config filled ``orbs`` at runtime; bind the standalone default here.
 # Intentionally a mutable module global, NOT an immutable constant: future
@@ -432,3 +434,303 @@ class Chart(object):
         moon = h["moon"] * 1.5 + s["moon"] + a["moon"] * 0.75 + z["moon"] * 0.5
         sat = h["sat"] * 1.5 + s["sat"] + a["sat"] * 0.75 + z["sat"] * 0.5
         return (sun, moon, sat)
+
+    # --- Dynamics (element/cross strength) + cross-points + rays ---
+    # Pure numeric calc (no ephemeris call of its own); verified EXACT vs the
+    # legacy golden (tests/golden/dynamics.json). Ported verbatim.
+
+    def signdyn(self):
+        sum1 = 0
+        signs = [0] * 12
+        hou = [0] * 12
+        for h in (0, 3, 6, 9):
+            hou[h] = int(self.houses[h] / 30)
+        for i in range(len(self.planets)):
+            p = self.planets[i]
+            sign = int(p / 30)
+            deg = p - sign * 30
+            point = points[i]
+            if deg < 2 or deg >= 27:
+                point -= 3
+            elif deg >= 7 and deg <= 18:
+                point += 3
+            signs[sign] += point
+            if sign == hou[0]:
+                sum1 += 1
+            if deg >= 29 and deg < 30:
+                signs[(sign + 1) % 12] += int(point / 2)
+            elif deg >= 0 and deg < 1:
+                signs[(sign + 11) % 12] += int(point / 2)
+        if sum1 == 1:
+            signs[hou[0]] += 5
+        else:
+            signs[hou[0]] += 3 * sum1
+        return self.resolve_dyn(signs)
+
+    def housedyn(self):
+        magick = [0.206, 0.412, 0.6847, 0.745, 0.8727, 0.966]
+        houses = [0] * 12
+        plinh = self.plan_in_house()
+        sizes = self.sizes()
+        for i in range(11):
+            point = points[i]
+            hou = plinh[i]
+            houplus = (hou + 1) % 12
+            if hou % 3 == 0:
+                plus = 5
+            else:
+                plus = 3
+            p = self.planets[i] - self.houses[hou]
+            if p < 0:
+                p += 360
+            zone = [0] * 6
+            for j in range(6):
+                zone[j] = sizes[hou] * magick[j]
+            if p < zone[0]:
+                houses[hou] += (point + plus)
+            elif p < zone[1]:
+                houses[hou] += point
+            elif p < zone[2]:
+                houses[hou] += (point - 3)
+            elif p < zone[3]:
+                houses[hou] += (point - 3)
+                houses[houplus] += (point - 3)
+            elif p < zone[4]:
+                houses[hou] += point
+                houses[houplus] += point
+            elif p < zone[5]:
+                if houplus % 3 == 0:
+                    plus = 5
+                else:
+                    plus = 3
+                houses[hou] += (point + plus)
+                houses[houplus] += (point + plus)
+            else:
+                if houplus % 3 == 0:
+                    plus = 5
+                else:
+                    plus = 3
+                houses[houplus] += (point + plus)
+        return self.resolve_dyn(houses)
+
+    def resolve_dyn(self, dinary):
+        elem = {'fire': 0, 'earth': 0, 'air': 0, 'water': 0}
+        cross = {'card': 0, 'fix': 0, 'mut': 0}
+        for i in range(len(self.houses)):
+            if i % 4 == 3:
+                elem['water'] += dinary[i]
+            elif i % 4 == 0:
+                elem['fire'] += dinary[i]
+            elif i % 4 == 1:
+                elem['earth'] += dinary[i]
+            elif i % 4 == 2:
+                elem['air'] += dinary[i]
+            if i % 3 == 2:
+                cross['mut'] += dinary[i]
+            elif i % 3 == 0:
+                cross['card'] += dinary[i]
+            elif i % 3 == 1:
+                cross['fix'] += dinary[i]
+        return {'elem': elem, 'cross': cross}
+
+    def dyncalc_stress(self):
+        ds = self.signdyn()
+        dh = self.housedyn()
+        tots = ds['cross']['card'] + ds['cross']['fix'] + ds['cross']['mut']
+        toth = dh['cross']['card'] + dh['cross']['fix'] + dh['cross']['mut']
+        return toth - tots
+
+    def dyncalc_list(self):
+        ds = self.signdyn()
+        dh = self.housedyn()
+        tots = ds['cross']['card'] + ds['cross']['fix'] + ds['cross']['mut']
+        toth = dh['cross']['card'] + dh['cross']['fix'] + dh['cross']['mut']
+        cr = ds['cross']; el = ds['elem']
+        srow = (tots, cr['card'], cr['fix'], cr['mut'],
+                el['fire'], el['earth'], el['air'], el['water'])
+        cr = dh['cross']; el = dh['elem']
+        hrow = (toth, cr['card'], cr['fix'], cr['mut'],
+                el['fire'], el['earth'], el['air'], el['water'])
+        # legacy: zip(hrow,srow) then reduce(lambda x,y:x-y, pair) -> h-s per col
+        dif = [h - s for h, s in zip(hrow, srow)]
+        srow = [str(s) for s in srow]
+        hrow = [str(s) for s in hrow]
+        dif = [str(s) for s in dif]
+        return srow, hrow, dif
+
+    def dynstar_signs(self):
+        return self._dynstar(self.signdyn())
+
+    def dynstar_houses(self):
+        return self._dynstar(self.housedyn())
+
+    def _dynstar(self, d):
+        el = d['elem']
+        cr = d['cross']
+        return [
+            cr['card'] + el['fire'],   cr['fix'] + el['earth'],
+            cr['mut'] + el['air'],     cr['card'] + el['water'],
+            cr['fix'] + el['fire'],    cr['mut'] + el['earth'],
+            cr['card'] + el['air'],    cr['fix'] + el['water'],
+            cr['mut'] + el['fire'],    cr['card'] + el['earth'],
+            cr['fix'] + el['air'],     cr['mut'] + el['water'],
+        ]
+
+    def dyn_span_diff(self):
+        ds = self.signdyn()
+        dh = self.housedyn()
+        scr = ds['cross']; sel = ds['elem']
+        hcr = dh['cross']; hel = dh['elem']
+        keys = [('card', 'fire'), ('fix', 'earth'), ('mut', 'air'),
+                ('card', 'water'), ('fix', 'fire'), ('mut', 'earth'),
+                ('card', 'air'), ('fix', 'water'), ('mut', 'fire'),
+                ('card', 'earth'), ('fix', 'air'), ('mut', 'water')]
+        return [(hcr[c] + hel[e]) - (scr[c] + sel[e]) for c, e in keys]
+
+    def plan_conflicts(self):
+        pl = []
+        for i, p in enumerate(self.house_plan_long()):
+            pl.append({'degree': p, 'ix': i, 'conflict': None})
+        pl = sorted(pl, key=lambda d: d['degree'])
+        for i in range(len(pl)):
+            dif = pl[(i + 1) % 11]["degree"] - pl[i]["degree"]
+            if dif < 0:
+                dif += 360.0
+            if dif <= 6.5:
+                pl[i]["conflict"] = pl[(i + 1) % 11]["conflict"] = True
+        return pl
+
+    def cuad_plan(self):
+        pl = self.plan_conflicts()
+        low = 30 - 30 * PHI
+        ii = []
+        try:
+            while pl[-1]['degree'] > (330 - low):
+                ii.insert(0, pl.pop())
+        except IndexError:
+            pass
+        ind = []
+        try:
+            while pl[-1]['degree'] > (240 - low):
+                ind.insert(0, pl.pop())
+        except IndexError:
+            pass
+        you = []
+        try:
+            while pl[-1]['degree'] > (150 - low):
+                you.insert(0, pl.pop())
+        except IndexError:
+            pass
+        col = []
+        try:
+            while pl[-1]['degree'] > (60 - low):
+                col.insert(0, pl.pop())
+        except IndexError:
+            pass
+        ii = ii + pl
+        return (ind, you, col, ii)
+
+    def which_all_houses(self):
+        hh = []
+        sz = self.sizes()
+        for h in range(len(self.houses)):
+            d = self.houses[h]
+            g = sz[h] * PHI
+            l = d + g
+            i = d + sz[h] - g
+            d = self.which_sign(d)
+            l = self.which_sign(l)
+            i = self.which_sign(i)
+            hh.append((d, i, l))
+        return hh
+
+    def which_all_signs(self):
+        return [self.which_sign(p) for p in self.planets]
+
+    def rays_calc(self):
+        pertab = [1, 4, 6, 5, 2]
+        minortab = [6, 7, 5, 4]
+        mayortab = [1, 3, 2]
+        asc = self.houses[0]
+        mc = self.houses[9]
+        lim1 = asc - int(asc / 30) * 30
+        lim2 = mc - int(mc / 30) * 30
+        pasc = int(asc / 30) % 3
+        pmc = int(mc / 30) % 3
+        if lim1 > 29.0 or lim1 < 1.0 or lim2 > 29.0 or lim2 < 1.0:
+            rpers = 7
+        else:
+            rpers = pasc + pmc
+            if rpers == 2 and pasc == pmc:
+                rpers = 3
+            else:
+                rpers = pertab[rpers]
+        rays = [rpers]
+        asc = int(asc / 30) % 12
+        mc = int(mc / 30) % 12
+        for i in [0, 1, 6, 7, 8, 9]:
+            pl = int(self.planets[i] / 30) % 12
+            if pl == asc or (pl + 6) % 12 == asc or pl == mc or (pl + 6) % 12 == mc:
+                rays.append(mayortab[pl % 3])
+            else:
+                rays.append(minortab[pl % 4])
+        nd = int(self.planets[10] / 30) % 12
+        rays.append(mayortab[nd % 3])
+        return rays
+
+    def calc_cross_points(self, cross=None):
+        sizes = self.sizes()
+        hasc = self.houses[0]
+        nnode = self.planets[10]
+        h = 0
+        hn = self.which_house(nnode)
+        while hn > h:
+            if hn - h == 1 and hn < self.which_house((nnode - 30) % 360):
+                break
+            if h == 0 and hn == 1:
+                break
+            h = (h + 1) % 12
+            hasc = self.houses[h]
+            nnode = (nnode - 30) % 360
+            hn = self.which_house(nnode)
+        dist = nnode - hasc
+        if dist < 0:
+            if dist < -30:  # aries pisces
+                dist += 360
+            else:
+                h = (h - 1) % 12  # cp in prev h.
+        else:
+            if h > hn:
+                dist -= 360
+                h = (h - 1) % 12  # cp in prev h.
+        va = sizes[h] / 6
+        vn = 5.0
+        la = dist * va / (va + vn)
+        if not cross:
+            return (hasc + la) % 360
+        r = {}
+        r['cp1'] = self.which_sign((hasc + la) % 360)
+        r['cp2'] = self.which_sign((hasc + la + 180) % 360)
+        h += [0, 1][la < 0]
+        r['dat1'] = self.cp_time_lapsus(h, la)
+        r['dat2'] = self.cp_time_lapsus((h + 6) % 12, la)
+        return r
+
+    def cp_time_lapsus(self, h, off):
+        """Date of the cross-point in house h at angular offset ``off``.
+
+        Ported from legacy chart.py. Uses house_time_lapsus (in age_point) and
+        self.date (ISO string) for the natal year.
+        """
+        from .age_point import house_time_lapsus
+        from datetime import datetime
+        date, _ = parsestrtime(self.date)
+        d_str, m_str, y_str = date.split("/")
+        birth_dt = datetime(int(y_str), int(m_str), int(d_str))
+        t = house_time_lapsus(birth_dt, h)
+        off = off / self.sizes()[h]
+        days = t["lapsus"].days * off
+        d = t["begin"] + timedelta(days)
+        return "%s.%s.%s" % (str(d.day).rjust(2, '0'),
+                             str(d.month).rjust(2, '0'),
+                             str(d.year))
