@@ -5,7 +5,33 @@ _In memory of José Antonio Rodríguez (1960–2022), creator of Astro-Nex — m
 All notable changes to this project are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] — Phase 2B: Calculation engine
+## [Unreleased] — Phase 2C-core: Rendering core
+
+Ports the chart-drawing layer to Python 3 / pycairo using the project's
+function-pure renderer pattern (not the legacy mixin/chartob hierarchy). The
+calc half is golden-verified (exact vs the original); the render half is
+smoke-tested + visually checked. **333 tests passing.**
+
+### Added
+- **`core/chart.py` dynamics**: signdyn, housedyn, resolve_dyn, dyncalc_list,
+  dynstar_signs/houses, dyn_span_diff, plan_conflicts, cuad_plan,
+  which_all_houses/signs, rays_calc, calc_cross_points, cp_time_lapsus —
+  verified EXACT vs the legacy golden (`tests/golden/dynamics.json`).
+- **`render/aspects.py`**: the 5 Huber aspect visual shapes (Fusus, Conjunctio,
+  Unilateral, Goodwill, AgePoint) — pure cairo, zero boss coupling.
+- **`render/wheel.py`**: `draw_wheel(cr, chart, kind, size)` supporting 7 chart
+  kinds (radix, soul, house, dharma, nodal, ur_nodal, local); `draw_radix`
+  kept as alias.
+- **`render/datasheets.py`**: radix data sheet (planet table, 12×12 aspect
+  matrix, dynamics table, Huber rays).
+- **`render/diagrams.py`**: composite dynamics view (signs, houses, energy,
+  differences, bars).
+
+### Deferred
+- biograph/planetogram (#22), paarwabe synastry (#21), interactive quadrant
+  diagrams (dyn_cuad), datasheet house/nodal variants.
+
+## [Superseded] — Phase 2B: Calculation engine
 
 Ports the directional techniques, the chart-type transforms, and the NeXDate
 surface needed to close the cycle with `Current`. All verified test-first

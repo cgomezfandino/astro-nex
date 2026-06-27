@@ -3,7 +3,7 @@
 > **Lee esto al iniciar cada sesión.** Captura el estado y el siguiente paso.
 > Metodología detallada en `docs/WORKING-STYLE.md`.
 >
-> Última actualización: 2026-06-27 (tras cerrar Phase 2B completa, 252 tests).
+> Última actualización: 2026-06-27 (Phase 2C-core render completa, 333 tests).
 
 ## Estado actual (verificado con evidencia)
 
@@ -11,8 +11,11 @@
 |---|---|---|
 | Phase 1 (slice Py3/GTK3) | ✅ DONE | v0.1.0 |
 | Phase 2A — Cimientos de datos | ✅ DONE, mergeado | milestone #4 closed |
-| **Phase 2B — Motor de cálculo** | ✅ **DONE, mergeado, QA verde, 252 tests** | milestone #5 (cerrar) |
-| Phase 2C–2E | ⏳ **SIGUIENTE** | milestones #6, #7, #2 |
+| Phase 2B — Motor de cálculo | ✅ DONE, mergeado, 252 tests | milestone #5 closed |
+| **Phase 2C-core — Render core** | ✅ **DONE, mergeado, QA verde, 333 tests** | milestone #6 (2C-core parcial) |
+| Phase 2C-advanced (biograph/planetogram) | ⏳ Pendiente | #22 |
+| Phase 2C-synastry (paarwabe) | ⏳ Pendiente | #21 |
+| Phase 2D–2E | ⏳ Pendientes | milestones #7, #2 |
 
 - **`main`**: sincronizada con `origin/main`, working tree limpio, sin ramas colgadas.
 - **Tests**: **252 pasando** (baseline 2A era 125 → +127 en 2B).
@@ -57,22 +60,33 @@ con review subagent aprobado por cada uno.
 - `calc_agep(local=True)` (relocated-houses).
 - `calc_plan_with_retrogression`, `chiron_calc`, `vulcan_calc`, dynamics.
 
-## ━━ SIGUIENTE PASO: Phase 2C (render) ━━
+## ━━ Phase 2C-core cerrada — qué se hizo ━━
 
-El motor de cálculo está completo. La siguiente fase es **2C · Render** (milestone #6):
-portar el núcleo de dibujo para que las cartas y los análisis (biograph, planetogram,
-datasheets) se rendericen. Issues:
+El render core está portado con el **patrón del port** (funciones puras en
+`render/`, NO la jerarquía mixin/chartob del legacy). Verificado con smoke +
+comparación visual humana (no golden — es trabajo visual).
 
-| Issue | Qué | LOC |
+| Tarea | Qué | Detalle |
 |---|---|---|
-| #19 | coredraw.py + aspects.py + dispatcher.py | 804+404+953 |
-| #20 | datasheets.py + diagrams.py + roundedcharts.py | 705+962+771 |
-| #21 | paarwabe.py (sistema de ondas/parejas Huber) | 3.296 (pieza central) |
-| #22 | biograph.py + planetogram.py + profchart.py + progsheet.py | 1.205+1.115+388+213 |
+| **Dynamics** (calc) | signdyn, housedyn, dyncalc_list, dynstar_*, cuad_plan, rays_calc, calc_cross_points | Golden-exact (5 datasets). Desbloquea datasheets/diagrams. |
+| **Aspect geometry** | 5 formas Huber (Fusus, Conjunctio, Unilateral, Goodwill, AgePoint) | 0 acoplamiento boss. `render/aspects.py`. |
+| **Wheel multi-tipo** | draw_wheel (radix/soul/house/dharma/nodal/ur_nodal/local) | `render/wheel.py` extendido; draw_radix = alias. |
+| **Datasheets** | tabla planetas + matriz aspectos 12×12 + dynamics + rays | `render/datasheets.py`. |
+| **Diagrams** | composite dynamics (signs/houses/energy/differences/bars) | `render/diagrams.py`. |
 
-**Cómo empezar 2C**: brainstorming del issue #19 (núcleo de dibujo) — el render ya
-tiene un slice funcionando (`render/wheel.py` + `surfaces/png.py`, validado con PNGs
-en 2B), pero falta el dispatcher/aspects completo y los diagramas.
+### Lo que queda de 2C (no bloquea)
+
+| Issue | Qué | Por qué diferido |
+|---|---|---|
+| #22 | biograph + planetogram + profchart + progsheet | Análisis avanzado; alta deuda calc (calc_pe_houses, plagram_*analysis). |
+| #21 | paarwabe (3.296 LOC) | Sinastria/parejas — subsistema distinto; depende de jerarquía chartob dual. |
+| parcial | dyn_cuad/dyn_cuad2 (quadrant interactivo), datasheets house/nodal variants | Click-chart / variants menores. |
+
+## ━━ SIGUIENTE PASO: Phase 2D (GUI) ━━
+
+El cálculo Y el render core están completos. La siguiente fase es **2D · GUI**
+(milestone #7): portar la ventana GTK3, paneles y diálogos que consumen el
+`core/` + `render/` ya portados. Issues #23-#31.
 
 ## Dependencias a recordar
 - `core/` está **completo y testeado** (config, state, chart, directions, age_point,
