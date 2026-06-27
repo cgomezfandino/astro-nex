@@ -8,3 +8,4 @@ build/
 *.png
 *.pdf
 !tests/golden/*
+.worktrees/
