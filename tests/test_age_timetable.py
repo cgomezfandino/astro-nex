@@ -34,7 +34,8 @@ def test_pl_midpoints(c):
         assert g["sign"] == ref["sign"]
         assert g["house"] == ref["house"]
         assert g["name"] == ref["name"]
-        assert g["pair"] == ref["pair"]  # kept for structure parity w/ legacy
+        # golden serializes the legacy tuple as a JSON list; port keeps a tuple
+        assert list(g["pair"]) == ref["pair"]
 
 
 @pytest.mark.parametrize("c", GOLDEN, ids=lambda c: c["name"])
