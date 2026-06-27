@@ -4,11 +4,13 @@ NeXDate: local datetime → UT conversion for ephemeris calculations.
 
 Ported from legacy Python 2 / pytz implementation to Python 3 / zoneinfo.
 
-Intentionally deferred to a later milestone:
-  - tz_sup historical-DST patching (oldtimes transition-time patching) -- issue #5:
-    under zoneinfo + the system tz database, named zones already resolve LMT
-    offsets correctly, so the legacy longitude-based FixedOffset branch is not
-    needed for the standard path.
+Note on issue #5 (historical / pre-standard-time DST): the legacy ``tz_sup.py``
+patched pytz internals for pre-standard births and fell back to a longitude-
+based LMT offset. Under zoneinfo + the system tz database this is unnecessary --
+every populated zone carries an LMT entry, so pre-standard births resolve to a
+correct LMT offset natively (verified vs the legacy formula in
+tests/test_tz_sup_historical.py). ``FixedOffset`` remains available in
+``timezones.py`` for any explicit longitude-LMT use.
 """
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
