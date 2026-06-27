@@ -133,3 +133,66 @@ class TestPersonInfo:
         # The next instance sees the incremented counter
         q = PersonInfo()
         assert q.first == "sin_nombre2"
+
+
+# ---------------------------------------------------------------------------
+# Current
+# ---------------------------------------------------------------------------
+from astronex.core.state import Current
+from astronex.core.chart import Chart
+
+
+@pytest.fixture
+def current(tmp_path):
+    """A fresh Current with an ephemeral home dir (resets the singleton)."""
+    Current._reset_singleton()
+    c = Current(homedir=str(tmp_path))
+    yield c
+    Current._reset_singleton()
+
+
+class TestCurrent:
+    def test_is_singleton(self, tmp_path):
+        Current._reset_singleton()
+        a = Current(homedir=str(tmp_path))
+        b = Current()
+        assert a is b
+        Current._reset_singleton()
+
+    def test_init_defaults(self, current):
+        assert current.epheflag == 4
+        assert current.country == ''
+        assert current.opmode == 'simple'
+        assert current.curr_op == 'draw_nat'
+        assert current.opleft == 'draw_nat'
+        assert current.opright == 'draw_house'
+
+    def test_has_four_charts(self, current):
+        for key in ('master', 'click', 'now', 'calc'):
+            assert key in current.charts
+            assert isinstance(current.charts[key], Chart)
+
+    def test_has_locality(self, current):
+        assert hasattr(current, 'loc')
+
+    def test_curr_list_is_opdouble(self, current):
+        assert list(current.curr_list) == list(opdouble)
+
+    def test_is_valid_false_for_empty(self, current):
+        # master chart has no date/city -> invalid
+        assert current.is_valid('master') is False
+
+    def test_set_op(self, current):
+        current.set_op('draw_nod')
+        assert current.curr_op == 'draw_nod'
+
+    def test_set_list(self, current):
+        current.set_list('data')
+        assert current.curr_list is datlist
+
+    def test_newchart_returns_chart(self, current):
+        ch = current.newchart()
+        assert isinstance(ch, Chart)
+
+    def test_pool_starts_empty(self, current):
+        assert len(current.pool) == 0
