@@ -72,8 +72,11 @@ def age_point_longitude(houses, birth_dt, now_dt, cycles, kind="radix",
             found = True
             break
     if not found:
-        # now overruns all 12 houses of this cycle (shouldn't happen if cycles
-        # is consistent with now_dt) -- match the legacy fallback to house 0.
+        # now overruns all 12 houses of this cycle. In normal use cycles is
+        # derived from now_dt (every legacy call site does this), so now always
+        # lands inside the cycle and this branch is unreachable. The legacy's
+        # for/else left `t` as house 11's lapsus while setting wh=0 (a latent
+        # bug -- inconsistent); we rebind t to house 0 to keep wh and t in sync.
         t = house_time_lapsus(birth_dt, 0, cycles=cycles)
         wh = 0
 
@@ -96,8 +99,8 @@ def age_point_longitude(houses, birth_dt, now_dt, cycles, kind="radix",
 def _sizes(houses):
     """Angular sizes of the first 6 houses (Koch), replicated to 12.
 
-    Ported verbatim from legacy Chart.sizes (the pointer only needs sizes of
-    the house it lands in, but the legacy computes all 12 this way).
+    Duplicated from Chart.sizes BY DESIGN: age_point is decoupled from Chart
+    (pure functions, no Chart import), mirroring the directions.py pattern.
     """
     hs = houses[0:7]
     sizes = [0] * 6
