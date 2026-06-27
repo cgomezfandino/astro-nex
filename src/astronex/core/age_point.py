@@ -18,6 +18,23 @@ against the legacy golden (tests/golden/age_point.json).
 Pure functions: explicit inputs -> data outputs. No boss, no GUI, no Chart.
 """
 from datetime import datetime, timedelta
+from functools import cmp_to_key
+
+from .constants import zodnames, aspnames, planames
+
+# Golden ratio (Huber low-points Pr/Pi). Ported from legacy chart.py:11.
+PHI = 1 / ((1 + 5 ** 0.5) / 2)
+
+
+def _evcmp(a, b):
+    """Event comparison by scusp (legacy chart.py:1340). Used to sort each
+    house's events chronologically. Both Py2 and Py3 sorts are stable, so
+    equal-scusp events keep insertion order -- hence the append order in
+    calc_agep MUST mirror the legacy to reproduce tie-breaks."""
+    ac, bc = a["scusp"], b["scusp"]
+    if ac == bc:
+        return 0
+    return -1 if ac < bc else 1
 
 
 def get_cycles(birth_year, now_year):
@@ -110,3 +127,129 @@ def _sizes(houses):
             s += 360
         sizes[i] = s
     return sizes * 2
+
+
+# --- 72-year event timetable (calc_agep family) ---
+# Pure functions, decoupled from Chart. ``plan`` is a sorted list of
+# {degree, ix} dicts (built by the caller, mirroring legacy sortplan).
+
+def house_degree(houses):
+    """Within-sign degree of each house cusp (legacy Chart.house_degree)."""
+    degs = []
+    for h in houses:
+        sign = int(h / 30)
+        degs.append(h - sign * 30)
+    return degs
+
+
+def pl_midpoints(houses, plan):
+    """Consecutive-planet midpoints located in their natal house.
+
+    ``plan`` is sorted by degree. Returns [{degree, sign, house, name, pair}].
+    Ported verbatim from legacy Chart.pl_midpoints.
+    """
+    all_midpoints = []
+    for i in range(len(plan)):
+        midpoint = plan[(i + 1) % 11]["degree"] - plan[i]["degree"]
+        if midpoint < 0:
+            midpoint += 360
+        midpoint = plan[i]["degree"] + midpoint / 2
+        if midpoint > 360:
+            midpoint -= 360
+        name = planames[plan[i]["ix"]] + "/" + planames[plan[(i + 1) % 11]["ix"]]
+        pair = (plan[i]["ix"], plan[(i + 1) % 11]["ix"])
+        for j in range(len(houses)):
+            h1 = houses[j]
+            h2 = houses[(j + 1) % 12]
+            if h1 > h2:
+                if midpoint < h1 and midpoint < h2:
+                    midpoint += 360
+                h2 += 360
+            if midpoint > h1 and midpoint < h2:
+                sign = int(midpoint / 30)
+                midpoint = midpoint - 30 * int(midpoint / 30)
+                all_midpoints.append({
+                    "degree": midpoint, "sign": sign,
+                    "house": j, "name": name, "pair": pair})
+                break
+    return all_midpoints
+
+
+def calc_agep(houses, birth_dt, plan):
+    """Full 72-year Age Point event timetable (radix variant).
+
+    For each of 12 houses (6 years each), produces an ordered list of events
+    in chronological order: house entry (Cc N), sign cusps, planet aspects,
+    midpoints, and the Huber Pr/Pi low-points (golden-ratio split).
+
+    Returns [{day, mon, year, lab, cl}] with zero-padded string fields, matching
+    the legacy format. The order is the legacy's exact sort order (stable on
+    equal scusp via insertion order), verified against the golden.
+    """
+    degs = house_degree(houses)
+    sizes = _sizes(houses)
+    mids = pl_midpoints(houses, plan)
+    age_prog = []
+
+    for i in range(12):
+        events = []
+        time_obj = house_time_lapsus(birth_dt, i)
+        d = time_obj["begin"]
+        day = str(d.day).rjust(2, "0")
+        month = str(d.month).rjust(2, "0")
+        year = d.year
+        age_prog.append({
+            "day": day, "mon": month, "year": year,
+            "lab": "Cc %s" % str(i + 1), "cl": "txt_cp"})
+        house = houses[i]
+        s = 0
+        scusp = 30.0 - degs[i]
+        sign = int(house / 30)
+        while scusp < sizes[i]:
+            events.append({
+                "scusp": scusp,
+                "sname": zodnames[(sign + 1 + s) % 12],
+                "cl": "sign"})
+            s += 1
+            scusp += s * 30
+
+        for m in mids:
+            dif = abs(sign - m["sign"])
+            lg = m["degree"] + 30 * dif - degs[i]
+            if lg < 0:
+                lg += 30
+            if m["house"] == i:
+                events.append({"scusp": lg, "sname": m["name"], "cl": "mid"})
+
+        for p in plan:
+            pl_lg = p["degree"]
+            pl_sign = int(pl_lg / 30)
+            pl_lg = pl_lg - 30 * pl_sign
+            lg = pl_lg - degs[i]
+            if lg < 0:
+                lg += 30
+            c = 0
+            while lg + 30 * c < sizes[i]:
+                aspsign = int((house + lg + 30 * c) / 30) % 12
+                realasp = abs(pl_sign - aspsign)
+                label = aspnames[realasp] + "/" + planames[p["ix"]]
+                events.append({"scusp": lg + 30 * c, "sname": label, "cl": "asp"})
+                c += 1
+
+        pr = sizes[i] * PHI
+        pi = sizes[i] - pr
+        events.append({"scusp": pr, "sname": "Pr %s" % str(i + 1), "cl": "pr"})
+        events.append({"scusp": pi, "sname": "Pi %s" % str(i + 1), "cl": "pi"})
+        events.sort(key=cmp_to_key(_evcmp))
+        for e in events:
+            fac = e["scusp"] / sizes[i]
+            days = time_obj["lapsus"].days * fac
+            dat = time_obj["begin"] + timedelta(days)
+            hday = str(dat.day).rjust(2, "0")
+            hmonth = str(dat.month).rjust(2, "0")
+            hyear = dat.year
+            age_prog.append({
+                "day": hday, "mon": hmonth, "year": hyear,
+                "lab": e["sname"], "cl": e["cl"]})
+
+    return age_prog
