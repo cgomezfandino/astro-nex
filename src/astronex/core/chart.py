@@ -7,21 +7,24 @@ the GTK ``boss``/config layer, on ``self.date``/``pytz`` machinery, or on the
 age-point milestone is intentionally NOT ported.
 
 DEFERRED (out of scope for this slice; see legacy chart.py):
-- calc_localhouses          (uses boss.get_state())
+- calc_localhouses          (uses boss.get_state())  -- Tier B (issue #18)
 - calc_plan_with_retrogression (uses self.date/self.zone/pytz)
 - calc_aspects              (bi-wheel/click variant)
 - chiron_calc, vulcan_calc
 - All age-point machinery: calc_agep, calc_nodal_agep, calc_house_agep,
   calc_house_nodal_agep, pl_midpoints, nodal_pl_midpoints, house_time_lapsus,
   house_degree, birthday_frac, cp_time_lapsus, when_angle, when_angle_nodal,
-  which_degree_today*, calc_cross_points, calc_pe_houses, nodal_cusp_degrees,
-  which_house_today, get_cycles, evcmp.
+  which_degree_today*, calc_cross_points, calc_pe_houses, which_house_today,
+  get_cycles, evcmp.  (issue #17)
 - All "dynamics" methods: signdyn, housedyn, resolve_dyn, dyncalc_*,
   dynstar_*, dyn_span_diff.
-- Draw-house / sign / nodal helpers and force/ray/data-sheet methods not in
-  the radix subset (sign_sizes, house_sign_long, sign_in_house, nod_*,
-  invert_*, rays_calc, *_force, plagram_*, etc.).
-The age point is the next milestone and is deliberately left for then.
+- Force/ray/data-sheet methods (rays_calc, *_force, plagram_*).
+
+Ported Tier-A pure transforms (nod_plan_long, nod_sign_long, nodal_cusp_degrees,
+house_sign_long, sign_sizes, sign_in_house, invert_house_plan,
+invert_house_sign, which_house_nodal) -- verified exact (1e-9) vs the legacy
+golden (tests/golden/chart_types.json).
+The age point is a later milestone and is deliberately left for then.
 """
 
 from . import ephemeris
@@ -206,4 +209,122 @@ class Chart(object):
                 h2 += 360
             if point > h1 and point <= h2:
                 return i
+        return None
+
+    # --- Tier A chart-type pure transforms (ported verbatim from legacy) ---
+    # These read only self.planets / self.houses (no ephemeris call of their
+    # own), so they verify EXACT (1e-9) against the legacy golden.
+
+    def nod_plan_long(self):
+        """Nodal chart planet longitudes (node <-> asc swap, reversed houses)."""
+        factor = [s / 30 for s in self.sizes()]
+        plan = self.planets[:]
+        asc = self.houses[0]
+        plan[10], asc = asc, plan[10]
+        ndpl = []
+        for p in plan:
+            dist = 360 - (p - asc) % 360
+            h, d = divmod(dist, 30)
+            h = int(h)
+            ndpl.append(self.houses[h] + d * factor[h])
+        return ndpl
+
+    def nod_sign_long(self):
+        """Nodal chart sign (house-cusp) longitudes."""
+        nod = self.planets[10]
+        asc = self.houses[0]
+        factor = [s / 30 for s in self.sizes()]
+        sign, deg = divmod(nod, 30)
+        hssg = []
+        for i in range(12):
+            res = self.houses[i] + deg * factor[i]
+            hssg.append(res - asc)
+        return hssg
+
+    def nodal_cusp_degrees(self):
+        """Equal 30-degree nodal cusps counted backwards from the node."""
+        nodasc = self.planets[10]
+        hn = []
+        for i in range(12):
+            c = nodasc - 30 * i
+            if c < 0:
+                c += 360.0
+            hn.append(c)
+        return hn
+
+    def house_sign_long(self):
+        """Sign (zodiac) longitudes repositioned onto the unequal-house wheel."""
+        signinh = self.sign_in_house()
+        factor = [30 / s for s in self.sizes()]
+        hssg = []
+        for i in range(12):
+            h = signinh[i]
+            dist = (i * 30 - self.houses[h]) % 360
+            res = h * 30 + dist * factor[h]
+            hssg.append(res)
+        return hssg
+
+    def sign_in_house(self):
+        """For each zodiac sign cusp (0,30,...,330), which house it falls in."""
+        signinh = []
+        for i in range(12):
+            sign = 30 * i
+            for j in range(len(self.houses)):
+                h1 = self.houses[j]
+                h2 = self.houses[(j + 1) % 12]
+                if h1 > h2:
+                    if sign < h1 and sign < h2:
+                        sign += 360
+                    h2 += 360
+                if sign > h1 and sign < h2:
+                    signinh.append(j)
+                    break
+        return signinh
+
+    def sign_sizes(self):
+        """Angular size of each sign on the unequal-house wheel."""
+        ss = self.house_sign_long()
+        sizes = [0] * 12
+        for i in range(len(ss)):
+            s = ss[(i + 1) % 12] - ss[i]
+            if s < 0:
+                s += 360
+            sizes[i] = s
+        return sizes
+
+    def invert_house_plan(self, hspl):
+        """Inverse of house_plan_long: equal-house longitudes back to radix."""
+        factor = [s / 30 for s in self.sizes()]
+        ipl = [0] * 11
+        for i, hp in enumerate(hspl):
+            h, deg = divmod(hp, 30)
+            ipl[i] = self.houses[int(h)] + deg * factor[int(h)]
+        return ipl
+
+    def invert_house_sign(self, hssg):
+        """Inverse of house_sign_long."""
+        factor = [s / 30 for s in self.sizes()]
+        isg = [0] * 12
+        for i, hp in enumerate(hssg):
+            h, deg = divmod(hp, 30)
+            isg[i] = self.houses[int(h)] + deg * factor[int(h)]
+        return isg
+
+    def which_house_nodal(self, p):
+        """House index in the nodal (equal-30, node-based) wheel.
+
+        Returns (11 - i) -- inverted numbering. May return None if the point
+        falls exactly on a cusp boundary (matches legacy behaviour).
+        """
+        point = p
+        house = self.planets[10]
+        for i in range(12):
+            h1 = (house + 30.0 * i) % 360.0
+            h2 = (house + 30 * (i + 1)) % 360.0
+            if h1 > h2:  # piscis - aries
+                if point < h1 and point < h2:
+                    point += 360
+                h2 += 360
+            if point > h1 and point <= h2:
+                return (11 - i)
         return None
