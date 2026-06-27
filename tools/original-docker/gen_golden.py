@@ -98,11 +98,66 @@ def dump_directions(ds):
     return out
 
 
+def dump_chart_types(ds):
+    """Run the ORIGINAL legacy Tier-A chart-type methods (pure transforms of
+    planets/houses) via a minimal Chart stub; capture outputs.
+
+    These methods read only self.planets / self.houses (no boss, no ephemeris
+    call of their own), so the golden verifies EXACT arithmetic parity (no
+    engine-tolerance needed). Golden fields per dataset:
+      nod_plan[11], nod_sign[12], nodal_cusps[12],
+      house_sign_long[12], sign_sizes[12], sign_in_house[12],
+      invert_house_plan[11] (inverse of house_plan_long),
+      invert_house_sign[12] (inverse of house_sign_long),
+      which_house_nodal samples[11]  (per-planet nodal house lookup)
+    """
+    import chart as legacy_chart
+
+    class _StubChart(legacy_chart.Chart):
+        # bypass __init__ (which does not read boss); set planets/houses directly
+        def __init__(self, planets, houses):
+            self.planets = list(planets)
+            self.houses = list(houses)
+
+    out = []
+    for c in ds:
+        jd = pysw.julday(c["y"], c["m"], c["d"], c["h"])
+        planets = pysw.planets(jd, EPHEFLAG)
+        houses = list(pysw.houses(jd, c["lat"], c["lon"]))
+        ch = _StubChart(planets, houses)
+
+        nod_plan = ch.nod_plan_long()
+        nod_sign = ch.nod_sign_long()
+        nodal_cusps = ch.nodal_cusp_degrees()
+        house_sign = ch.house_sign_long()
+        sign_sz = ch.sign_sizes()
+        sign_in_h = ch.sign_in_house()
+        hpl = ch.house_plan_long()
+        invert_hp = ch.invert_house_plan(hpl)
+        invert_hs = ch.invert_house_sign(house_sign)
+        whn = [ch.which_house_nodal(p) for p in planets]
+
+        out.append({
+            "name": c["name"],
+            "planets": planets, "houses": houses,
+            "nod_plan": nod_plan, "nod_sign": nod_sign,
+            "nodal_cusps": nodal_cusps,
+            "house_sign_long": house_sign, "sign_sizes": sign_sz,
+            "sign_in_house": sign_in_h,
+            "invert_house_plan": invert_hp,
+            "invert_house_sign": invert_hs,
+            "which_house_nodal": whn,
+        })
+    return out
+
+
 if __name__ == "__main__":
     ds = json.load(open(sys.argv[1]))
     mode = sys.argv[3] if len(sys.argv) > 3 else "ephemeris"
     if mode == "directions":
         result = dump_directions(ds)
+    elif mode == "chart_types":
+        result = dump_chart_types(ds)
     else:
         result = dump(ds)
     json.dump(result, open(sys.argv[2], "w"), indent=2)
