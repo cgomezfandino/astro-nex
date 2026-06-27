@@ -18,7 +18,6 @@ set -e
 HERE="$(cd "$(dirname "$0")" && pwd)"            # .../Contents/MacOS
 CONTENTS="$(dirname "$HERE")"
 RESOURCES="$CONTENTS/Resources"
-ASTRONEX_DIR="{{ASTRONEX_DIR}}"                  # .../Contents/Resources/astronex
 
 # --- locate Homebrew prefix (arm64 or intel) ---
 if [ -x /opt/homebrew/bin/python3 ]; then
@@ -28,8 +27,10 @@ else
 fi
 PY_BIN="{{PY_BIN}}"                              # /opt/homebrew/bin/python3.14
 
-# --- point Python at the embedded astronex package ---
-export PYTHONPATH="$ASTRONEX_DIR"
+# --- point Python at the embedded astronex package.
+# PYTHONPATH is the PARENT of the astronex package dir, so `python -m astronex`
+# resolves astronex as an importable package. ---
+export PYTHONPATH="$RESOURCES"
 
 # --- isolate GTK/GI env to Homebrew (so the app finds typelibs/loaders) ---
 export GI_TYPELIB_PATH="$BREW/lib/girepository-1.0"

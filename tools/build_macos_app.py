@@ -122,7 +122,6 @@ def write_launcher(py3):
     info("writing launcher (MacOS/Astro-Nex)")
     tmpl = (TMPL / "launcher.sh.tmpl").read_text()
     text = (tmpl.replace("{{PY_BIN}}", py3)
-                .replace("{{ASTRONEX_DIR}}", "$CONTENTS/Resources/astronex")
                 .replace("{{VERSION}}", VERSION))
     launcher = MACOS_DIR / "Astro-Nex"
     launcher.write_text(text)
