@@ -9,3 +9,4 @@ build/
 *.pdf
 !tests/golden/*
 .worktrees/
+.DS_Store
