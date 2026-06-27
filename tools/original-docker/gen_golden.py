@@ -34,8 +34,19 @@ def dump_directions(ds):
     """Run the ORIGINAL legacy solar_rev/sec_prog via a boss-stub; capture outputs.
 
     Golden fields per dataset:
-      natal_sun_lon, target_year, birth_month, birth_day, zone, natal_dt_iso,
-      now_dt, jd_solrev, dt_solrev, progdt, progdt_alltimes
+      natal_sun_lon, target_year, birth_month, birth_day, zone, now_dt,
+      jd_solrev, dt_solrev, progdt, progdt_alltimes
+
+    Output format conventions (the Py3 port MUST match each exactly):
+      - natal_dt_iso, now_dt : legacy-internal form "YYYY-MM-DDTHH:MM:SS+0000UTC"
+        (what parsestrtime/strdate_to_date consume).
+      - jd_solrev            : authoritative solar-return JD (a float), re-derived
+                               from the captured UT tuple via pysw.julday. This is
+                               the value solar_rev should reproduce; not a datetime.
+      - dt_solrev            : local rendering of the return moment,
+                               "%Y-%m-%dT%H:%M:%S%z" (zone-aware, offset like +0100).
+      - progdt / progdt_alltimes : naive datetime (legacy combine_date strips tz),
+                               "%Y-%m-%d %H:%M:%S" (no zone).
     """
     from boss_stub import Boss
     import directions as legacy_dir

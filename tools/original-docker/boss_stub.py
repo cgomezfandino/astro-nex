@@ -85,10 +85,14 @@ class _State(object):
         mif = int(round((ds["h"] - ho) * 60))
         date_str = "%04d-%02d-%02dT%02d:%02d:00+0000UTC" % (y, mo, d, ho, mif)
         self.curr_chart = _Chart(date_str, planets, zone)
-        self.now = _Chart(date_str, planets, zone)
+        self.now = _Chart(date_str, planets, zone)   # sec_prog fallback; only used
+                                                      # when curr_chart.date is falsy
+                                                      # (not exercised by these datasets)
         tz = timezone(zone)
         self.date = _Date(now_dt, tz)
-        self.calcdt = _Date(now_dt, tz)   # setdt capture reused via _Date
+        # calcdt is a SEPARATE _Date so sec_prog's setdt capture is independent of
+        # solar_rev's getnewdt capture on .date (no aliasing).
+        self.calcdt = _Date(now_dt, tz)
         self._zone = zone
 
     def setprogchart(self, chart):
