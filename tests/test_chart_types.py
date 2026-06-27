@@ -86,3 +86,26 @@ def test_which_house_nodal(c):
     ch = _chart(c)
     got = [ch.which_house_nodal(p) for p in c["planets"]]
     assert got == c["which_house_nodal"]
+
+
+# --- Tier B: local houses (relocated) ---
+
+@pytest.mark.parametrize("c", GOLDEN, ids=lambda c: c["name"])
+def test_calc_localhouses(c):
+    from astronex.core.ephemeris import julday, local_houses
+    jd = julday(c["jd_y"], c["jd_m"], c["jd_d"], c["jd_h"])
+    got = list(local_houses(jd, c["lon"], c["lat"], 4))
+    for g, ref in zip(got, c["local_houses"]):
+        assert abs(g - ref) < 1e-4   # fresh ephemeris call -> engine tolerance
+
+
+# --- Tier D: profession force (output is a 3-tuple, not longitudes) ---
+
+@pytest.mark.parametrize("c", GOLDEN, ids=lambda c: c["name"])
+def test_pers_force(c):
+    got = _chart(c).pers_force()
+    sun, moon, sat = got
+    ref = c["pers_force"]
+    assert abs(sun - ref[0]) < 1e-6
+    assert abs(moon - ref[1]) < 1e-6
+    assert abs(sat - ref[2]) < 1e-6

@@ -119,6 +119,17 @@ def dump_chart_types(ds):
             self.planets = list(planets)
             self.houses = list(houses)
 
+    # The legacy module-global `orbs` is [] until boss/config populates it at
+    # runtime. Populate it with the default table (matches the port's
+    # DEFAULT_ORBS) so aspects()-dependent methods (pers_force) work headless.
+    legacy_chart.orbs = [
+        [3.0, 5.0, 6.0, 8.0, 9.0],
+        [2.0, 4.0, 5.0, 6.0, 7.0],
+        [1.5, 3.0, 4.0, 5.0, 6.0],
+        [1.0, 2.0, 3.0, 4.0, 5.0],
+        [1.0, 2.0, 2.0, 3.0, 4.0],
+    ]
+
     out = []
     for c in ds:
         jd = pysw.julday(c["y"], c["m"], c["d"], c["h"])
@@ -139,6 +150,8 @@ def dump_chart_types(ds):
 
         out.append({
             "name": c["name"],
+            "jd_y": c["y"], "jd_m": c["m"], "jd_d": c["d"], "jd_h": c["h"],
+            "lat": c["lat"], "lon": c["lon"],
             "planets": planets, "houses": houses,
             "nod_plan": nod_plan, "nod_sign": nod_sign,
             "nodal_cusps": nodal_cusps,
@@ -147,6 +160,11 @@ def dump_chart_types(ds):
             "invert_house_plan": invert_hp,
             "invert_house_sign": invert_hs,
             "which_house_nodal": whn,
+            # Tier B: local houses (relocated) -- decoupled, computed at the same
+            # jd with the dataset lat/lon via the ephemeris directly (no boss).
+            "local_houses": list(pysw.local_houses(jd, c["lon"], c["lat"], EPHEFLAG)),
+            # Tier D: profession force (output is a 3-tuple, not longitudes)
+            "pers_force": list(ch.pers_force()),
         })
     return out
 

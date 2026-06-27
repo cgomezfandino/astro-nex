@@ -328,3 +328,98 @@ class Chart(object):
             if point > h1 and point <= h2:
                 return (11 - i)
         return None
+
+    # --- Tier D: profession force (Huber professional factors) ---
+    # Output is a weighted (sun, moon, saturn) 3-tuple, not longitudes.
+    # Ported verbatim from legacy chart.py; verified exact (1e-6) vs golden.
+
+    def pers_house_force(self):
+        hspl = self.house_plan_long()
+        pl = []
+        for l in [hspl[0], hspl[1], hspl[6]]:
+            f = l - int(l)
+            p = int(l) % 30 + f
+            if p > 22.35:
+                p = 30 - p
+            pl.append(p)
+        tups = [(pl[0], "sun"), (pl[1], "moon"), (pl[2], "sat")]
+        tups.sort()
+        phforce = {}
+        for i, t in enumerate(tups):
+            phforce[t[1]] = 3 - i
+        return phforce
+
+    def pers_sign_force(self):
+        n = 30 - 30 * PHI
+        fac = n * (PHI - 1)
+        sl = self.planets[:]
+        pl = []
+        for l in [sl[0], sl[1], sl[6]]:
+            f = l - int(l)
+            p = int(l) % 30 + f
+            if p > n:
+                p = (p * PHI) - fac
+            pl.append(abs(n - p))
+        tups = [(pl[0], "sun"), (pl[1], "moon"), (pl[2], "sat")]
+        tups.sort()
+        phforce = {}
+        for i, t in enumerate(tups):
+            phforce[t[1]] = 3 - i
+        return phforce
+
+    def pers_aspects_force(self):
+        asp = self.aspects()
+        pl = [0] * 11
+        for a in asp:
+            if a["gw"]:
+                continue
+            f1 = a["f1"]
+            f2 = a["f2"]
+            if f1 > 1:
+                f1 = 0.95
+            if f2 > 1:
+                f2 = 0.95
+            f1 = 2 - 2 * f1
+            f2 = 2 - 2 * f2
+            if a["p1"] == 10 or a["p2"] == 10:
+                f1 /= 2
+                f2 /= 2
+            pl[a["p1"]] += f1
+            pl[a["p2"]] += f2
+        tups = [(pl[0], "sun"), (pl[1], "moon"), (pl[6], "sat")]
+        tups.sort()
+        phforce = {}
+        for i, t in enumerate(tups):
+            phforce[t[1]] = i + 1
+        return phforce
+
+    def pers_zone_force(self):
+        pl = self.house_plan_long()
+        sun = abs(270 - pl[0])
+        if sun > 180:
+            sun = 360 - sun
+        sat = abs(90 - pl[6])
+        if sat > 180:
+            sat = 360 - sat
+        moon = pl[1]
+        if moon > 90 and moon <= 270:
+            moon = abs(180 - moon)
+        elif moon > 270:
+            moon = 360 - moon
+        tups = [(sun, "sun"), (moon, "moon"), (sat, "sat")]
+        tups.sort()
+        phforce = {}
+        for i, t in enumerate(tups):
+            phforce[t[1]] = 3 - i
+        return phforce
+
+    def pers_force(self):
+        """Huber professional factors: weighted (sun, moon, saturn) strength."""
+        h = self.pers_house_force()
+        s = self.pers_sign_force()
+        a = self.pers_aspects_force()
+        z = self.pers_zone_force()
+        sun = h["sun"] * 1.5 + s["sun"] + a["sun"] * 0.75 + z["sun"] * 0.5
+        moon = h["moon"] * 1.5 + s["moon"] + a["moon"] * 0.75 + z["moon"] * 0.5
+        sat = h["sat"] * 1.5 + s["sat"] + a["sat"] * 0.75 + z["sat"] * 0.5
+        return (sun, moon, sat)
