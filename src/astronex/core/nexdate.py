@@ -10,7 +10,7 @@ Intentionally deferred to a later milestone:
     offsets correctly, so the legacy longitude-based FixedOffset branch is not
     needed for the standard path.
 """
-from datetime import datetime, timedelta, date, time
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 UTC = ZoneInfo("UTC")
