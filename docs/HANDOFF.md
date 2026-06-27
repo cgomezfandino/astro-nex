@@ -3,17 +3,18 @@
 > **Lee esto al iniciar cada sesión.** Captura el estado y el siguiente paso.
 > Metodología detallada en `docs/WORKING-STYLE.md`.
 >
-> Última actualización: 2026-06-27 (Phase 2D-mvp GUI usable completa, 350 tests).
+> Última actualización: 2026-06-28 (Phase 2E empaquetado .app completo, 350 tests).
 
 ## Estado actual (verificado con evidencia)
 
 | Hito | Estado | Ref |
 |---|---|---|
-| Phase 1 (slice PyPy/GTK3) | ✅ DONE | v0.1.0 |
+| Phase 1 (slice Py3/GTK3) | ✅ DONE | v0.1.0 |
 | Phase 2A — Cimientos de datos | ✅ DONE, mergeado | milestone #4 closed |
 | Phase 2B — Motor de cálculo | ✅ DONE, mergeado, 252 tests | milestone #5 closed |
 | Phase 2C-core — Render core | ✅ DONE, mergeado, 333 tests | milestone #6 (parcial) |
-| **Phase 2D-mvp — GUI usable** | ✅ **DONE, mergeado, QA verde, 350 tests** | milestone #7 (mvp) |
+| Phase 2D-mvp — GUI usable | ✅ DONE, mergeado, 350 tests | milestone #7 (mvp) |
+| **Phase 2E — .app empaquetado** | ✅ **DONE, mergeado, app arranca + relocatable** | milestone #2 (parcial) |
 | Phase 2D-advanced (diálogos) | ⏳ Pendiente | #23-#31 |
 | Phase 2E — Empaquetado .app | ⏳ Pendiente | milestone #2 |
 | **Phase 2C-core — Render core** | ✅ **DONE, mergeado, QA verde, 333 tests** | milestone #6 (2C-core parcial) |
@@ -107,14 +108,37 @@ La **GUI usable** está completa, construida SOBRE el core/render ya portados
   couples/cycles (paarwabe/biograph). Son features; el mvp da la app usable.
 - boss.Manager god-object, slot/master-click swap, ~40 keyboard accelerators.
 
-## ━━ SIGUIENTE PASO: Phase 2D-advanced o 2E (.app) ━━
+## ━━ Phase 2E cerrada — qué se hizo ━━
 
-Dos caminos:
-- **2D-advanced**: diálogos del legacy (browser DB, config, place search) — más
-  features pero no cambian el flujo principal.
-- **2E empaquetado**: `Astro-Nex.app` autocontenido (spec ya existe) — convierte
-  lo hecho en una app instalable de doble clic. Recomendado: tras 2D-mvp, el
-  empaquetado da el producto entregable.
+La app es ahora un **`.Astro-Nex.app` de doble clic** (hybrid bundle). El build
+vive en `tools/build_macos_app.py` + `tools/macos/` (aditivo, no toca src/).
+
+> `python3 tools/build_macos_app.py` → genera `dist/Astro-Nex.app` (11MB),
+> la firma ad-hoc, lanza y verifica que arranca, y comprueba relocatable.
+
+**Approach híbrido** (decidido tras topar con codesign + framework-Python en el
+approach embebido): el `.app` embebe astronex + launcher + icono + Info.plist y
+referencia el Python + GTK de Homebrew en runtime via DYLD/GI env. Robusto y
+compacto. El **bundle embebido completo** (sin dependencia de Homebrew) queda
+como objetivo de seguimiento (requiere resolver Python standalone + dylib
+rewriting + firma bottom-up de sub-bundles).
+
+Launcher: PYTHONPATH al paquete embebido, GI/GDK/XDG a Homebrew, lockfile
+instancia única, auto-diagnóstico en fallo (`~/Library/Logs/Astro-Nex/app.log`
++ diálogo osascript).
+
+Verificado: build idempotente, app arranca y se mantiene viva, relocatable
+(abre desde /tmp), no-regresión (350 tests).
+
+## ━━ SIGUIENTE PASO ━━
+
+El producto entregable está completo (app de doble clic funcional). Opciones:
+- **2E-followup**: bundle embebido completo (sin Homebrew) + `.dmg` instalable
+  + firma Developer ID/notarización (~99 USD/año Apple).
+- **2D-advanced**: diálogos del legacy (browser DB, config, place search,
+  couples/cycles = paarwabe/biograph).
+- **2C-advanced**: biograph/planetogram (#22), paarwabe sinastria (#21).
+- **Phase 3**: integración con Astro Soul Center (envolver core/ en API).
 
 ## Dependencias a recordar
 - `core/` está **completo y testeado** (config, state, chart, directions, age_point,
