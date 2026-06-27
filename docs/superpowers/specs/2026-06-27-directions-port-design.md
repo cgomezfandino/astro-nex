@@ -90,11 +90,13 @@ consumidor; el test la verifica para cubrir ambas piezas.
 def sec_prog(natal_dt, target_year, sec_alltimes=False, now_dt=None):
     """Datetime progresado (UTC) por la regla 1 año de vida = 1 día tras el nacimiento.
 
+    Devuelve un datetime NAIVE en UTC (legacy combine_date elimina tzinfo).
+
     - sec_alltimes=False: progdate = natal_dt + timedelta(days=years_from_birth).
     - sec_alltimes=True: interpola linealmente entre los 'cumpleaños sintéticos'
       del año en curso (reparte el día progresado a lo largo del año). Requiere now_dt.
     """
-    return prog_dt   # datetime, tz-aware UTC
+    return prog_dt   # datetime naive en UTC
 ```
 
 Mapeo de entradas:
