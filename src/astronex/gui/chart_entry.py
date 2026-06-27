@@ -85,7 +85,11 @@ class ChartEntry(Gtk.Box):
             raise ValueError("Zona horaria desconocida: %s" % tz_name)
         nd = NeXDate(datetime(y, mo, d, hh, mm), tz=tz)
         ch = Chart()
-        ch.calc(nd.dateforcalc(), loc=(lat, lon), epheflag=4)
+        dateforcalc = nd.dateforcalc()
+        ch.calc(dateforcalc, loc=(lat, lon), epheflag=4)
+        # stash natal jd + loc for local-house recompute by the controller
+        ch._natal_dateforcalc = dateforcalc
+        ch._natal_loc = (lat, lon)
         name = f["Name"].get_text().strip()
         if name:
             parts = name.split(None, 1)
