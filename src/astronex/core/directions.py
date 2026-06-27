@@ -5,10 +5,14 @@ Pure functions: explicit inputs -> data outputs. No boss, no GUI, no Current
 mutation. Verified against golden data from the original engine.
 
 Ported so far:
-    * solar_rev  -- solar revolution (return of the natal Sun)
-    * sec_prog   -- secondary progression (1 year of life = 1 day)
+    * solar_rev  -- solar revolution (return of the natal Sun); returns the
+                   return JD (UT) as a float. NB: unlike the legacy boss-coupled
+                   version, it does NOT yield a localized wall-clock time; the
+                   caller builds that via revjul(jd) + NeXDate.getnewdt.
+    * sec_prog   -- secondary progression (1 year of life = 1 day); returns a
+                   naive UTC datetime.
 """
-from datetime import timedelta
+from datetime import timedelta, date, time, datetime
 
 from . import ephemeris as pysw
 
@@ -18,27 +22,31 @@ def solar_rev(natal_sun_lon, target_year, birth_month, birth_day, epheflag=4):
     ``target_year``.
 
     The Sun moves ~0.9856 deg/day and its longitude is monotonic within a
-    +/-2 day window around the birthday, so a bisection on ``f(jd) =
-    sun(jd) - natal`` converges to the return in ~40 evaluations. This
-    replaces the legacy's nested coarse-to-fine loops (6 levels, hundreds of
-    evaluations) with a single readable loop; verified to land within the
-    ephemeris-engine tolerance of the legacy golden (and closer to the true
-    root: sun(jd) ~= natal to ~1e-7 deg).
+    +/-2 day window around the birthday, so a bisection on the *wrapped*
+    residual ``f(jd) = wrap(sun(jd) - natal)`` converges to the return in ~40
+    evaluations. This replaces the legacy's nested coarse-to-fine loops with a
+    single readable loop; verified to land within the ephemeris-engine
+    tolerance of the legacy golden (and closer to the true root).
+
+    The wrap into (-180, 180] is essential: the Sun's *reported* longitude is
+    discontinuous at the 0/360 boundary (vernal equinox), so the raw
+    difference does not change sign there and a plain bisection would miss the
+    root for birthdays near the equinox.
     """
-    def sun_lon(jd):
+    def resid(jd):
         _status, lon, _err = pysw.calc(jd, 0, epheflag)
-        return lon
+        return (lon - natal_sun_lon + 180.0) % 360.0 - 180.0
 
     lo = pysw.julday(target_year, birth_month, birth_day, 0.0) - 2.0
     hi = lo + 4.0
-    flo = sun_lon(lo) - natal_sun_lon
-    fhi = sun_lon(hi) - natal_sun_lon
+    flo = resid(lo)
+    fhi = resid(hi)
 
     # Within a 4-day window the Sun crosses every longitude exactly once, so flo
-    # and fhi straddle zero (modulo 360 handled by the direction of the sign).
-    for _ in range(40):   # 2^-40 day is far below the ephemeris resolution
+    # and fhi (now wrapped) straddle zero.
+    for _ in range(40):   # 2^-40 day (~21 us) is far below ephemeris resolution
         mid = (lo + hi) / 2.0
-        fmid = sun_lon(mid) - natal_sun_lon
+        fmid = resid(mid)
         if fmid == 0.0:
             return mid
         if (flo < 0) == (fmid < 0):
@@ -89,9 +97,8 @@ def sec_prog(natal_dt, target_year, sec_alltimes=False, now_dt=None):
 
 def _combine_date(dt):
     """Strip sub-day fields into a fresh naive datetime (legacy combine_date)."""
-    from datetime import date, time, datetime as _dt
-    return _dt.combine(date(dt.year, dt.month, dt.day),
-                       time(dt.hour, dt.minute, dt.second))
+    return datetime.combine(date(dt.year, dt.month, dt.day),
+                            time(dt.hour, dt.minute, dt.second))
 
 
 def _synth_birthday(natal_dt, year):

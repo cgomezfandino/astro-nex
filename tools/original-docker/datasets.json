@@ -2,5 +2,6 @@
   {"name": "ref1", "y": 1970, "m": 1, "d": 1, "h": 12.0, "lat": 40.4168, "lon": -3.7038, "zone": "Europe/Madrid", "target_year": 2025, "now_dt": "2025-07-01T12:00:00+0000"},
   {"name": "ref2", "y": 1985, "m": 6, "d": 15, "h": 8.5, "lat": 51.5074, "lon": -0.1278, "zone": "Europe/London", "target_year": 2025, "now_dt": "2025-07-01T12:00:00+0000"},
   {"name": "ref3", "y": 2000, "m": 12, "d": 31, "h": 23.25, "lat": -34.6037, "lon": -58.3816, "zone": "America/Argentina/Buenos_Aires", "target_year": 2025, "now_dt": "2025-07-01T12:00:00+0000"},
-  {"name": "ref4", "y": 1969, "m": 7, "d": 20, "h": 20.2833, "lat": 48.8566, "lon": 2.3522, "zone": "Europe/Paris", "target_year": 2025, "now_dt": "2025-07-01T12:00:00+0000"}
+  {"name": "ref4", "y": 1969, "m": 7, "d": 20, "h": 20.2833, "lat": 48.8566, "lon": 2.3522, "zone": "Europe/Paris", "target_year": 2025, "now_dt": "2025-07-01T12:00:00+0000"},
+  {"name": "ref5", "y": 1985, "m": 3, "d": 21, "h": 12.0, "lat": 40.4168, "lon": -3.7038, "zone": "Europe/Madrid", "target_year": 2025, "now_dt": "2025-07-01T12:00:00+0000"}
 ]
